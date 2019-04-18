@@ -1,6 +1,34 @@
+.body {
+  height: 400px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .email {
-  margin: 20px;
+  width: 400px;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 18px;
   color: #636262;
+}
+
+.github-icon {
+  width: 80px;
+}
+
+.linkedin-icon {
+  margin-left: -100px;
+  width: 200px;
+}
+
+.gmail-icon {
+  width: 140px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  margin-left: 60px;
 }
