@@ -18,3 +18,10 @@
   margin-top: 15px;
   color: #969b9e;
 }
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #636262;
+  width: 600px;
+}
