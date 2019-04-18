@@ -1,0 +1,27 @@
+<div local-class="header">
+  <div local-class="details">
+    <h1 local-class="name">
+      Shane O'Neill
+    </h1>
+    <h2 local-class="title">
+      Software Developer
+    </h2>
+  </div>
+  <div local-class="nav-bar">
+    {{#link-to 'home'
+      class=(local-class "nav-item")
+      activeClass=(local-class "active")}}
+      Home
+    {{/link-to}}
+    {{#link-to 'experience'
+      class=(local-class "nav-item")
+      activeClass=(local-class "active")}}
+      Experience
+    {{/link-to}}
+    {{#link-to 'contact'
+      class=(local-class "nav-item")
+      activeClass=(local-class "active")}}
+      Contact
+    {{/link-to}}
+  </div>
+</div>
