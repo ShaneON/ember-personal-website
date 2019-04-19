@@ -1,8 +1,10 @@
 .header {
+  width: 100%;
+  position: absolute;
   background-color: #518eba;
   height: 140px;
   padding: 0;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
 }
 

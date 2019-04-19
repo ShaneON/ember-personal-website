@@ -1,6 +1,6 @@
 .body {
-  height: 400px;
-  padding: 30px;
+  background-color: #fcfcfc;
+  height: 600px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -31,4 +31,22 @@
   align-items: center;
   width: 100px;
   margin-left: 60px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.content {
+  padding-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px 0px rgba(186,182,186,1);
+  width: 800px;
+  height: 100%;
+  margin-top: 140px;
 }
