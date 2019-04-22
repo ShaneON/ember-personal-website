@@ -1,7 +1,8 @@
+{{log media.isMobile}}
 {{page-header
   header=header}}
 <div local-class="body">
-  <div local-class="content">
+  <div local-class="{{if isMobile "content-mobile" "content-desktop"}}">
     <p local-class="text">
       Shane is a software developer from Dublin who has experience working in frontend,
       android, and desktop development. His main languages are java and javascript.

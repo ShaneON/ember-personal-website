@@ -1,16 +1,16 @@
 {{page-header
   header=header}}
 <body local-class="body">
-  <div local-class="content">
+  <div local-class="{{if isMobile "content-mobile" "content-desktop"}}">
     <div local-class="links">
-      <a local-class="link" href="mailto:sgoneill89@gmail.com">
-        <img local-class="gmail-icon" src="images/gmail.png">
+      <a local-class={{if isMobile "link-mobile" "link"}} href="mailto:sgoneill89@gmail.com">
+        <img local-class="{{if isMobile "gmail-icon-mobile" "gmail-icon"}}" src="images/gmail.png">
       </a>
-      <a local-class="link" href="https://github.com/ShaneON">
-        <img local-class="github-icon" src="images/github.png">
+      <a local-class={{if isMobile "link-mobile" "link"}} href="https://github.com/ShaneON">
+        <img local-class={{if isMobile "github-icon-mobile" "github-icon"}} src="images/github.png">
       </a>
-      <a local-class="link" href="https://linkedin.com/in/shane-o-neill-7b133511b">
-        <img local-class="linkedin-icon" src="images/linkedin.png">
+      <a local-class={{if isMobile "link-mobile" "link"}} href="https://linkedin.com/in/shane-o-neill-7b133511b">
+        <img local-class={{if isMobile "linkedin-icon-mobile" "linkedin-icon"}} src="images/linkedin.png">
       </a>
     </div>
   </div>
