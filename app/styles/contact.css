@@ -1,6 +1,7 @@
 .body {
+  overflow: hidden;
   background-color: #fcfcfc;
-  height: 600px;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;

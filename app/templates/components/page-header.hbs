@@ -1,12 +1,15 @@
-<div local-class="header">
-  <div local-class="details">
-    <h1 local-class="name">
-      Shane O'Neill
-    </h1>
-    <h2 local-class="title">
-      Software Developer
-    </h2>
-  </div>
+{{log header}}
+<div local-class="{{header}}">
+  {{#if (eq header "header")}}
+    <div local-class="details">
+      <h1 local-class="name">
+        Shane O'Neill
+      </h1>
+      <h2 local-class="title">
+        Software Developer
+      </h2>
+    </div>
+  {{/if}}
   <div local-class="nav-bar">
     {{#link-to 'home'
       class=(local-class "nav-item")
