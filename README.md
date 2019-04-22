@@ -1,3 +1,3 @@
 # ember-personal-website
 
-Website is available here: sgoneill.com
+Website is available here: http://sgoneill.com/
