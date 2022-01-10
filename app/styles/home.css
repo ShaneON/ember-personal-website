@@ -6,23 +6,11 @@
   flex-direction: column;
 }
 
-.image {
-  width: 70%;
-  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
-}
-
-.caption {
-  width: 60%;
-  font-size: 11px;
-  margin-top: 15px;
-  color: #969b9e;
-}
-
 .text {
   font-size: 16px;
   font-weight: 500;
   color: #636262;
-  width: 80%;
+  width: 70%;
 }
 
 .content-desktop {

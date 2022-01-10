@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('home', { path: '/'});
   this.route('experience');
   this.route('contact');
+  this.route('awards');
 });
 
 export default Router;
