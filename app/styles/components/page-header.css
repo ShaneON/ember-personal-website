@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   position: absolute;
-  background-color: #518eba;
+  background-color: #211f1f;
   height: 140px;
   padding: 0;
   margin-bottom: 5px;
@@ -11,7 +11,7 @@
 .sticky {
   width: 100%;
   position: fixed;
-  background-color: #518eba;
+  background-color: #211f1f;
   height: 50px;
   padding: 0;
   margin-bottom: 5px;

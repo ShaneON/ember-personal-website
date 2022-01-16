@@ -2,16 +2,44 @@
   header=this.header}}
 <div local-class="body">
   <div local-class="{{if this.isMobile "content-mobile" "content-desktop"}}">
-    <p local-class="text">
-      Shane is a freelance software developer from Dublin who has experience working in frontend,
-      android, and desktop development. His main languages are java and javascript, and uses the
-      Ember javascript framework for frontend work.
-      He graduated from DCU in 2017 with a 2.1 and worked in both frontend and backend development
-      in industry.<br>
-      Shane has experience in both small and large companies having worked in a local Irish business
-      with a startup feel, a large insurance company, and also one of the biggest banks in the world.
+    <div local-class="about-container">
+      <img local-class="img" src="/images/me.jpg">
+      <p local-class="text">
+        Shane is a freelance software developer from Dublin who has experience working in frontend,
+        android, and desktop development. His main languages are java and javascript, and uses the
+        Ember javascript framework for frontend work.
+        He graduated from DCU in 2017 with a 2.1 and worked in both frontend and backend development
+        in industry.
+        <br>
+        Shane has experience in both small and large companies having worked in a local Irish business
+        with a startup feel, a large insurance company, and also one of the biggest banks in the world.
+        <br>
+        Shane is passionate about delivering quality-built, responsive web pages to his clients, he truly
+        loves his work and puts everything into his projects, as he wants to build something he can be proud of.
+        <br><br>
+      </p>
+    </div>
+    <div local-class="thumbnail-container">
+      <img local-class="img-slideshow-thumbnail" src="/images/html-css-js.png">
+      <img local-class="img-slideshow-thumbnail" src="/images/ember-icon.svg">
+      <img local-class="img-slideshow-thumbnail" src="/images/spring.png">
+      <img local-class="img-slideshow-thumbnail" src="/images/nodejs.png">
+    </div>
+    <AnimatedContainer local-class="animated-container">
+    {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionMove}}
+      <img local-class="img-slideshow" src="/images/ember-icon.svg">
+    {{/animated-if}}
+    {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionMove}}
+      <img local-class="img-slideshow" src="/images/html-css-js.png">
+    {{/animated-if}}
+    {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionMove}}
+      <img local-class="img-slideshow" src="/images/spring.png">
+    {{/animated-if}}
+    {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
+      <img local-class="img-slideshow" src="/images/nodejs.png">
+    {{/animated-if}}
 
-      <br><br>
-    </p>
+
+    </AnimatedContainer>
   </div>
 </div>
