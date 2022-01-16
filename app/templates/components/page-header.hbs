@@ -10,37 +10,20 @@
     </div>
   {{/if}}
   <div local-class="nav-bar">
-    <!-- {{#link-to 'home'
-      class=(local-class "nav-item")
-      activeClass=(local-class "active")}}
+    <div local-class="nav-item" onclick={{action "scrollToSection" "about"}}>
       Home
-    {{/link-to}}
-    {{#link-to 'experience'
-      class=(local-class "nav-item")
-      activeClass=(local-class "active")}}
+    </div>
+    <div local-class="nav-item" onclick={{action "scrollToSection" "tech"}}>
+      Technologies
+    </div>
+    <div local-class="nav-item" onclick={{action "scrollToSection" "cv"}}>
       CV
-    {{/link-to}}
-    {{#link-to 'awards'
-      class=(local-class "nav-item")
-      activeClass=(local-class "active")}}
+    </div>
+    <div local-class="nav-item" onclick={{action "scrollToSection" "awards"}}>
       Awards
-    {{/link-to}}
-    {{#link-to 'contact'
-      class=(local-class "nav-item")
-      activeClass=(local-class "active")}}
+    </div>
+    <div local-class="nav-item" onclick={{action "scrollToSection" "contact"}}>
       Contact
-    {{/link-to}} -->
-    <LinkTo @route="home" id="nav-link-1" local-class="nav-item">
-      Home
-    </LinkTo>
-    <LinkTo @route="experience" id="nav-link-2" local-class="nav-item">
-      CV
-    </LinkTo>
-    <LinkTo @route="awards" id="nav-link-3" local-class="nav-item">
-      Awards
-    </LinkTo>
-    <LinkTo @route="contact" id="nav-link-4" local-class="nav-item">
-      Contact
-    </LinkTo>
+    </div>
   </div>
 </div>

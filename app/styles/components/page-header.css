@@ -58,8 +58,16 @@
   width: 110px;
   text-decoration: none;
   color: white;
+  border-radius: 3px;
 }
 
-.active {
-  background-color: #345d7a;
+.nav-item:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 110px;
+  text-decoration: none;
+  color: white;
+  background-color: #403f3d;
 }

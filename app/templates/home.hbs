@@ -1,6 +1,6 @@
 {{page-header
   header=this.header}}
-<div local-class="body">
+<div local-class="body" id="about">
   <div local-class="{{if this.isMobile "content-mobile" "content-desktop"}}">
     <div local-class="about-container">
       <img local-class="img" src="/images/me.jpg">
@@ -19,6 +19,15 @@
         <br><br>
       </p>
     </div>
+
+    <div local-class="page-seperator" id="tech">
+      <div local-class="dividing-line-left"></div>
+      <h2 local-class="seperator-title">
+        Technologies
+      </h2>
+      <div local-class="dividing-line-right"></div>
+    </div>
+
     <div local-class="thumbnail-container">
       <img local-class="img-slideshow-thumbnail" src="/images/html-css-js.png">
       <img local-class="img-slideshow-thumbnail" src="/images/ember-icon.svg">
@@ -48,5 +57,57 @@
       {{/animated-if}}
 
     </AnimatedContainer>
+
+    <div local-class="page-seperator" id=cv>
+      <div local-class="dividing-line-left"></div>
+      <h2 local-class="seperator-title">
+        CV
+      </h2>
+      <div local-class="dividing-line-right"></div>
+    </div>
+
+     <img local-class="cv-image" src="images/cv1.jpg" width="800px" height="1000px" />
+     <img local-class="cv-image" src="images/cv2.jpg" width="800px" height="1000px" />
+
+     <div local-class="page-seperator" id="awards">
+       <div local-class="dividing-line-left"></div>
+       <h2 local-class="seperator-title">
+         Awards
+       </h2>
+       <div local-class="dividing-line-right"></div>
+     </div>
+
+     <h1 local-class="header"> DCU Final Year Project Expo </h1>
+     <p local-class="text">
+       Shane was awarded "Most Innovative Project" at DCU's 2017 final year project expo.
+       His project was a wearable technology navigation system for cyclists consisting
+       of an android app and an arduino which was fitted to a helmet, using a light system
+       to direct the cyclist to their destination.
+       Shane received first class honours for the project as well as a new Ipad.
+     </p>
+     <img local-class="image" src="images/openet.jpeg">
+     <p local-class="caption">
+       Shane being presented with an Ipad by the CEO of Openet, Joe Hogan.
+     </p>
+
+     <div local-class="page-seperator" id="contact">
+       <div local-class="dividing-line-left"></div>
+       <h2 local-class="seperator-title">
+         Contact
+       </h2>
+       <div local-class="dividing-line-right"></div>
+     </div>
+
+     <div local-class="links">
+       <a local-class={{if this.isMobile "link-mobile" "link"}} href="mailto:sgoneill89@gmail.com">
+         <img local-class="{{if this.isMobile "gmail-icon-mobile" "gmail-icon"}}" src="images/gmail.png">
+       </a>
+       <a local-class={{if this.isMobile "link-mobile" "link"}} href="https://github.com/ShaneON">
+         <img local-class={{if this.isMobile "github-icon-mobile" "github-icon"}} src="images/github.png">
+       </a>
+       <a local-class={{if this.isMobile "link-mobile" "link"}} href="https://linkedin.com/in/shane-o-neill-7b133511b">
+         <img local-class={{if this.isMobile "linkedin-icon-mobile" "linkedin-icon"}} src="images/linkedin.png">
+       </a>
+     </div>
   </div>
 </div>

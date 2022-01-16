@@ -41,7 +41,7 @@ export default Controller.extend({
   transitionFade: fade,
 
   imgCount: 0,
-  technologies: ['HTML5/Javascript/CSS3', 'Ember', 'Java/Spring', 'Node.js'],
+  technologies: ['HTML5/Javascript/CSS3', 'Ember.js', 'Java/Spring', 'Node.js'],
   currentTech: 'HTML5/Javascript/CSS3'
 
 });

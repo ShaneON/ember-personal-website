@@ -54,8 +54,8 @@
 
 .animated-heading {
   color: #636262;
-  letter-spacing: 1;
-  font-weight: 300;
+  letter-spacing: 1px;
+  font-weight: 400;
 }
 
 .img {
@@ -77,4 +77,62 @@
 .img-slideshow-thumbnail {
   width: 75px;
   margin-left: 20px;
+}
+
+.page-seperator {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.page-seperator-1 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.dividing-line-left {
+  border-bottom: 1px solid #bbb;
+  width: 38%;
+  box-shadow: 0px 2px 0px 0px rgba(186,182,186,1);
+  margin-left: 20px;
+}
+
+.dividing-line-right {
+  border-bottom: 1px solid #bbb;
+  width: 38%;
+  box-shadow: 0px 2px 0px 0px rgba(186,182,186,1);
+  margin-right: 20px;
+}
+
+.seperator-title {
+  margin: 0;
+  color: #636262;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.github-icon {
+  width: 100px;
+}
+
+.linkedin-icon {
+  width: 180px;
+}
+
+.gmail-icon {
+  margin-right: 20px;
+  width: 160px;
 }
