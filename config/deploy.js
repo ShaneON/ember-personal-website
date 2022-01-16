@@ -1,16 +1,17 @@
 /* eslint-env node */
 'use strict';
 
-module.exports = function(deployTarget) {
+module.exports = function (deployTarget) {
   let ENV = {
     build: {},
     s3: {
-    filePattern: '**/*.{js,css,png,gif,ico,jpg,jpeg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}',
-    accessKeyId: process.env.AWS_KEY,
-    secretAccessKey: process.env.AWS_SECRET,
-    bucket: 'sgoneill.com',
-    region: 'eu-west-1'
-  }
+      filePattern:
+        '**/*.{js,css,png,gif,ico,jpg,jpeg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}',
+      accessKeyId: process.env.AWS_KEY,
+      secretAccessKey: process.env.AWS_SECRET,
+      bucket: 'sgoneill.com',
+      region: 'eu-west-1',
+    },
     // include other plugin configuration that applies to all deploy targets here
   };
 

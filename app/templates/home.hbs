@@ -25,20 +25,27 @@
       <img local-class="img-slideshow-thumbnail" src="/images/spring.png">
       <img local-class="img-slideshow-thumbnail" src="/images/nodejs.png">
     </div>
+    <AnimatedContainer local-class="animation-title">
+      {{#animated-value this.currentTech use=this.transitionFade as |value|}}
+        <h2 local-class="animated-heading">
+        {{value}}
+      </h2>
+      {{/animated-value}}
+    </AnimatedContainer>
     <AnimatedContainer local-class="animated-container">
-    {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionMove}}
-      <img local-class="img-slideshow" src="/images/ember-icon.svg">
-    {{/animated-if}}
-    {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionMove}}
-      <img local-class="img-slideshow" src="/images/html-css-js.png">
-    {{/animated-if}}
-    {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionMove}}
-      <img local-class="img-slideshow" src="/images/spring.png">
-    {{/animated-if}}
-    {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
-      <img local-class="img-slideshow" src="/images/nodejs.png">
-    {{/animated-if}}
 
+      {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionMove}}
+        <img local-class="img-slideshow" src="/images/html-css-js.png">
+      {{/animated-if}}
+      {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionMove}}
+        <img local-class="img-slideshow" src="/images/ember-icon.svg">
+      {{/animated-if}}
+      {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionMove}}
+        <img local-class="img-slideshow" src="/images/spring.png">
+      {{/animated-if}}
+      {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
+        <img local-class="img-slideshow" src="/images/nodejs.png">
+      {{/animated-if}}
 
     </AnimatedContainer>
   </div>
