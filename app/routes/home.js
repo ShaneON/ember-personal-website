@@ -6,7 +6,8 @@ export default Route.extend({
 
   setupController(controller) {
     this._super(...arguments);
-    controller.set('isMobile', this.media.isMobile),
+    // controller.set('isMobile', this.media.isMobile),
+    controller.set('isMobile', true)
     controller.set('header', 'header');
     this._checkScroll(controller);
   },
