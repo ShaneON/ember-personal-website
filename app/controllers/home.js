@@ -11,7 +11,7 @@ export default Controller.extend({
 
     setInterval(() => {
       let count = this.imgCount;
-      if (count === 3) {
+      if (count === 4) {
         this.set('imgCount', 0);
       } else {
         this.set('imgCount', this.imgCount + 1);
@@ -41,7 +41,7 @@ export default Controller.extend({
   transitionFade: fade,
 
   imgCount: 0,
-  technologies: ['HTML5/Javascript/CSS3', 'Ember.js', 'Java/Spring', 'Node.js'],
+  technologies: ['HTML5/Javascript/CSS3', 'Ember.js Frontend Development', 'Java/Spring Server-Side Development', 'Node.js/Express Server-Side Development', 'Android Development'],
   currentTech: 'HTML5/Javascript/CSS3',
 
   actions: {

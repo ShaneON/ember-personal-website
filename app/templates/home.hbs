@@ -29,8 +29,8 @@
 <div local-class="body" id="about">
   <div local-class="{{if this.isMobile "content-mobile" "content-desktop"}}">
     <div local-class="about-container">
-      <img local-class="img" src="/images/me.jpg">
-      <p local-class="text">
+      <img local-class="img-about" src="/images/me.jpg">
+      <p local-class="text-about">
         Shane is a freelance software developer from Dublin who has experience working in frontend,
         android, and desktop development. His main languages are java and javascript, and uses the
         Ember javascript framework for frontend work.
@@ -59,6 +59,7 @@
       <img local-class="img-slideshow-thumbnail" src="/images/ember-icon.svg">
       <img local-class="img-slideshow-thumbnail" src="/images/spring.png">
       <img local-class="img-slideshow-thumbnail" src="/images/nodejs.png">
+      <img local-class="img-slideshow-thumbnail" src="/images/android.png">
     </div>
     <AnimatedContainer local-class="animated-heading-container">
       {{#animated-value this.currentTech use=this.transitionFade as |value|}}
@@ -80,6 +81,9 @@
       {{/animated-if}}
       {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
         <img local-class="img-slideshow" src="/images/nodejs.png">
+      {{/animated-if}}
+      {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionMove}}
+        <img local-class="img-slideshow" src="/images/android.png">
       {{/animated-if}}
 
     </AnimatedContainer>
@@ -105,7 +109,7 @@
 
      <h1 local-class="title-black"> DCU Final Year Project Expo </h1>
      <p local-class="text">
-       Shane was awarded "Most Innovative Project" at DCU's 2017 final year project expo.
+       Shane was awarded "Most Innovative Project" at Dublin City University's 2017 final year project expo.
        His project was a wearable technology navigation system for cyclists consisting
        of an android app and an arduino which was fitted to a helmet, using a light system
        to direct the cyclist to their destination.
