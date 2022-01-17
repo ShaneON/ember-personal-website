@@ -42,6 +42,12 @@ export default Controller.extend({
 
   imgCount: 0,
   technologies: ['HTML5/Javascript/CSS3', 'Ember.js', 'Java/Spring', 'Node.js'],
-  currentTech: 'HTML5/Javascript/CSS3'
+  currentTech: 'HTML5/Javascript/CSS3',
+
+  actions: {
+    scrollToSection(section) {
+      document.getElementById(section).scrollIntoView();
+    }
+  }
 
 });

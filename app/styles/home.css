@@ -58,6 +58,10 @@
   font-weight: 400;
 }
 
+.animated-heading-container {
+  z-index: 1;
+}
+
 .img {
   border-radius: 10px;
   margin-right: 20px;
@@ -135,4 +139,84 @@
 .gmail-icon {
   margin-right: 20px;
   width: 160px;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  background-color: #211f1f;
+  height: 140px;
+  padding: 0;
+  margin-bottom: 5px;
+  box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
+  z-index: 999;
+}
+
+.sticky {
+  width: 100%;
+  position: fixed;
+  background-color: #211f1f;
+  height: 50px;
+  padding: 0;
+  margin-bottom: 50px;
+  box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
+  z-index: 999;
+}
+
+.details {
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  letter-spacing: 1px;
+}
+
+.img-name {
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0;
+  color: #dddce8;
+}
+
+.title-black {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0;
+  color: white;
+}
+
+.nav-bar {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 110px;
+  text-decoration: none;
+  color: #dddce8;
+  border-radius: 3px;
+}
+
+.nav-item:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 110px;
+  text-decoration: none;
+  color: white;
+  background-color: #403f3d;
 }

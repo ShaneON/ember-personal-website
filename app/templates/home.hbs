@@ -1,5 +1,31 @@
-{{page-header
-  header=this.header}}
+<div local-class="{{this.header}}">
+  {{#if (eq this.header "header")}}
+    <div local-class="details">
+      <img local-class="img-name" src="/images/name.png">
+      <h2 local-class="title">
+        Software Developer
+      </h2>
+    </div>
+  {{/if}}
+  <div local-class="nav-bar">
+    <div local-class="nav-item" onclick={{action "scrollToSection" "about"}}>
+      Home
+    </div>
+    <div local-class="nav-item" onclick={{action "scrollToSection" "tech"}}>
+      Technologies
+    </div>
+    <div local-class="nav-item" onclick={{action "scrollToSection" "cv"}}>
+      CV
+    </div>
+    <div local-class="nav-item" onclick={{action "scrollToSection" "awards"}}>
+      Awards
+    </div>
+    <div local-class="nav-item" onclick={{action "scrollToSection" "contact"}}>
+      Contact
+    </div>
+  </div>
+</div>
+
 <div local-class="body" id="about">
   <div local-class="{{if this.isMobile "content-mobile" "content-desktop"}}">
     <div local-class="about-container">
@@ -34,7 +60,7 @@
       <img local-class="img-slideshow-thumbnail" src="/images/spring.png">
       <img local-class="img-slideshow-thumbnail" src="/images/nodejs.png">
     </div>
-    <AnimatedContainer local-class="animation-title">
+    <AnimatedContainer local-class="animated-heading-container">
       {{#animated-value this.currentTech use=this.transitionFade as |value|}}
         <h2 local-class="animated-heading">
         {{value}}
@@ -77,7 +103,7 @@
        <div local-class="dividing-line-right"></div>
      </div>
 
-     <h1 local-class="header"> DCU Final Year Project Expo </h1>
+     <h1 local-class="title-black"> DCU Final Year Project Expo </h1>
      <p local-class="text">
        Shane was awarded "Most Innovative Project" at DCU's 2017 final year project expo.
        His project was a wearable technology navigation system for cyclists consisting
