@@ -44,10 +44,21 @@ export default Controller.extend({
   technologies: ['HTML5/Javascript/CSS3', 'Ember.js Frontend Development', 'Java/Spring Server-Side Development', 'Node.js/Express Server-Side Development', 'Android Development'],
   currentTech: 'HTML5/Javascript/CSS3',
 
-  actions: {
-    scrollToSection(section) {
-      document.getElementById(section).scrollIntoView();
-    }
-  }
+  // actions: {
+  //   navigateToSection(section) {
+  //     console.log(section);
+  //     let navItemActive;
+  //     var navItem1 = document.getElementById('nav-about');
+      // navItem1.children[0].classList.add('disabled');
+      // navItem1.children[0].classList.add('disabled');
+      // navItem1.children[2].classList.add('disabled');
+      // console.log(navItem1);
+      // if (navItem1.className.includes("active")) {
+      //   navItem1.style.color = '#edd5ea';
+      //   navItem1.style.backgroundColor = '#61505f';
+      //   navItem1.style.boxShadow = '0px -1px 5px #888888';
+      // }
+  //   }
+  // }
 
 });

@@ -2,47 +2,78 @@
   {{#if (eq this.header "header")}}
     <div local-class="header-content">
       <img local-class={{if this.isMobile "header-img-mobile" "header-img"}} src="/images/name.png">
-      <h2 local-class={{if this.isMobile "header-title-mobile" "header-title"}}>
-        Software Developer
-      </h2>
+      <div local-class={{if this.isMobile "header-title-mobile" "header-title"}}>
+        <span local-class={{if this.isMobile "header-title-angle-mobile" "header-title-angle"}}>
+          &lt;
+        </span>
+        <span local-class={{if this.isMobile "header-title-text-1-mobile" "header-title-text-1"}}>
+          Software
+        </span>
+        <span local-class={{if this.isMobile "header-title-syntax-mobile" "header-title-syntax"}}>
+          .
+        </span>
+        <span local-class={{if this.isMobile "header-title-text-2-mobile" "header-title-text-2"}}>
+          Developer
+        </span>
+        <span local-class={{if this.isMobile "header-title-syntax-mobile" "header-title-syntax"}}>
+          /
+        </span>
+        <span local-class={{if this.isMobile "header-title-angle-mobile" "header-title-angle"}}>
+          &gt;
+        </span>
+      </div>
+
     </div>
   {{/if}}
   <div local-class={{if this.isMobile "nav-bar-mobile" "nav-bar"}}>
-    <div local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} onclick={{action "scrollToSection" "about"}}>
-      Home
-    </div>
-    <div local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} onclick={{action "scrollToSection" "tech"}}>
-      Technologies
-    </div>
-    <div local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} onclick={{action "scrollToSection" "cv"}}>
-      CV
-    </div>
-    <div local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} onclick={{action "scrollToSection" "awards"}}>
-      Awards
-    </div>
-    <div local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} onclick={{action "scrollToSection" "contact"}}>
-      Contact
-    </div>
+    <a local-class={{if this.isMobile "nav-item-mobile" "nav-item active"}} href="#about" id="nav-about">
+      <span local-class="nav-item-bracket"> { </span>
+      <span local-class="nav-item-text"> Home </span>
+      <span local-class="nav-item-bracket"> } </span>
+    </a>
+    <a local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} href="#tech" id="nav-tech">
+      <span local-class="nav-item-bracket disabled"> { </span>
+      <span local-class="nav-item-text"> Tech </span>
+      <span local-class="nav-item-bracket disabled"> } </span>
+    </a>
+    <a local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} href="#cv" id="nav-cv">
+      <span local-class="nav-item-bracket disabled"> { </span>
+      <span local-class="nav-item-text"> CV </span>
+      <span local-class="nav-item-bracket disabled"> } </span>
+    </a>
+    <a local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} href="#awards" id="nav-awards">
+      <span local-class="nav-item-bracket disabled"> { </span>
+      <span local-class="nav-item-text"> Awards </span>
+      <span local-class="nav-item-bracket disabled"> } </span>
+    </a>
+    <a local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} href="#contact" id="nav-contact">
+      <span local-class="nav-item-bracket disabled"> { </span>
+      <span local-class="nav-item-text"> Contact </span>
+      <span local-class="nav-item-bracket disabled"> } </span>
+    </a>
   </div>
 </div>
 
 <div local-class="body" id="about">
   <div local-class="{{if this.isMobile "content-mobile" "content"}}">
     <div local-class="about-container">
-      <img local-class={{if this.isMobile "about-img-mobile" "about-img"}} src="/images/me.jpg">
+      <div local-class="about-top">
+        <img local-class={{if this.isMobile "about-img-mobile" "about-img"}} src="/images/me.jpg">
+        <p local-class={{if this.isMobile "about-text-mobile" "about-text"}}>
+          Shane is a freelance software developer from Dublin who has experience working in frontend,
+          android, and desktop development. His main languages are java and javascript, and uses the
+          Ember javascript framework for frontend work.
+        </p>
+      </div>
       <p local-class={{if this.isMobile "about-text-mobile" "about-text"}}>
-        Shane is a freelance software developer from Dublin who has experience working in frontend,
-        android, and desktop development. His main languages are java and javascript, and uses the
-        Ember javascript framework for frontend work.
         He graduated from DCU in 2017 with a 2.1 and worked in both frontend and backend development
         in industry.
-        <br>
+        <br><br><br>
         Shane has experience in both small and large companies having worked in a local Irish business
         with a startup feel, a large insurance company, and also one of the biggest banks in the world.
-        <br>
+        <br><br><br>
         Shane is passionate about delivering quality-built, responsive web pages to his clients, he truly
         loves his work and puts everything into his projects, as he wants to build something he can be proud of.
-        <br><br>
       </p>
     </div>
 
@@ -54,7 +85,7 @@
       <div local-class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
     </div>
 
-    <div local-class="thumbnail-container">
+    <div local-class={{if this.isMobile "thumbnail-container-mobile" "thumbnail-container"}}>
       <img local-class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/html-css-js.png">
       <img local-class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/ember-icon.svg">
       <img local-class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/spring.png">
@@ -88,7 +119,7 @@
 
     </AnimatedContainer>
 
-    <div local-class={{if this.isMobile "seperator-mobile" "seperator"}} id="tech">
+    <div local-class={{if this.isMobile "seperator-mobile" "seperator"}} id="cv">
       <div local-class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
       <h2 local-class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
         CV
@@ -96,15 +127,15 @@
       <div local-class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
     </div>
 
-    <div local-class="cv-container">
+    <div local-class={{if this.isMobile "cv-container-mobile" "cv-container"}}>
 
-      <img local-class="cv-image-large" src="images/cv1.jpg"/>
+      <img local-class={{if this.isMobile "cv-image-large-mobile" "cv-image-large"}} src="images/cv1.jpg"/>
 
-      <img local-class="cv-image-small" src="images/cv1.jpg"/>
-      <img local-class="cv-image-small" src="images/cv2.jpg"/>
+      <img local-class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv1.jpg"/>
+      <img local-class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv2.jpg"/>
     </div>
 
-    <div local-class={{if this.isMobile "seperator-mobile" "seperator"}} id="tech">
+    <div local-class={{if this.isMobile "seperator-mobile" "seperator"}} id="awards">
       <div local-class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
       <h2 local-class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
         Awards
@@ -112,20 +143,20 @@
       <div local-class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
     </div>
 
-    <h1 local-class="expo-title"> DCU Final Year Project Expo </h1>
-    <p local-class="expo-text">
+    <h1 local-class={{if this.isMobile "expo-title-mobile" "expo-title"}}> DCU Final Year Project Expo </h1>
+    <p local-class={{if this.isMobile "expo-text-mobile" "expo-text"}}>
      Shane was awarded "Most Innovative Project" at Dublin City University's 2017 final year project expo.
      His project was a wearable technology navigation system for cyclists consisting
      of an android app and an arduino which was fitted to a helmet, using a light system
      to direct the cyclist to their destination.
      Shane received first class honours for the project as well as a new Ipad.
     </p>
-    <img local-class="expo-image" src="images/openet.jpeg">
-    <p local-class="expo-caption">
+    <img local-class={{if this.isMobile "expo-image-mobile" "expo-image"}} src="images/openet.jpeg">
+    <p local-class={{if this.isMobile "expo-caption-mobile" "expo-caption"}}>
      Shane being presented with an Ipad by the CEO of Openet, Joe Hogan.
     </p>
 
-    <div local-class={{if this.isMobile "seperator-mobile" "seperator"}} id="tech">
+    <div local-class={{if this.isMobile "seperator-mobile" "seperator"}} id="contact">
       <div local-class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
       <h2 local-class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
         Contact
@@ -133,7 +164,7 @@
       <div local-class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
     </div>
 
-    <div local-class="links">
+    <div local-class={{if this.isMobile "links-mobile" "links"}}>
      <a local-class={{if this.isMobile "link-mobile" "link"}} href="mailto:sgoneill89@gmail.com">
        <img local-class="{{if this.isMobile "gmail-icon-mobile" "gmail-icon"}}" src="images/gmail.png">
      </a>

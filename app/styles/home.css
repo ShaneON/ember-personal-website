@@ -1,7 +1,7 @@
 .header {
   position: absolute;
   width: 100%;
-  background-color: #182945;
+  background-color: #2d2f30;
   height: 140px;
   padding: 0;
   margin-bottom: 5px;
@@ -13,7 +13,7 @@
 .sticky {
   width: 100%;
   position: fixed;
-  background-color: #211f1f;
+  background-color: #2d2f30;
   height: 50px;
   padding: 0;
   margin-bottom: 50px;
@@ -37,10 +37,38 @@
 }
 
 .header-title {
-  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+}
+
+.header-title-text-1 {
+  font-size: 16px;
   font-weight: 300;
   margin: 0;
-  color: #dddce8;
+  color: #2db7f7;
+}
+
+.header-title-text-2 {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  color: #8ade1d;
+}
+
+.header-title-angle {
+  font-size: 16px;
+  color: red;
+  margin: 0;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-weight: 400;
+}
+
+.header-title-syntax {
+  font-size: 16px;
+  color: #c4cacf;
+  margin: 0;
+  font-weight: 300;
 }
 
 .nav-bar {
@@ -62,6 +90,14 @@
   border-radius: 3px;
 }
 
+.active {
+  color: #f2c213;
+}
+
+.disabled {
+  display: none;
+}
+
 .nav-item:hover {
   display: flex;
   justify-content: center;
@@ -73,9 +109,20 @@
   background-color: #403f3d;
 }
 
+.nav-item-text {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.nav-item-bracket {
+  font-size: 20px;
+  color: red;
+  font-weight: 800;
+}
+
 .body {
   overflow-x: hidden;
-  background-color: #fff3d6;
+  background-color: #d9dede;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,17 +134,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
   width: 100%;
   margin-top: 140px;
 }
 
 .about-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   width: 100%;
   margin-bottom: 10px;
+}
+
+.about-top {
+  display: flex;
+  flex-direction: row;
 }
 
 .about-text {
@@ -110,6 +161,7 @@
 }
 
 .about-img {
+  width: 300px;
   border-radius: 10px;
   margin-right: 20px;
   margin-left: 30px;
@@ -128,7 +180,7 @@
 }
 
 .animated-container {
-  background-color: #fce5ac;
+  background-color: #e8e6e3;
   height: 400px;
   width: 100%;
   display: flex;
@@ -174,6 +226,7 @@
 }
 
 .links {
+  height: 500px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -181,7 +234,12 @@
   margin-top: 50px;
 }
 
+.link {
+
+}
+
 .github-icon {
+  border-radius: 10px;
   width: 100px;
 }
 
@@ -230,18 +288,19 @@
   font-size: 12px;
   font-weight: 300;
   color: #636262;
-  width: 400px;
   margin-right: 30px;
+  margin-left: 30px;
   letter-spacing: 1px;
   margin-top: 0;
 }
 
 .about-img-mobile {
-  width: 100px;
+  width: 120px;
   height: 140px;
   border-radius: 10px;
-  margin-right: 20px;
+  box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
   margin-left: 30px;
+  margin-bottom: 20px;
 }
 
 .header-img-mobile {
@@ -287,6 +346,13 @@
   margin-top: 140px;
 }
 
+.thumbnail-container-mobile {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .thumbnail-img-mobile {
   width: 50px;
   margin-left: 10px;
@@ -301,6 +367,81 @@
 
 .img-slideshow-mobile {
   width: 250px;
+}
+
+.cv-container-mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-image-large-mobile {
+  display: none;
+  height: 850px;
+  width: 650px;
+  box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
+  margin-right: 20px;
+}
+
+.cv-image-small-mobile {
+  height: 600px;
+  width: 100%;
+  box-shadow: 0px 0px 5px -4px rgba(0,0,0,0.75);
+}
+
+.expo-title-mobile {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0;
+  color: #636262;
+}
+
+.expo-text-mobile {
+  font-size: 12px;
+  font-weight: 300;
+  color: #636262;
+  letter-spacing: 1px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.expo-caption-mobile {
+  font-size: 10px;
+  font-weight: 300;
+  width: 200px;
+  color: #636262;
+  letter-spacing: 1px;
+}
+
+.expo-image-mobile {
+  width: 300px;
+  box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
+  border-radius: 5px;
+}
+
+.links-mobile {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  align-items: center;
+}
+
+.link-mobile {
+
+}
+
+.github-icon-mobile {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.linkedin-icon-mobile {
+  width: 180px;
+}
+
+.gmail-icon-mobile {
+  width: 140px;
 }
 
 .seperator-mobile {
