@@ -122,49 +122,10 @@ export default Controller.extend({
 
   actions: {
     navigateToSection(section) {
-      this._removeActiveClass();
       let navItem = document.getElementById(section);
-      navItem.classList.add('active');
-      navItem.children[0].classList.remove('disabled');
-      navItem.children[2].classList.remove('disabled');
-
       navItem = document.getElementById(section.replace('nav-', ''));
       navItem.scrollIntoView();
     }
   },
-
-  _removeActiveClass() {
-    let navItem;
-    navItem = document.getElementById('nav-about');
-    if (navItem.className.includes("active")) {
-      navItem.classList.remove('active');
-      navItem.children[0].classList.add('disabled');
-      navItem.children[2].classList.add('disabled');
-    }
-    navItem = document.getElementById('nav-tech');
-    if (navItem.className.includes("active")) {
-      navItem.classList.remove('active');
-      navItem.children[0].classList.add('disabled');
-      navItem.children[2].classList.add('disabled');
-    }
-    navItem = document.getElementById('nav-cv');
-    if (navItem.className.includes("active")) {
-      navItem.classList.remove('active');
-      navItem.children[0].classList.add('disabled');
-      navItem.children[2].classList.add('disabled');
-    }
-    navItem = document.getElementById('nav-awards');
-    if (navItem.className.includes("active")) {
-      navItem.classList.remove('active');
-      navItem.children[0].classList.add('disabled');
-      navItem.children[2].classList.add('disabled');
-    }
-    navItem = document.getElementById('nav-contact');
-    if (navItem.className.includes("active")) {
-      navItem.classList.remove('active');
-      navItem.children[0].classList.add('disabled');
-      navItem.children[2].classList.add('disabled');
-    }
-  }
 
 });
