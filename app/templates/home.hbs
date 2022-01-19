@@ -1,71 +1,71 @@
-<div local-class="{{this.header}}">
+<div class="{{this.header}}">
   {{#if (eq this.header "header")}}
-    <div local-class="header-content">
-      <img local-class={{if this.isMobile "header-img-mobile" "header-img"}} src="/images/name.png">
-      <div local-class={{if this.isMobile "header-title-mobile" "header-title"}}>
-        <span local-class={{if this.isMobile "header-title-angle-mobile" "header-title-angle"}}>
+    <div class="header-content">
+      <img class={{if this.isMobile "header-img-mobile" "header-img"}} src="/images/name.png">
+      <div class={{if this.isMobile "header-title-mobile" "header-title"}}>
+        <span class={{if this.isMobile "header-title-angle-mobile" "header-title-angle"}}>
           &lt;
         </span>
-        <span local-class={{if this.isMobile "header-title-text-1-mobile" "header-title-text-1"}}>
+        <span class={{if this.isMobile "header-title-text-1-mobile" "header-title-text-1"}}>
           Software
         </span>
-        <span local-class={{if this.isMobile "header-title-syntax-mobile" "header-title-syntax"}}>
+        <span class={{if this.isMobile "header-title-syntax-mobile" "header-title-syntax"}}>
           .
         </span>
-        <span local-class={{if this.isMobile "header-title-text-2-mobile" "header-title-text-2"}}>
+        <span class={{if this.isMobile "header-title-text-2-mobile" "header-title-text-2"}}>
           Developer
         </span>
-        <span local-class={{if this.isMobile "header-title-syntax-mobile" "header-title-syntax"}}>
+        <span class={{if this.isMobile "header-title-syntax-mobile" "header-title-syntax"}}>
           /
         </span>
-        <span local-class={{if this.isMobile "header-title-angle-mobile" "header-title-angle"}}>
+        <span class={{if this.isMobile "header-title-angle-mobile" "header-title-angle"}}>
           &gt;
         </span>
       </div>
 
     </div>
   {{/if}}
-  <div local-class={{if this.isMobile "nav-bar-mobile" "nav-bar"}}>
-    <a local-class={{if this.isMobile "nav-item-mobile" "nav-item active"}} href="#about" id="nav-about">
-      <span local-class="nav-item-bracket"> { </span>
-      <span local-class="nav-item-text"> Home </span>
-      <span local-class="nav-item-bracket"> } </span>
+  <div class={{if this.isMobile "nav-bar-mobile" "nav-bar"}}>
+    <a class={{if this.isMobile "nav-item-mobile" "nav-item active"}} {{action "navigateToSection" "nav-about"}} id="nav-about">
+      <span class="nav-item-bracket"> { </span>
+      <span class="nav-item-text"> Home </span>
+      <span class="nav-item-bracket"> } </span>
     </a>
-    <a local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} href="#tech" id="nav-tech">
-      <span local-class="nav-item-bracket disabled"> { </span>
-      <span local-class="nav-item-text"> Tech </span>
-      <span local-class="nav-item-bracket disabled"> } </span>
+    <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-tech"}} id="nav-tech">
+      <span class="nav-item-bracket disabled"> { </span>
+      <span class="nav-item-text"> Tech </span>
+      <span class="nav-item-bracket disabled"> } </span>
     </a>
-    <a local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} href="#cv" id="nav-cv">
-      <span local-class="nav-item-bracket disabled"> { </span>
-      <span local-class="nav-item-text"> CV </span>
-      <span local-class="nav-item-bracket disabled"> } </span>
+    <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-cv"}} id="nav-cv">
+      <span class="nav-item-bracket disabled"> { </span>
+      <span class="nav-item-text"> CV </span>
+      <span class="nav-item-bracket disabled"> } </span>
     </a>
-    <a local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} href="#awards" id="nav-awards">
-      <span local-class="nav-item-bracket disabled"> { </span>
-      <span local-class="nav-item-text"> Awards </span>
-      <span local-class="nav-item-bracket disabled"> } </span>
+    <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-awards"}} id="nav-awards">
+      <span class="nav-item-bracket disabled"> { </span>
+      <span class="nav-item-text"> Awards </span>
+      <span class="nav-item-bracket disabled"> } </span>
     </a>
-    <a local-class={{if this.isMobile "nav-item-mobile" "nav-item"}} href="#contact" id="nav-contact">
-      <span local-class="nav-item-bracket disabled"> { </span>
-      <span local-class="nav-item-text"> Contact </span>
-      <span local-class="nav-item-bracket disabled"> } </span>
+    <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-contact"}} id="nav-contact">
+      <span class="nav-item-bracket disabled"> { </span>
+      <span class="nav-item-text"> Contact </span>
+      <span class="nav-item-bracket disabled"> } </span>
     </a>
   </div>
 </div>
 
-<div local-class="body" id="about">
-  <div local-class="{{if this.isMobile "content-mobile" "content"}}">
-    <div local-class="about-container">
-      <div local-class="about-top">
-        <img local-class={{if this.isMobile "about-img-mobile" "about-img"}} src="/images/me.jpg">
-        <p local-class={{if this.isMobile "about-text-mobile" "about-text"}}>
+<div class="body" id="about">
+  <div class="{{if this.isMobile "content-mobile" "content"}}">
+    <div class="about-container">
+      <div class="about-top">
+        <img class={{if this.isMobile "about-img-mobile" "about-img"}} src="/images/me.jpg">
+        <p class={{if this.isMobile "about-text-mobile" "about-text"}}>
           Shane is a freelance software developer from Dublin who has experience working in frontend,
           android, and desktop development. His main languages are java and javascript, and uses the
           Ember javascript framework for frontend work.
         </p>
       </div>
-      <p local-class={{if this.isMobile "about-text-mobile" "about-text"}}>
+      <p class={{if this.isMobile "about-text-mobile" "about-text"}}>
         He graduated from DCU in 2017 with a 2.1 and worked in both frontend and backend development
         in industry.
         <br><br><br>
@@ -77,102 +77,102 @@
       </p>
     </div>
 
-    <div local-class={{if this.isMobile "seperator-mobile" "seperator"}} id="tech">
-      <div local-class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
-      <h2 local-class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
+    <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="tech">
+      <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
+      <h2 class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
         Technologies
       </h2>
-      <div local-class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
+      <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
     </div>
 
-    <div local-class={{if this.isMobile "thumbnail-container-mobile" "thumbnail-container"}}>
-      <img local-class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/html-css-js.png">
-      <img local-class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/ember-icon.svg">
-      <img local-class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/spring.png">
-      <img local-class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/nodejs.png">
-      <img local-class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/android.png">
+    <div class={{if this.isMobile "thumbnail-container-mobile" "thumbnail-container"}}>
+      <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/html-css-js.png">
+      <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/ember-icon.svg">
+      <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/spring.png">
+      <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/nodejs.png">
+      <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/android.png">
     </div>
-    <AnimatedContainer local-class="animated-heading-container">
+    <AnimatedContainer class="animated-heading-container">
       {{#animated-value this.currentTech use=this.transitionFade as |value|}}
-        <h2 local-class={{if this.isMobile "animated-heading-mobile" "animated-heading"}}>
-        {{value}}
-      </h2>
+        <h2 class={{if this.isMobile "animated-heading-mobile" "animated-heading"}}>
+          {{value}}
+        </h2>
       {{/animated-value}}
     </AnimatedContainer>
-    <AnimatedContainer local-class="animated-container">
+    <AnimatedContainer class="animated-slideshow-container">
 
       {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionMove}}
-        <img local-class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/html-css-js.png">
+        <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/html-css-js.png">
       {{/animated-if}}
       {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionMove}}
-        <img local-class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/ember-icon.svg">
+        <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/ember-icon.svg">
       {{/animated-if}}
       {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionMove}}
-        <img local-class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/spring.png">
+        <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/spring.png">
       {{/animated-if}}
       {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
-        <img local-class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/nodejs.png">
+        <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/nodejs.png">
       {{/animated-if}}
       {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionMove}}
-        <img local-class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/android.png">
+        <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/android.png">
       {{/animated-if}}
 
     </AnimatedContainer>
 
-    <div local-class={{if this.isMobile "seperator-mobile" "seperator"}} id="cv">
-      <div local-class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
-      <h2 local-class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
+    <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="cv">
+      <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
+      <h2 class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
         CV
       </h2>
-      <div local-class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
+      <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
     </div>
 
-    <div local-class={{if this.isMobile "cv-container-mobile" "cv-container"}}>
+    <div class={{if this.isMobile "cv-container-mobile" "cv-container"}}>
 
-      <img local-class={{if this.isMobile "cv-image-large-mobile" "cv-image-large"}} src="images/cv1.jpg"/>
+      <img class={{if this.isMobile "cv-image-large-mobile" "cv-image-large"}} src="images/cv1.jpg"/>
 
-      <img local-class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv1.jpg"/>
-      <img local-class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv2.jpg"/>
+      <img class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv1.jpg"/>
+      <img class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv2.jpg"/>
     </div>
 
-    <div local-class={{if this.isMobile "seperator-mobile" "seperator"}} id="awards">
-      <div local-class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
-      <h2 local-class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
+    <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="awards">
+      <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
+      <h2 class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
         Awards
       </h2>
-      <div local-class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
+      <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
     </div>
 
-    <h1 local-class={{if this.isMobile "expo-title-mobile" "expo-title"}}> DCU Final Year Project Expo </h1>
-    <p local-class={{if this.isMobile "expo-text-mobile" "expo-text"}}>
+    <h1 class={{if this.isMobile "expo-title-mobile" "expo-title"}}> DCU Final Year Project Expo </h1>
+    <p class={{if this.isMobile "expo-text-mobile" "expo-text"}}>
      Shane was awarded "Most Innovative Project" at Dublin City University's 2017 final year project expo.
      His project was a wearable technology navigation system for cyclists consisting
      of an android app and an arduino which was fitted to a helmet, using a light system
      to direct the cyclist to their destination.
      Shane received first class honours for the project as well as a new Ipad.
     </p>
-    <img local-class={{if this.isMobile "expo-image-mobile" "expo-image"}} src="images/openet.jpeg">
-    <p local-class={{if this.isMobile "expo-caption-mobile" "expo-caption"}}>
+    <img class={{if this.isMobile "expo-image-mobile" "expo-image"}} src="images/openet.jpeg">
+    <p class={{if this.isMobile "expo-caption-mobile" "expo-caption"}}>
      Shane being presented with an Ipad by the CEO of Openet, Joe Hogan.
     </p>
 
-    <div local-class={{if this.isMobile "seperator-mobile" "seperator"}} id="contact">
-      <div local-class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
-      <h2 local-class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
+    <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="contact">
+      <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
+      <h2 class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
         Contact
       </h2>
-      <div local-class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
+      <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
     </div>
 
-    <div local-class={{if this.isMobile "links-mobile" "links"}}>
-     <a local-class={{if this.isMobile "link-mobile" "link"}} href="mailto:sgoneill89@gmail.com">
-       <img local-class="{{if this.isMobile "gmail-icon-mobile" "gmail-icon"}}" src="images/gmail.png">
+    <div class={{if this.isMobile "links-mobile" "links"}}>
+     <a class={{if this.isMobile "link-mobile" "link"}} href="mailto:sgoneill89@gmail.com">
+       <img class="{{if this.isMobile "gmail-icon-mobile" "gmail-icon"}}" src="images/gmail.png">
      </a>
-     <a local-class={{if this.isMobile "link-mobile" "link"}} href="https://github.com/ShaneON">
-       <img local-class={{if this.isMobile "github-icon-mobile" "github-icon"}} src="images/github.png">
+     <a class={{if this.isMobile "link-mobile" "link"}} href="https://github.com/ShaneON">
+       <img class={{if this.isMobile "github-icon-mobile" "github-icon"}} src="images/github.png">
      </a>
-     <a local-class={{if this.isMobile "link-mobile" "link"}} href="https://linkedin.com/in/shane-o-neill-7b133511b">
-       <img local-class={{if this.isMobile "linkedin-icon-mobile" "linkedin-icon"}} src="images/linkedin.png">
+     <a class={{if this.isMobile "link-mobile" "link"}} href="https://linkedin.com/in/shane-o-neill-7b133511b">
+       <img class={{if this.isMobile "linkedin-icon-mobile" "linkedin-icon"}} src="images/linkedin.png">
      </a>
     </div>
   </div>

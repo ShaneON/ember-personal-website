@@ -38,27 +38,133 @@ export default Controller.extend({
     }
   },
 
+  scrollListener: window.addEventListener('scroll', () => {
+    var navBar = document.getElementsByClassName('nav-bar')[0];
+    var navItems = navBar.children;
+    var container = document.getElementsByTagName('html')[0];
+    var scrollTop = container.scrollTop;
+
+    var aboutNav = document.getElementById('nav-about');
+    var techNav = document.getElementById('nav-tech');
+    var cvNav = document.getElementById('nav-cv');
+    var awardsNav = document.getElementById('nav-awards');
+    var contactNav = document.getElementById('nav-contact');
+
+    var aboutSection = document.getElementById('about');
+    var techSection = document.getElementById('tech');
+    var cvSection = document.getElementById('cv');
+    var awardsSection = document.getElementById('awards');
+    var contactSection = document.getElementById('contact');
+
+    let navItem;
+    navItem = document.getElementById('nav-about');
+    if (navItem.className.includes("active")) {
+      navItem.classList.remove('active');
+      navItem.children[0].classList.add('disabled');
+      navItem.children[2].classList.add('disabled');
+    }
+    navItem = document.getElementById('nav-tech');
+    if (navItem.className.includes("active")) {
+      navItem.classList.remove('active');
+      navItem.children[0].classList.add('disabled');
+      navItem.children[2].classList.add('disabled');
+    }
+    navItem = document.getElementById('nav-cv');
+    if (navItem.className.includes("active")) {
+      navItem.classList.remove('active');
+      navItem.children[0].classList.add('disabled');
+      navItem.children[2].classList.add('disabled');
+    }
+    navItem = document.getElementById('nav-awards');
+    if (navItem.className.includes("active")) {
+      navItem.classList.remove('active');
+      navItem.children[0].classList.add('disabled');
+      navItem.children[2].classList.add('disabled');
+    }
+    navItem = document.getElementById('nav-contact');
+    if (navItem.className.includes("active")) {
+      navItem.classList.remove('active');
+      navItem.children[0].classList.add('disabled');
+      navItem.children[2].classList.add('disabled');
+    }
+    if ((scrollTop + 75) < techSection.offsetTop) {
+      aboutNav.classList.add('active');
+      aboutNav.children[0].classList.remove('disabled');
+      aboutNav.children[2].classList.remove('disabled');
+    }
+    else if ((scrollTop + 75) < cvSection.offsetTop) {
+      techNav.classList.add('active');
+      techNav.children[0].classList.remove('disabled');
+      techNav.children[2].classList.remove('disabled');
+    }
+    else if ((scrollTop + 75) < awardsSection.offsetTop) {
+      cvNav.classList.add('active');
+      cvNav.children[0].classList.remove('disabled');
+      cvNav.children[2].classList.remove('disabled');
+    }
+    else if ((scrollTop + 75) < contactSection.offsetTop) {
+      awardsNav.classList.add('active');
+      awardsNav.children[0].classList.remove('disabled');
+      awardsNav.children[2].classList.remove('disabled');
+    }
+    else if ((scrollTop + 75) > contactSection.offsetTop) {
+      contactNav.classList.add('active');
+      contactNav.children[0].classList.remove('disabled');
+      contactNav.children[2].classList.remove('disabled');
+    }
+  }),
+
   transitionFade: fade,
 
   imgCount: 0,
   technologies: ['HTML5/Javascript/CSS3', 'Ember.js Frontend Development', 'Java/Spring Server-Side Development', 'Node.js/Express Server-Side Development', 'Android Development'],
   currentTech: 'HTML5/Javascript/CSS3',
 
-  // actions: {
-  //   navigateToSection(section) {
-  //     console.log(section);
-  //     let navItemActive;
-  //     var navItem1 = document.getElementById('nav-about');
-      // navItem1.children[0].classList.add('disabled');
-      // navItem1.children[0].classList.add('disabled');
-      // navItem1.children[2].classList.add('disabled');
-      // console.log(navItem1);
-      // if (navItem1.className.includes("active")) {
-      //   navItem1.style.color = '#edd5ea';
-      //   navItem1.style.backgroundColor = '#61505f';
-      //   navItem1.style.boxShadow = '0px -1px 5px #888888';
-      // }
-  //   }
-  // }
+  actions: {
+    navigateToSection(section) {
+      this._removeActiveClass();
+      let navItem = document.getElementById(section);
+      navItem.classList.add('active');
+      navItem.children[0].classList.remove('disabled');
+      navItem.children[2].classList.remove('disabled');
+
+      navItem = document.getElementById(section.replace('nav-', ''));
+      navItem.scrollIntoView();
+    }
+  },
+
+  _removeActiveClass() {
+    let navItem;
+    navItem = document.getElementById('nav-about');
+    if (navItem.className.includes("active")) {
+      navItem.classList.remove('active');
+      navItem.children[0].classList.add('disabled');
+      navItem.children[2].classList.add('disabled');
+    }
+    navItem = document.getElementById('nav-tech');
+    if (navItem.className.includes("active")) {
+      navItem.classList.remove('active');
+      navItem.children[0].classList.add('disabled');
+      navItem.children[2].classList.add('disabled');
+    }
+    navItem = document.getElementById('nav-cv');
+    if (navItem.className.includes("active")) {
+      navItem.classList.remove('active');
+      navItem.children[0].classList.add('disabled');
+      navItem.children[2].classList.add('disabled');
+    }
+    navItem = document.getElementById('nav-awards');
+    if (navItem.className.includes("active")) {
+      navItem.classList.remove('active');
+      navItem.children[0].classList.add('disabled');
+      navItem.children[2].classList.add('disabled');
+    }
+    navItem = document.getElementById('nav-contact');
+    if (navItem.className.includes("active")) {
+      navItem.classList.remove('active');
+      navItem.children[0].classList.add('disabled');
+      navItem.children[2].classList.add('disabled');
+    }
+  }
 
 });
