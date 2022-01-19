@@ -39,6 +39,7 @@ export default Controller.extend({
   },
 
   scrollListener: window.addEventListener('scroll', () => {
+    console.log('blah');
     var navBar = document.getElementsByClassName('nav-bar')[0];
     var navItems = navBar.children;
     var container = document.getElementsByTagName('html')[0];
@@ -55,6 +56,9 @@ export default Controller.extend({
     var cvSection = document.getElementById('cv');
     var awardsSection = document.getElementById('awards');
     var contactSection = document.getElementById('contact');
+
+    console.log('scrolltop = ' + scrollTop);
+    console.log('techSection = ' + techSection);
 
     let navItem;
     navItem = document.getElementById('nav-about');

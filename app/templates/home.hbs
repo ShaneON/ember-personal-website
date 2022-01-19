@@ -3,22 +3,22 @@
     <div class="header-content">
       <img class={{if this.isMobile "header-img-mobile" "header-img"}} src="/images/name.png">
       <div class={{if this.isMobile "header-title-mobile" "header-title"}}>
-        <span class={{if this.isMobile "header-title-angle-mobile" "header-title-angle"}}>
+        <span class={{if this.isMobile "" "angle"}}>
           &lt;
         </span>
-        <span class={{if this.isMobile "header-title-text-1-mobile" "header-title-text-1"}}>
+        <span class={{if this.isMobile "" "text-blue"}}>
           Software
         </span>
-        <span class={{if this.isMobile "header-title-syntax-mobile" "header-title-syntax"}}>
+        <span class={{if this.isMobile "" "syntax"}}>
           .
         </span>
-        <span class={{if this.isMobile "header-title-text-2-mobile" "header-title-text-2"}}>
+        <span class={{if this.isMobile "" "text-green"}}>
           Developer
         </span>
-        <span class={{if this.isMobile "header-title-syntax-mobile" "header-title-syntax"}}>
+        <span class={{if this.isMobile "" "syntax"}}>
           /
         </span>
-        <span class={{if this.isMobile "header-title-angle-mobile" "header-title-angle"}}>
+        <span class={{if this.isMobile "" "angle"}}>
           &gt;
         </span>
       </div>
@@ -59,22 +59,55 @@
     <div class="about-container">
       <div class="about-top">
         <img class={{if this.isMobile "about-img-mobile" "about-img"}} src="/images/me.jpg">
-        <p class={{if this.isMobile "about-text-mobile" "about-text"}}>
-          Shane is a freelance software developer from Dublin who has experience working in frontend,
-          android, and desktop development. His main languages are java and javascript, and uses the
-          Ember javascript framework for frontend work.
-        </p>
+        <div class={{if this.isMobile "" "about-text"}}>
+          <p class="about-line">
+            <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
+            is a freelance
+            <span class="text-blue">software</span><span class="syntax">.</span><span class="text-green">developer</span><span class="syntax">()</span>
+            from
+            <span class="text-blue"> Dublin </span><span class="syntax">(</span><span class="text-red">Ireland</span><span class="syntax">);</span>
+          </p>
+          <p class="about-line">
+            He has experience working in
+            <span class="syntax">[</span><span class="text-green"> Frontend, Backend, Android, Desktop </span><span class="syntax">] </span>
+            development<span class="syntax">;</span>
+            <br>
+          </p>
+          <p class="about-line">
+            He is passionate about building
+            <span class="syntax">[</span><span class="text-yellow"> beautiful, responsive, robust </span><span class="syntax">] </span>
+            web applications.
+          </p>
+        </div>
       </div>
-      <p class={{if this.isMobile "about-text-mobile" "about-text"}}>
-        He graduated from DCU in 2017 with a 2.1 and worked in both frontend and backend development
-        in industry.
-        <br><br><br>
-        Shane has experience in both small and large companies having worked in a local Irish business
-        with a startup feel, a large insurance company, and also one of the biggest banks in the world.
-        <br><br><br>
-        Shane is passionate about delivering quality-built, responsive web pages to his clients, he truly
-        loves his work and puts everything into his projects, as he wants to build something he can be proud of.
-      </p>
+      <div class="about-middle">
+        <div class={{if this.isMobile "" "about-text"}}>
+          <p class="about-line">
+            <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
+            graduated from
+            <span class="text-blue">Dublin</span>.<span class="text-green">City</span>(<span class="text-red">University</span>)
+            in
+            <span class="text-yellow">2017</span>
+            with an honours degree in
+            {<span class="text-red">Computer Science</span>};
+            <br><br><br>
+            He has experience in both small(<span class="text-yellow">startups</span>) and
+            large(<span class="text-red">corporations</span>), working with a wide range of technologies;
+          </p>
+        </div>
+      </div>
+      <div class="about-bottom">
+        <div class={{if this.isMobile "" "about-text"}}>
+          He graduated from DCU in 2017 with a 2.1 and worked in both frontend and backend development
+          in industry.
+          <br><br><br>
+          Shane has experience in both small and large companies having worked in a local Irish business
+          with a startup feel, a large insurance company, and also one of the biggest banks in the world.
+          <br><br><br>
+          Shane is passionate about delivering quality-built, responsive web pages to his clients, he truly
+          loves his work and puts everything into his projects, as he wants to build something he can be proud of.
+        </div>
+      </div>
     </div>
 
     <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="tech">
