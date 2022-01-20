@@ -1,18 +1,18 @@
 <div class="{{this.header}}">
   {{#if (eq this.header "header")}}
     <div class="header-content">
-      <img class={{if this.isMobile "header-img-mobile" "header-img"}} src="/images/name.png">
+      <img class={{if this.isMobile "header-img-mobile" "header-img"}} src="/images/myname.png">
       <div class={{if this.isMobile "header-title-mobile" "header-title"}}>
         <span class={{if this.isMobile "" "angle"}}>
           &lt;
         </span>
-        <span class={{if this.isMobile "" "text-blue"}}>
+        <span class={{if this.isMobile "" "text-dark-blue"}}>
           Software
         </span>
         <span class={{if this.isMobile "" "syntax"}}>
           .
         </span>
-        <span class={{if this.isMobile "" "text-green"}}>
+        <span class={{if this.isMobile "" "text-dark-green"}}>
           Developer
         </span>
         <span class={{if this.isMobile "" "syntax"}}>
@@ -59,7 +59,7 @@
     <div class="about-container">
       <div class="about-top">
         <img class={{if this.isMobile "about-img-mobile" "about-img"}} src="/images/me.jpg">
-        <div class={{if this.isMobile "" "about-text"}}>
+        <div class={{if this.isMobile "" "code-text"}}>
           <p class="about-line">
             <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
             is a freelance
@@ -69,7 +69,7 @@
           </p>
           <p class="about-line">
             He has experience working in
-            <span class="syntax">[</span><span class="text-green"> Frontend, Backend, Android, Desktop </span><span class="syntax">] </span>
+            <span class="syntax">[</span><span class="text-green"> frontend, backend, android, desktop </span><span class="syntax">] </span>
             development<span class="syntax">;</span>
             <br>
           </p>
@@ -81,7 +81,7 @@
         </div>
       </div>
       <div class="about-middle">
-        <div class={{if this.isMobile "" "about-text"}}>
+        <div class={{if this.isMobile "" "code-text"}}>
           <p class="about-line">
             <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
             graduated from
@@ -90,22 +90,32 @@
             <span class="text-yellow">2017</span>
             with an honours degree in
             {<span class="text-red">Computer Science</span>};
-            <br><br><br>
+            <br><br>
+            He won {<span class="text-red">Most Innovative Project</span>} at his university's final year project expo;
+            <br><br>
             He has experience in both small(<span class="text-yellow">startups</span>) and
             large(<span class="text-red">corporations</span>), working with a wide range of technologies;
           </p>
         </div>
       </div>
       <div class="about-bottom">
-        <div class={{if this.isMobile "" "about-text"}}>
-          He graduated from DCU in 2017 with a 2.1 and worked in both frontend and backend development
-          in industry.
-          <br><br><br>
-          Shane has experience in both small and large companies having worked in a local Irish business
-          with a startup feel, a large insurance company, and also one of the biggest banks in the world.
-          <br><br><br>
-          Shane is passionate about delivering quality-built, responsive web pages to his clients, he truly
-          loves his work and puts everything into his projects, as he wants to build something he can be proud of.
+        <div class={{if this.isMobile "" "code-text"}}>
+          <p class="about-line">
+            <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
+            has built <span class="text-yellow">frontend</span>.<span class="text-green">applications</span>
+            for the largest salon booking software in the world;
+          </p>
+          <br><br>
+          <p class="about-line">
+            He has worked on (<span class="text-yellow">backend</span> + <span class="text-blue">database</span>)
+            infrastructure for large banking multinationals;
+          </p>
+          <br><br>
+          <p class="about-line">
+            He has done many smaller projects
+            (<span class="text-yellow">frontend</span> + <span class="text-blue">backend</span>)
+            for individuals and startup companies;
+          </p>
         </div>
       </div>
     </div>
@@ -184,7 +194,7 @@
      to direct the cyclist to their destination.
      Shane received first class honours for the project as well as a new Ipad.
     </p>
-    <img class={{if this.isMobile "expo-image-mobile" "expo-image"}} src="images/openet.jpeg">
+    <img class={{if this.isMobile "expo-img-mobile" "expo-img"}} src="images/openet.jpeg">
     <p class={{if this.isMobile "expo-caption-mobile" "expo-caption"}}>
      Shane being presented with an Ipad by the CEO of Openet, Joe Hogan.
     </p>
