@@ -57,9 +57,6 @@ export default Controller.extend({
     var awardsSection = document.getElementById('awards');
     var contactSection = document.getElementById('contact');
 
-    console.log('scrolltop = ' + scrollTop);
-    console.log('techSection = ' + techSection);
-
     let navItem;
     navItem = document.getElementById('nav-about');
     if (navItem.className.includes("active")) {

@@ -187,17 +187,28 @@
     </div>
 
     <h1 class={{if this.isMobile "expo-title-mobile" "expo-title"}}> DCU Final Year Project Expo </h1>
-    <p class={{if this.isMobile "expo-text-mobile" "expo-text"}}>
-     Shane was awarded "Most Innovative Project" at Dublin City University's 2017 final year project expo.
-     His project was a wearable technology navigation system for cyclists consisting
-     of an android app and an arduino which was fitted to a helmet, using a light system
-     to direct the cyclist to their destination.
-     Shane received first class honours for the project as well as a new Ipad.
-    </p>
-    <img class={{if this.isMobile "expo-img-mobile" "expo-img"}} src="images/openet.jpeg">
-    <p class={{if this.isMobile "expo-caption-mobile" "expo-caption"}}>
-     Shane being presented with an Ipad by the CEO of Openet, Joe Hogan.
-    </p>
+    <div class={{if this.isMobile "" "code-text"}}>
+      <p class="about-line">
+        <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
+        was awarded
+        {<span class="text-red">Most Innovative Project</span>}
+        at the
+        <span class="text-blue">Dublin</span>.<span class="text-green">City</span>(<span class="text-red">University</span>)
+        <span class="text-yellow">2017</span> final year project expo.
+        <br><br>
+        His project was a wearable technology navigation system for cyclists consisting
+        of an android app and an arduino which was fitted to a helmet, using a light system
+        to direct the cyclist to their destination.
+        <br><br>
+        Shane received first class honours for the project as well as a new Ipad.
+      </p>
+    </div>
+    <div class="expo-img-container">
+      <img class={{if this.isMobile "expo-img-mobile" "expo-img"}} src="images/openet.jpeg">
+      <p class={{if this.isMobile "expo-caption-mobile" "expo-caption"}}>
+       Shane being presented with an Ipad by the CEO of Openet, Joe Hogan.
+      </p>
+    </div>
 
     <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="contact">
       <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
