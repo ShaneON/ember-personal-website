@@ -1,31 +1,15 @@
 <div class="{{this.header}}">
   {{#if (eq this.header "header")}}
     <div class="header-content">
-      <img class={{if this.isMobile "header-img-mobile" "header-img"}} src="/images/myname.png">
+      <img class={{if this.isMobile "header-img-mobile" "header-img"}} src="/images/name.png">
       <div class={{if this.isMobile "header-title-mobile" "header-title"}}>
-        <span class={{if this.isMobile "" "angle"}}>
-          &lt;
-        </span>
-        <span class={{if this.isMobile "" "text-dark-blue"}}>
-          Software
-        </span>
-        <span class={{if this.isMobile "" "syntax"}}>
-          .
-        </span>
-        <span class={{if this.isMobile "" "text-dark-green"}}>
-          Developer
-        </span>
-        <span class={{if this.isMobile "" "syntax"}}>
-          /
-        </span>
-        <span class={{if this.isMobile "" "angle"}}>
-          &gt;
-        </span>
+          Software Developer
       </div>
 
     </div>
   {{/if}}
-  <div class={{if this.isMobile "nav-bar-mobile" "nav-bar"}}>
+  <!-- <div class={{if this.isMobile "nav-bar-mobile" "nav-bar"}}> -->
+  <div class="nav-bar">
     <a class={{if this.isMobile "nav-item-mobile" "nav-item active"}} {{action "navigateToSection" "nav-about"}} id="nav-about">
       <span class="nav-item-bracket"> { </span>
       <span class="nav-item-text"> Home </span>
@@ -41,11 +25,6 @@
       <span class="nav-item-text"> CV </span>
       <span class="nav-item-bracket disabled"> } </span>
     </a>
-    <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-awards"}} id="nav-awards">
-      <span class="nav-item-bracket disabled"> { </span>
-      <span class="nav-item-text"> Awards </span>
-      <span class="nav-item-bracket disabled"> } </span>
-    </a>
     <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-contact"}} id="nav-contact">
       <span class="nav-item-bracket disabled"> { </span>
       <span class="nav-item-text"> Contact </span>
@@ -57,65 +36,81 @@
 <div class="body" id="about">
   <div class="{{if this.isMobile "content-mobile" "content"}}">
     <div class="about-container">
-      <div class="about-top">
-        <img class={{if this.isMobile "about-img-mobile" "about-img"}} src="/images/me.jpg">
-        <div class={{if this.isMobile "" "code-text"}}>
-          <p class="about-line">
-            <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
-            is a freelance
-            <span class="text-blue">software</span><span class="syntax">.</span><span class="text-green">developer</span><span class="syntax">()</span>
-            from
-            <span class="text-blue"> Dublin </span><span class="syntax">(</span><span class="text-red">Ireland</span><span class="syntax">);</span>
-          </p>
-          <p class="about-line">
-            He has experience working in
-            <span class="syntax">[</span><span class="text-green"> frontend, backend, android, desktop </span><span class="syntax">] </span>
-            development<span class="syntax">;</span>
-            <br>
-          </p>
-          <p class="about-line">
-            He is passionate about building
-            <span class="syntax">[</span><span class="text-yellow"> beautiful, responsive, robust </span><span class="syntax">] </span>
-            web applications.
-          </p>
+      <div class="{{if this.isMobile "about-top-mobile" "about-top"}}">
+        <div class={{if this.isMobile "code-container-mobile" "code-container"}}>
+          <div class="code-header">
+            about-me.html
+          </div>
+          <div class="code-text-container">
+            <img class={{if this.isMobile "about-img-mobile" "about-img"}} src="/images/me.jpg">
+            <div class="code-text">
+              <p class="about-line">
+                <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
+                is a freelance
+                <span class="text-blue">software</span><span class="syntax">.</span><span class="text-green">developer</span><span class="syntax">()</span>
+                from
+                <span class="text-blue"> Dublin </span><span class="syntax">(</span><span class="text-red">Ireland</span><span class="syntax">);</span>
+              </p>
+              <br>
+              <p class="about-line">
+                He has experience working in
+                <span class="syntax">[</span><span class="text-green"> frontend, backend, android, desktop </span><span class="syntax">] </span>
+                development<span class="syntax">;</span>
+              </p>
+              <br>
+              <p class="about-line">
+                He is passionate about building
+                <span class="syntax">[</span><span class="text-yellow"> beautiful, responsive, robust </span><span class="syntax">] </span>
+                web applications.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="about-middle">
-        <div class={{if this.isMobile "" "code-text"}}>
-          <p class="about-line">
-            <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
-            graduated from
-            <span class="text-blue">Dublin</span>.<span class="text-green">City</span>(<span class="text-red">University</span>)
-            in
-            <span class="text-yellow">2017</span>
-            with an honours degree in
-            {<span class="text-red">Computer Science</span>};
-            <br><br>
-            He won {<span class="text-red">Most Innovative Project</span>} at his university's final year project expo;
-            <br><br>
-            He has experience in both small(<span class="text-yellow">startups</span>) and
-            large(<span class="text-red">corporations</span>), working with a wide range of technologies;
-          </p>
+      <div class="{{if this.isMobile "about-middle-mobile" "about-middle"}}">
+        <div class={{if this.isMobile "code-container-mobile" "code-container"}}>
+          <div class="code-header">
+            about-me.html
+          </div>
+          <div class="code-text">
+            <p class="about-line">
+              <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
+              graduated from
+              <span class="text-blue">Dublin</span>.<span class="text-green">City</span> (<span class="text-red">University</span>)
+              in
+              <span class="text-yellow">2017</span>
+              with an honours degree in
+              {<span class="text-red">Computer Science</span>};
+              <br><br>
+              He won {<span class="text-red">Most Innovative Project</span>} at his university's final year project expo;
+              <br><br>
+              He has experience in both small(<span class="text-yellow">startups</span>) and
+              large(<span class="text-red">corporations</span>), working with a wide range of technologies;
+            </p>
+          </div>
         </div>
       </div>
-      <div class="about-bottom">
-        <div class={{if this.isMobile "" "code-text"}}>
-          <p class="about-line">
-            <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
-            has built <span class="text-yellow">frontend</span>.<span class="text-green">applications</span>
-            for the largest salon booking software in the world;
-          </p>
-          <br><br>
-          <p class="about-line">
-            He has worked on (<span class="text-yellow">backend</span> + <span class="text-blue">database</span>)
-            infrastructure for large banking multinationals;
-          </p>
-          <br><br>
-          <p class="about-line">
-            He has done many smaller projects
-            (<span class="text-yellow">frontend</span> + <span class="text-blue">backend</span>)
-            for individuals and startup companies;
-          </p>
+      <div class="{{if this.isMobile "about-bottom-mobile" "about-bottom"}}">
+        <div class={{if this.isMobile "code-text-mobile" "code-container"}}>
+          <div class="code-header">
+            about-me.html
+          </div>
+          <div class="code-text">
+            <p class="about-line">
+              <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
+              has built <span class="text-yellow">frontend</span>.<span class="text-green">applications</span>
+              for the largest salon booking software in the world;
+            </p>
+            <p class="about-line">
+              He has worked on (<span class="text-yellow">backend</span> + <span class="text-blue">database</span>)
+              infrastructure for large banking multinationals;
+            </p>
+            <p class="about-line">
+              He has done many smaller projects
+              (<span class="text-yellow">frontend</span> + <span class="text-blue">backend</span>)
+              for individuals and startup companies;
+            </p>
+          </div>
         </div>
       </div>
     </div>

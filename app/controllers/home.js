@@ -39,7 +39,6 @@ export default Controller.extend({
   },
 
   scrollListener: window.addEventListener('scroll', () => {
-    console.log('blah');
     var navBar = document.getElementsByClassName('nav-bar')[0];
     var navItems = navBar.children;
     var container = document.getElementsByTagName('html')[0];
@@ -48,14 +47,15 @@ export default Controller.extend({
     var aboutNav = document.getElementById('nav-about');
     var techNav = document.getElementById('nav-tech');
     var cvNav = document.getElementById('nav-cv');
-    var awardsNav = document.getElementById('nav-awards');
     var contactNav = document.getElementById('nav-contact');
 
     var aboutSection = document.getElementById('about');
     var techSection = document.getElementById('tech');
     var cvSection = document.getElementById('cv');
-    var awardsSection = document.getElementById('awards');
     var contactSection = document.getElementById('contact');
+
+    console.log('scrolltop = ' + scrollTop);
+    console.log('techSection = ' + techSection);
 
     let navItem;
     navItem = document.getElementById('nav-about');
@@ -71,12 +71,6 @@ export default Controller.extend({
       navItem.children[2].classList.add('disabled');
     }
     navItem = document.getElementById('nav-cv');
-    if (navItem.className.includes("active")) {
-      navItem.classList.remove('active');
-      navItem.children[0].classList.add('disabled');
-      navItem.children[2].classList.add('disabled');
-    }
-    navItem = document.getElementById('nav-awards');
     if (navItem.className.includes("active")) {
       navItem.classList.remove('active');
       navItem.children[0].classList.add('disabled');
@@ -98,15 +92,10 @@ export default Controller.extend({
       techNav.children[0].classList.remove('disabled');
       techNav.children[2].classList.remove('disabled');
     }
-    else if ((scrollTop + 75) < awardsSection.offsetTop) {
+    else if ((scrollTop + 75) < contactSection.offsetTop) {
       cvNav.classList.add('active');
       cvNav.children[0].classList.remove('disabled');
       cvNav.children[2].classList.remove('disabled');
-    }
-    else if ((scrollTop + 75) < contactSection.offsetTop) {
-      awardsNav.classList.add('active');
-      awardsNav.children[0].classList.remove('disabled');
-      awardsNav.children[2].classList.remove('disabled');
     }
     else if ((scrollTop + 75) > contactSection.offsetTop) {
       contactNav.classList.add('active');
