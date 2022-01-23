@@ -36,82 +36,113 @@
 <div class="body" id="about">
   <div class="{{if this.isMobile "content-mobile" "content"}}">
     <div class="about-container">
-      <div class="{{if this.isMobile "about-top-mobile" "about-top"}}">
-        <div class={{if this.isMobile "code-container-mobile" "code-container"}}>
-          <div class="code-header">
-            about-me.html
+      <div class="about-tiles">
+        <div class="about-tile" onclick={{action "changeTile" 'about'}}>
+          <img class="about-tile-img" src="/images/me.jpg">
+          <div class="about-tile-title">
+            About
           </div>
-          <div class="code-text-container">
-            <img class={{if this.isMobile "about-img-mobile" "about-img"}} src="/images/me.jpg">
-            <div class="code-text">
-              <p class="about-line">
-                <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
-                is a freelance
-                <span class="text-blue">software</span><span class="syntax">.</span><span class="text-green">developer</span><span class="syntax">()</span>
-                from
-                <span class="text-blue"> Dublin </span><span class="syntax">(</span><span class="text-red">Ireland</span><span class="syntax">);</span>
-              </p>
-              <br>
-              <p class="about-line">
-                He has experience working in
-                <span class="syntax">[</span><span class="text-green"> frontend, backend, android, desktop </span><span class="syntax">] </span>
-                development<span class="syntax">;</span>
-              </p>
-              <br>
-              <p class="about-line">
-                He is passionate about building
-                <span class="syntax">[</span><span class="text-yellow"> beautiful, responsive, robust </span><span class="syntax">] </span>
-                web applications.
+        </div>
+        <div class="about-tile" onclick={{action "changeTile" 'career'}}>
+          <img class="about-tile-img" src="/images/career.jpg">
+          <div class="about-tile-title">
+            Career
+          </div>
+        </div>
+        <div class="about-tile" onclick={{action "changeTile" 'education'}}>
+          <img class="about-tile-img" src="/images/college.jpg">
+          <div class="about-tile-title">
+            Education
+          </div>
+        </div>
+        <div class="about-tile" onclick={{action "changeTile" 'awards'}}>
+          <img class="about-tile-img" src="/images/openet.jpeg">
+          <div class="about-tile-title">
+            Awards
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        {{#if (eq this.currentTile 'about')}}
+          <div class="about-content-item">
+            <div class="about-content-header">
+              <h1 class="about-content-title">
+                About
+              </h1>
+            </div>
+            <div class="about-content-container">
+              <img class="about-content-img" src="/images/me.jpg">
+              <p class="about-content-text">
+                Shane is a freelance software and web developer from Dublin, Ireland.
+                <br><br>
+                He has experience working in frontend, backend, android and desktop development.
+                <br><br>
+                He is passionate about building beautiful, responsive, and robust web applications.
               </p>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="{{if this.isMobile "about-middle-mobile" "about-middle"}}">
-        <div class={{if this.isMobile "code-container-mobile" "code-container"}}>
-          <div class="code-header">
-            about-me.html
+        {{/if}}
+        {{#if (eq this.currentTile 'education')}}
+          <div class="about-content-item">
+            <div class="about-content-header">
+              <h1 class="about-content-title">
+                Education
+              </h1>
+            </div>
+            <div class="about-content-container">
+              <img class="about-content-img" src="/images/me.jpg">
+              <p class="about-content-text">
+                Shane graduated from Dublin City University in 2017 with an honours degree in Computer Science.
+                <br><br>
+                He specialized in wearable technology, machine translation and computer graphics.
+                <br><br>
+                He achieved a first class honours result and an award for his final year project.
+              </p>
+            </div>
           </div>
-          <div class="code-text">
-            <p class="about-line">
-              <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
-              graduated from
-              <span class="text-blue">Dublin</span>.<span class="text-green">City</span> (<span class="text-red">University</span>)
-              in
-              <span class="text-yellow">2017</span>
-              with an honours degree in
-              {<span class="text-red">Computer Science</span>};
-              <br><br>
-              He won {<span class="text-red">Most Innovative Project</span>} at his university's final year project expo;
-              <br><br>
-              He has experience in both small(<span class="text-yellow">startups</span>) and
-              large(<span class="text-red">corporations</span>), working with a wide range of technologies;
-            </p>
+        {{/if}}
+        {{#if (eq this.currentTile 'career')}}
+          <div class="about-content-item">
+            <div class="about-content-header">
+              <h1 class="about-content-title">
+                Career
+              </h1>
+            </div>
+            <div class="about-content-container">
+              <img class="about-content-img" src="/images/career.jpg">
+              <p class="about-content-text">
+                Shane has experience in both small startups and large corporations, working with a wide range of technologies.
+                <br><br>
+                Shane has built frontend applications for the largest salon booking software in the world.
+                <br><br>
+                He has worked on backend and database infrastructure for large banking multinationals.
+                <br><br>
+                He has also done many smaller projects (frontend + backend) for individuals and startup companies;
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="{{if this.isMobile "about-bottom-mobile" "about-bottom"}}">
-        <div class={{if this.isMobile "code-text-mobile" "code-container"}}>
-          <div class="code-header">
-            about-me.html
+        {{/if}}
+        {{#if (eq this.currentTile 'awards')}}
+          <div class="about-content-item">
+            <div class="about-content-header">
+              <h1 class="about-content-title">
+                Awards
+              </h1>
+            </div>
+            <div class="about-content-container">
+              <img class="about-content-img" src="/images/openet.jpeg">
+              <p class="about-content-text">
+                Shane was awarded Most Innovative Project at the Dublin City University 2017 final year project expo.
+                <br><br>
+                Shane has built frontend applications for the largest salon booking software in the world.
+                <br><br>
+                His project was a wearable technology navigation system for cyclists consisting of an android app and an arduino which was fitted to a helmet, using a light system to direct the cyclist to their destination.
+                <br><br>
+                Shane received first class honours for the project as well as a new Ipad.
+              </p>
+            </div>
           </div>
-          <div class="code-text">
-            <p class="about-line">
-              <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
-              has built <span class="text-yellow">frontend</span>.<span class="text-green">applications</span>
-              for the largest salon booking software in the world;
-            </p>
-            <p class="about-line">
-              He has worked on (<span class="text-yellow">backend</span> + <span class="text-blue">database</span>)
-              infrastructure for large banking multinationals;
-            </p>
-            <p class="about-line">
-              He has done many smaller projects
-              (<span class="text-yellow">frontend</span> + <span class="text-blue">backend</span>)
-              for individuals and startup companies;
-            </p>
-          </div>
-        </div>
+        {{/if}}
       </div>
     </div>
 
@@ -171,38 +202,6 @@
 
       <img class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv1.jpg"/>
       <img class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv2.jpg"/>
-    </div>
-
-    <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="awards">
-      <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
-      <h2 class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
-        Awards
-      </h2>
-      <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
-    </div>
-
-    <h1 class={{if this.isMobile "expo-title-mobile" "expo-title"}}> DCU Final Year Project Expo </h1>
-    <div class={{if this.isMobile "" "code-text"}}>
-      <p class="about-line">
-        <span class="angle">&lt;</span><span class="text-yellow">Shane</span><span class="syntax">/</span><span class="angle">&gt;</span>
-        was awarded
-        {<span class="text-red">Most Innovative Project</span>}
-        at the
-        <span class="text-blue">Dublin</span>.<span class="text-green">City</span>(<span class="text-red">University</span>)
-        <span class="text-yellow">2017</span> final year project expo.
-        <br><br>
-        His project was a wearable technology navigation system for cyclists consisting
-        of an android app and an arduino which was fitted to a helmet, using a light system
-        to direct the cyclist to their destination.
-        <br><br>
-        Shane received first class honours for the project as well as a new Ipad.
-      </p>
-    </div>
-    <div class="expo-img-container">
-      <img class={{if this.isMobile "expo-img-mobile" "expo-img"}} src="images/openet.jpeg">
-      <p class={{if this.isMobile "expo-caption-mobile" "expo-caption"}}>
-       Shane being presented with an Ipad by the CEO of Openet, Joe Hogan.
-      </p>
     </div>
 
     <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="contact">

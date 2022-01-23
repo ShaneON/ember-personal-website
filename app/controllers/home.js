@@ -54,9 +54,6 @@ export default Controller.extend({
     var cvSection = document.getElementById('cv');
     var contactSection = document.getElementById('contact');
 
-    console.log('scrolltop = ' + scrollTop);
-    console.log('techSection = ' + techSection);
-
     let navItem;
     navItem = document.getElementById('nav-about');
     if (navItem.className.includes("active")) {
@@ -108,13 +105,19 @@ export default Controller.extend({
 
   imgCount: 0,
   technologies: ['HTML5/Javascript/CSS3', 'Ember.js Frontend Development', 'Java/Spring Server-Side Development', 'Node.js/Express Server-Side Development', 'Android Development'],
+  tiles: ['about', 'career', 'education', 'awards'],
   currentTech: 'HTML5/Javascript/CSS3',
+  currentTile: 'about',
 
   actions: {
     navigateToSection(section) {
       let navItem = document.getElementById(section);
       navItem = document.getElementById(section.replace('nav-', ''));
       navItem.scrollIntoView();
+    },
+
+    changeTile(tile) {
+      this.set('currentTile', tile);
     }
   },
 

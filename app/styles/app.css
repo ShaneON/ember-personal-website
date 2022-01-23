@@ -53,52 +53,6 @@ body {
   flex-direction: row;
 }
 
-.text-blue {
-  font-weight: 300;
-  margin: 0;
-  color: #2db7f7;
-}
-
-.text-dark-blue {
-  font-weight: 500;
-  margin: 0;
-  color: #161d66;
-}
-
-.text-green {
-  font-weight: 300;
-  margin: 0;
-  color: #83db81;
-}
-
-.text-dark-green {
-  font-weight: 500;
-  margin: 0;
-  color: #067508;
-}
-
-.text-yellow {
-  color: #f2c213;
-}
-
-.text-red {
-  color: #f55d76;
-}
-
-.angle {
-  color: red;
-  margin: 0;
-  margin-left: 2px;
-  margin-right: 2px;
-  font-weight: 400;
-}
-
-.syntax {
-  color: #c4cacf;
-  margin: 0;
-  font-weight: 300;
-}
-
 .nav-bar {
   display: flex;
   flex-direction: row;
@@ -177,97 +131,92 @@ body {
   margin-bottom: 10px;
 }
 
-.about-top {
+.about-tiles {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  height: 46%;
-  margin-left: 50px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  justify-content: space-around;
+  height: 35%;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
-.about-middle {
-  display: flex;
-  justify-content: flex-start;
-  height: 27%;
-  min-height: 160px;
-  margin-left: 50px;
-  margin-bottom: 20px;
-}
-
-.about-bottom {
-  display: flex;
-  justify-content: flex-start;
-  height: 27%;
-  min-height: 160px;
-  margin-left: 50px;
-  margin-bottom: 20px;
-}
-
-.code-container {
-  min-height: 120px;
-  border-radius: 7px 7px 0 0;
-  background-color: #434547;
-  min-width: 600px;
-  max-width: 1000px;
-  margin-right: 30px;
-  box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
+.about-tile {
+  position: relative;
   transition: transform .2s;
-  font-family: monospace;
+  height: 180px;
+  width: 200px;
+  box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
+  overflow: hidden;
+}
+
+.about-tile-title {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  right: 28%;
+  color: #330b08;
+  letter-spacing: 2px;
+  width: 100px;
+  font-weight: 600;
+}
+
+.about-tile:hover {
+  transform: scale(1.05);
+}
+
+.about-content {
+  height: 65%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+
+.about-content-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+}
+
+.about-content-container {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.about-content-header {
+  height: 33px;
+  background-color: #9c9797;
+  border-radius: 7px 7px 0 0;
+  border-bottom: 1px solid #8c8787;
+  text-align: center;
+}
+
+.about-content-text {
   font-size: 14px;
-  font-weight: 300;
-  color: #f2f4f7;
+  font-weight: 400;
 }
 
-.code-header {
-  border-bottom: 1px solid #4f4b46;
-  padding: 10px;
-  height: 15px;
-  background-color: #3d3935;
-  border-radius: 7px 7px 0 0;
-}
-
-.code-text {
-  height: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.code-text-container {
+.about-tile-img {
+  height: 110%;
   width: 100%;
-  height: 100%;
+  opacity: .3;
+}
+
+.about-content-item {
   display: flex;
-  flex-direction: row;
-}
-
-.code-container:hover {
-  transform: scale(1.03);
-}
-
-.about-line {
-  margin-top: 7px;
-  margin-bottom: 7px;
-}
-
-.about-img {
-  transition: transform .2s;
-  width: 120px;
-  height: 120px;
-  border-radius: 10px;
-  margin-right: 10px;
-  margin-left: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  width: 600px;
+  height: 300px;
+  min-height: 250px;
   box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
-
+  flex-direction: column;
 }
 
-/* .about-img:hover {
-  transform: scale(1.1);
-} */
+.about-content-img {
+  height: 150px;
+  width: 150px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
 
 .thumbnail-container {
   height: 100px;
@@ -324,35 +273,6 @@ body {
   height: 400px;
   width: 250px;
   box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
-}
-
-.expo-title {
-  font-size: 18px;
-  font-weight: 300;
-  margin: 0;
-  color: white;
-}
-
-.expo-img-container {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.expo-img {
-  width: 400px;
-  border-radius: 5px;
-  transition: transform .2s;
-  box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
-}
-
-.expo-caption {
-  font-size: 12px;
-}
-
-.expo-img:hover {
-  transform: scale(1.03);
 }
 
 .links {
