@@ -43,68 +43,28 @@ export default Controller.extend({
     this.set('currentTech', this.technologies[this.imgCount]);
   },
 
-  // scrollListener: window.addEventListener('scroll', () => {
-  //   var navBar = document.getElementsByClassName('nav-bar')[0];
-  //   var navItems = navBar.children;
-  //   var container = document.getElementsByTagName('html')[0];
-  //   var scrollTop = container.scrollTop;
-  //
-  //   var aboutNav = document.getElementById('nav-about');
-  //   var techNav = document.getElementById('nav-tech');
-  //   var cvNav = document.getElementById('nav-cv');
-  //   var contactNav = document.getElementById('nav-contact');
-  //
-  //   var aboutSection = document.getElementById('about');
-  //   var techSection = document.getElementById('tech');
-  //   var cvSection = document.getElementById('cv');
-  //   var contactSection = document.getElementById('contact');
-  //
-  //   if (aboutNav.className.includes("active")) {
-  //     aboutNav.classList.remove('active');
-  //     aboutNav.children[0].classList.add('disabled');
-  //     aboutNav.children[2].classList.add('disabled');
-  //   }
-  //   if (techNav.className.includes("active")) {
-  //     techNav.classList.remove('active');
-  //     techNav.children[0].classList.add('disabled');
-  //     techNav.children[2].classList.add('disabled');
-  //   }
-  //   if (cvNav.className.includes("active")) {
-  //     cvNav.classList.remove('active');
-  //     cvNav.children[0].classList.add('disabled');
-  //     cvNav.children[2].classList.add('disabled');
-  //   }
-  //   if (contactNav.className.includes("active")) {
-  //     contactNav.classList.remove('active');
-  //     contactNav.children[0].classList.add('disabled');
-  //     contactNav.children[2].classList.add('disabled');
-  //   }
-  //   if ((scrollTop) < techSection.offsetTop) {
-  //     aboutNav.classList.add('active');
-  //     aboutNav.children[0].classList.remove('disabled');
-  //     aboutNav.children[2].classList.remove('disabled');
-  //   }
-  //   else if ((scrollTop + 100) < cvSection.offsetTop) {
-  //     techNav.classList.add('active');
-  //     techNav.children[0].classList.remove('disabled');
-  //     techNav.children[2].classList.remove('disabled');
-  //   }
-  //   else if ((scrollTop) < contactSection.offsetTop) {
-  //     cvNav.classList.add('active');
-  //     cvNav.children[0].classList.remove('disabled');
-  //     cvNav.children[2].classList.remove('disabled');
-  //   }
-  //   else if ((scrollTop) > contactSection.offsetTop) {
-  //     contactNav.classList.add('active');
-  //     contactNav.children[0].classList.remove('disabled');
-  //     contactNav.children[2].classList.remove('disabled');
-  //   }
-  //   console.log('scrollTop = ' + scrollTop);
-  //   console.log('contact offsetTop = ' + contactSection.offsetTop);
-  // }),
-
   _scrollToSection() {
-    console.log('scrolling');
+    var scrollTop = document.getElementsByTagName('html')[0].scrollTop;
+    let sections = this.get('sections');
+
+    sections.forEach((section) => {
+      console.log('nav-' + section);
+      var navItem = document.getElementById('nav-' + section);
+      var sectionItem = document.getElementById(section);
+      var endItem = document.getElementById(section + '-end');
+
+      if (navItem.className.includes("active")) {
+        navItem.classList.remove('active');
+        navItem.children[0].classList.add('disabled');
+        navItem.children[2].classList.add('disabled');
+      }
+
+      if ((scrollTop + 1) > sectionItem.offsetTop && scrollTop < endItem.offsetTop) {
+        navItem.classList.add('active');
+        navItem.children[0].classList.remove('disabled');
+        navItem.children[2].classList.remove('disabled');
+      }
+    })
   },
 
   transitionFade: fade,
