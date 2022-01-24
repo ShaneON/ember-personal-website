@@ -94,7 +94,7 @@ export default Controller.extend({
       cvNav.children[0].classList.remove('disabled');
       cvNav.children[2].classList.remove('disabled');
     }
-    else if ((scrollTop + 75) > contactSection.offsetTop) {
+    else if ((scrollTop + 100) > contactSection.offsetTop) {
       contactNav.classList.add('active');
       contactNav.children[0].classList.remove('disabled');
       contactNav.children[2].classList.remove('disabled');

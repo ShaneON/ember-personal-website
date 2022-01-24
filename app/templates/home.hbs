@@ -65,14 +65,14 @@
       <div class="about-content">
         {{#if (eq this.currentTile 'about')}}
           <div class="about-content-item">
-            <div class="about-content-header">
-              <h1 class="about-content-title">
+            <div class="about-content-item-header">
+              <h1 class="about-content-item-title">
                 About
               </h1>
             </div>
-            <div class="about-content-container">
-              <img class="about-content-img" src="/images/me.jpg">
-              <p class="about-content-text">
+            <div class="about-content-item-container">
+              <img class="about-content-item-img" src="/images/me.jpg">
+              <p class="about-content-item-text">
                 Shane is a freelance software and web developer from Dublin, Ireland.
                 <br><br>
                 He has experience working in frontend, backend, android and desktop development.
@@ -84,14 +84,14 @@
         {{/if}}
         {{#if (eq this.currentTile 'education')}}
           <div class="about-content-item">
-            <div class="about-content-header">
-              <h1 class="about-content-title">
+            <div class="about-content-item-header">
+              <h1 class="about-content-item-title">
                 Education
               </h1>
             </div>
-            <div class="about-content-container">
-              <img class="about-content-img" src="/images/me.jpg">
-              <p class="about-content-text">
+            <div class="about-content-item-container">
+              <img class="about-content-item-img" src="/images/me.jpg">
+              <p class="about-content-item-text">
                 Shane graduated from Dublin City University in 2017 with an honours degree in Computer Science.
                 <br><br>
                 He specialized in wearable technology, machine translation and computer graphics.
@@ -103,14 +103,14 @@
         {{/if}}
         {{#if (eq this.currentTile 'career')}}
           <div class="about-content-item">
-            <div class="about-content-header">
-              <h1 class="about-content-title">
+            <div class="about-content-item-header">
+              <h1 class="about-content-item-title">
                 Career
               </h1>
             </div>
-            <div class="about-content-container">
-              <img class="about-content-img" src="/images/career.jpg">
-              <p class="about-content-text">
+            <div class="about-content-item-container">
+              <img class="about-content-item-img" src="/images/career.jpg">
+              <p class="about-content-item-text">
                 Shane has experience in both small startups and large corporations, working with a wide range of technologies.
                 <br><br>
                 Shane has built frontend applications for the largest salon booking software in the world.
@@ -124,14 +124,14 @@
         {{/if}}
         {{#if (eq this.currentTile 'awards')}}
           <div class="about-content-item">
-            <div class="about-content-header">
-              <h1 class="about-content-title">
+            <div class="about-content-item-header">
+              <h1 class="about-content-item-title">
                 Awards
               </h1>
             </div>
-            <div class="about-content-container">
-              <img class="about-content-img" src="/images/openet.jpeg">
-              <p class="about-content-text">
+            <div class="about-content-item-container">
+              <img class="about-content-item-img" src="/images/openet.jpeg">
+              <p class="about-content-item-text">
                 Shane was awarded Most Innovative Project at the Dublin City University 2017 final year project expo.
                 <br><br>
                 Shane has built frontend applications for the largest salon booking software in the world.
@@ -154,39 +154,40 @@
       <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
     </div>
 
-    <div class={{if this.isMobile "thumbnail-container-mobile" "thumbnail-container"}}>
-      <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/html-css-js.png">
-      <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/ember-icon.svg">
-      <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/spring.png">
-      <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/nodejs.png">
-      <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/android.png">
+    <div class="tech-container">
+      <div class={{if this.isMobile "thumbnail-container-mobile" "thumbnail-container"}}>
+        <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/html-css-js.png">
+        <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/ember-icon.svg">
+        <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/spring.png">
+        <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/nodejs.png">
+        <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/android.png">
+      </div>
+      <AnimatedContainer class="animated-heading-container">
+        {{#animated-value this.currentTech use=this.transitionFade as |value|}}
+          <h2 class={{if this.isMobile "animated-heading-mobile" "animated-heading"}}>
+            {{value}}
+          </h2>
+        {{/animated-value}}
+      </AnimatedContainer>
+      <AnimatedContainer class="animated-slideshow-container">
+
+        {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionMove}}
+          <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/html-css-js.png">
+        {{/animated-if}}
+        {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionMove}}
+          <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/ember-icon.svg">
+        {{/animated-if}}
+        {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionMove}}
+          <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/spring.png">
+        {{/animated-if}}
+        {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
+          <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/nodejs.png">
+        {{/animated-if}}
+        {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionMove}}
+          <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/android.png">
+        {{/animated-if}}
+      </AnimatedContainer>
     </div>
-    <AnimatedContainer class="animated-heading-container">
-      {{#animated-value this.currentTech use=this.transitionFade as |value|}}
-        <h2 class={{if this.isMobile "animated-heading-mobile" "animated-heading"}}>
-          {{value}}
-        </h2>
-      {{/animated-value}}
-    </AnimatedContainer>
-    <AnimatedContainer class="animated-slideshow-container">
-
-      {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionMove}}
-        <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/html-css-js.png">
-      {{/animated-if}}
-      {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionMove}}
-        <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/ember-icon.svg">
-      {{/animated-if}}
-      {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionMove}}
-        <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/spring.png">
-      {{/animated-if}}
-      {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
-        <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/nodejs.png">
-      {{/animated-if}}
-      {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionMove}}
-        <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/android.png">
-      {{/animated-if}}
-
-    </AnimatedContainer>
 
     <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="cv">
       <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
