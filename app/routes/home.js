@@ -6,15 +6,22 @@ export default Route.extend({
 
   setupController(controller) {
     this._super(...arguments);
-    controller.set('isMobile', this.media.isMobile),
-      controller.set('header', 'header');
+    controller.set('isDesktop', !this.media.isMobile),
+    controller.set('header', 'header');
     this._checkScroll(controller);
   },
 
   _checkScroll(controller) {
     window.addEventListener('scroll', () => {
+      let stickyPosition;
+      if (this.media.isMobile) {
+        stickyPosition = 70;
+      }
+      else {
+        stickyPosition = 110;
+      }
       let scrollPosition = Math.round(window.scrollY);
-      if (scrollPosition > 90) {
+      if (scrollPosition > stickyPosition) {
         controller.set('header', 'sticky');
       } else {
         controller.set('header', 'header');

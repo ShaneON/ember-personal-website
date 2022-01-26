@@ -1,237 +1,472 @@
 {{ui-hooks did-insert=(action "activateScrolling")}}
-<div class="{{this.header}}">
-  {{#if (eq this.header "header")}}
-    <div class="header-content">
-      <img class={{if this.isMobile "header-img-mobile" "header-img"}} src="/images/name.png">
-      <div class={{if this.isMobile "header-title-mobile" "header-title"}}>
-          Software Developer
-      </div>
 
+{{#if this.isDesktop}}
+  {{log "desktop"}}
+  <div class="{{this.header}}">
+    {{#if (eq this.header "header")}}
+      <div class="header-content">
+        <img class="header-img" src="/images/name2.png">
+        <img class="header-sub-img" src="/images/software-dev.png">
+      </div>
+    {{/if}}
+    <!-- <div class="nav-bar"> -->
+    <div class="nav-bar">
+      <a class="nav-item active" {{action "navigateToSection" "nav-about"}} id="nav-about">
+        <span class="nav-item-bracket"> { </span>
+        <span class="nav-item-text"> Home </span>
+        <span class="nav-item-bracket"> } </span>
+      </a>
+      <a class="nav-item" {{action "navigateToSection" "nav-tech"}} id="nav-tech">
+        <span class="nav-item-bracket disabled"> { </span>
+        <span class="nav-item-text"> Tech </span>
+        <span class="nav-item-bracket disabled"> } </span>
+      </a>
+      <a class="nav-item" {{action "navigateToSection" "nav-cv"}} id="nav-cv">
+        <span class="nav-item-bracket disabled"> { </span>
+        <span class="nav-item-text"> CV </span>
+        <span class="nav-item-bracket disabled"> } </span>
+      </a>
+      <a class="nav-item" {{action "navigateToSection" "nav-contact"}} id="nav-contact">
+        <span class="nav-item-bracket disabled"> { </span>
+        <span class="nav-item-text"> Contact </span>
+        <span class="nav-item-bracket disabled"> } </span>
+      </a>
     </div>
-  {{/if}}
-  <!-- <div class={{if this.isMobile "nav-bar-mobile" "nav-bar"}}> -->
-  <div class="nav-bar">
-    <a class={{if this.isMobile "nav-item-mobile" "nav-item active"}} {{action "navigateToSection" "nav-about"}} id="nav-about">
-      <span class="nav-item-bracket"> { </span>
-      <span class="nav-item-text"> Home </span>
-      <span class="nav-item-bracket"> } </span>
-    </a>
-    <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-tech"}} id="nav-tech">
-      <span class="nav-item-bracket disabled"> { </span>
-      <span class="nav-item-text"> Tech </span>
-      <span class="nav-item-bracket disabled"> } </span>
-    </a>
-    <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-cv"}} id="nav-cv">
-      <span class="nav-item-bracket disabled"> { </span>
-      <span class="nav-item-text"> CV </span>
-      <span class="nav-item-bracket disabled"> } </span>
-    </a>
-    <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-contact"}} id="nav-contact">
-      <span class="nav-item-bracket disabled"> { </span>
-      <span class="nav-item-text"> Contact </span>
-      <span class="nav-item-bracket disabled"> } </span>
-    </a>
   </div>
-</div>
 
-<div class="body" id="about">
-  <div class="{{if this.isMobile "content-mobile" "content"}}">
-    <div class="about-container">
-      <div class="about-tiles">
-        <div class="about-tile" onclick={{action "changeTile" 'about'}}>
-          <img class="about-tile-img" src="/images/me.jpg">
-          <div class="about-tile-title">
-            About
+  <div class="body" id="about">
+    <div class="content">
+      <div class="about-container">
+        <div class="about-tiles">
+          <div class="about-tile" onclick={{action "changeTile" 'about'}}>
+            <img class="about-tile-img-bg" src="/images/code.jpg">
+            <img class="about-tile-img-text-1" src="/images/about.png">
+          </div>
+          <div class="about-tile" onclick={{action "changeTile" 'career'}}>
+            <img class="about-tile-img-bg" src="/images/career.jpg">
+            <img class="about-tile-img-text-2" src="/images/career.png">
+          </div>
+          <div class="about-tile" onclick={{action "changeTile" 'education'}}>
+            <img class="about-tile-img-bg" src="/images/education.jpg">
+            <img class="about-tile-img-text-3" src="/images/education.png">
+          </div>
+          <div class="about-tile" onclick={{action "changeTile" 'awards'}}>
+            <img class="about-tile-img-bg" src="/images/awards.jpg">
+            <img class="about-tile-img-text-4" src="/images/awards.png">
           </div>
         </div>
-        <div class="about-tile" onclick={{action "changeTile" 'career'}}>
-          <img class="about-tile-img" src="/images/career.jpg">
-          <div class="about-tile-title">
-            Career
-          </div>
-        </div>
-        <div class="about-tile" onclick={{action "changeTile" 'education'}}>
-          <img class="about-tile-img" src="/images/college.jpg">
-          <div class="about-tile-title">
-            Education
-          </div>
-        </div>
-        <div class="about-tile" onclick={{action "changeTile" 'awards'}}>
-          <img class="about-tile-img" src="/images/openet.jpeg">
-          <div class="about-tile-title">
-            Awards
-          </div>
+        <div class="about-content">
+          {{#if (eq this.currentTile 'about')}}
+            <div class="about-content-item">
+              <div class="about-content-item-header">
+                <h1 class="about-content-item-title">
+                  About
+                </h1>
+              </div>
+              <div class="about-content-item-container">
+                <img class="about-content-item-img" src="/images/me.jpg">
+                <p class="about-content-item-text">
+                  Shane is a freelance software and web developer from Dublin, Ireland.
+                  <br><br>
+                  He has experience working in frontend, backend, android and desktop development.
+                  <br><br>
+                  He is passionate about building beautiful, responsive, and robust web applications.
+                </p>
+              </div>
+            </div>
+          {{/if}}
+          {{#if (eq this.currentTile 'education')}}
+            <div class="about-content-item">
+              <div class="about-content-item-header">
+                <h1 class="about-content-item-title">
+                  Education
+                </h1>
+              </div>
+              <div class="about-content-item-container">
+                <img class="about-content-item-img" src="/images/me.jpg">
+                <p class="about-content-item-text">
+                  Shane graduated from Dublin City University in 2017 with an honours degree in Computer Science.
+                  <br><br>
+                  He specialized in wearable technology, machine translation and computer graphics.
+                  <br><br>
+                  He achieved a first class honours result and an award for his final year project.
+                </p>
+              </div>
+            </div>
+          {{/if}}
+          {{#if (eq this.currentTile 'career')}}
+            <div class="about-content-item">
+              <div class="about-content-item-header">
+                <h1 class="about-content-item-title">
+                  Career
+                </h1>
+              </div>
+              <div class="about-content-item-container">
+                <img class="about-content-item-img" src="/images/career.jpg">
+                <p class="about-content-item-text">
+                  Shane has experience in both small startups and large corporations, working with a wide range of technologies.
+                  <br><br>
+                  Shane has built frontend applications for the largest salon booking software in the world.
+                  <br><br>
+                  He has worked on backend and database infrastructure for large banking multinationals.
+                  <br><br>
+                  He has also done many smaller projects (frontend + backend) for individuals and startup companies;
+                </p>
+              </div>
+            </div>
+          {{/if}}
+          {{#if (eq this.currentTile 'awards')}}
+            <div class="about-content-item">
+              <div class="about-content-item-header">
+                <h1 class="about-content-item-title">
+                  Awards
+                </h1>
+              </div>
+              <div class="about-content-item-container">
+                <img class="about-content-item-img" src="/images/openet.jpeg">
+                <p class="about-content-item-text">
+                  Shane was awarded Most Innovative Project at the Dublin City University 2017 final year project expo.
+                  <br><br>
+                  Shane has built frontend applications for the largest salon booking software in the world.
+                  <br><br>
+                  His project was a wearable technology navigation system for cyclists consisting of an android app and an arduino which was fitted to a helmet, using a light system to direct the cyclist to their destination.
+                  <br><br>
+                  Shane received first class honours for the project as well as a new Ipad.
+                </p>
+              </div>
+            </div>
+          {{/if}}
         </div>
       </div>
-      <div class="about-content">
-        {{#if (eq this.currentTile 'about')}}
-          <div class="about-content-item">
-            <div class="about-content-item-header">
-              <h1 class="about-content-item-title">
-                About
-              </h1>
-            </div>
-            <div class="about-content-item-container">
-              <img class="about-content-item-img" src="/images/me.jpg">
-              <p class="about-content-item-text">
-                Shane is a freelance software and web developer from Dublin, Ireland.
-                <br><br>
-                He has experience working in frontend, backend, android and desktop development.
-                <br><br>
-                He is passionate about building beautiful, responsive, and robust web applications.
-              </p>
-            </div>
-          </div>
-        {{/if}}
-        {{#if (eq this.currentTile 'education')}}
-          <div class="about-content-item">
-            <div class="about-content-item-header">
-              <h1 class="about-content-item-title">
-                Education
-              </h1>
-            </div>
-            <div class="about-content-item-container">
-              <img class="about-content-item-img" src="/images/me.jpg">
-              <p class="about-content-item-text">
-                Shane graduated from Dublin City University in 2017 with an honours degree in Computer Science.
-                <br><br>
-                He specialized in wearable technology, machine translation and computer graphics.
-                <br><br>
-                He achieved a first class honours result and an award for his final year project.
-              </p>
-            </div>
-          </div>
-        {{/if}}
-        {{#if (eq this.currentTile 'career')}}
-          <div class="about-content-item">
-            <div class="about-content-item-header">
-              <h1 class="about-content-item-title">
-                Career
-              </h1>
-            </div>
-            <div class="about-content-item-container">
-              <img class="about-content-item-img" src="/images/career.jpg">
-              <p class="about-content-item-text">
-                Shane has experience in both small startups and large corporations, working with a wide range of technologies.
-                <br><br>
-                Shane has built frontend applications for the largest salon booking software in the world.
-                <br><br>
-                He has worked on backend and database infrastructure for large banking multinationals.
-                <br><br>
-                He has also done many smaller projects (frontend + backend) for individuals and startup companies;
-              </p>
-            </div>
-          </div>
-        {{/if}}
-        {{#if (eq this.currentTile 'awards')}}
-          <div class="about-content-item">
-            <div class="about-content-item-header">
-              <h1 class="about-content-item-title">
-                Awards
-              </h1>
-            </div>
-            <div class="about-content-item-container">
-              <img class="about-content-item-img" src="/images/openet.jpeg">
-              <p class="about-content-item-text">
-                Shane was awarded Most Innovative Project at the Dublin City University 2017 final year project expo.
-                <br><br>
-                Shane has built frontend applications for the largest salon booking software in the world.
-                <br><br>
-                His project was a wearable technology navigation system for cyclists consisting of an android app and an arduino which was fitted to a helmet, using a light system to direct the cyclist to their destination.
-                <br><br>
-                Shane received first class honours for the project as well as a new Ipad.
-              </p>
-            </div>
-          </div>
-        {{/if}}
+      <div id="about-end"></div>
+
+      <div class="seperator" id="tech">
+        <div class="seperator-line-left"></div>
+        <h2 class="seperator-title">
+          Technologies
+        </h2>
+        <div class="seperator-line-right"></div>
       </div>
-    </div>
-    <div id="about-end"></div>
 
-    <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="tech">
-      <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
-      <h2 class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
-        Technologies
-      </h2>
-      <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
-    </div>
-
-    <div class="tech-container">
-      <div class={{if this.isMobile "thumbnail-container-mobile" "thumbnail-container"}}>
-        <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/html-css-js.png">
-        <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/ember-icon.svg">
-        <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/spring.png">
-        <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/nodejs.png">
-        <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/android.png">
-      </div>
-      <div class="animated-container">
-        <AnimatedContainer class="animated-heading">
-          {{#animated-value this.currentTech use=this.transitionFade as |value|}}
-            <h2 class={{if this.isMobile "animated-heading-mobile" "animated-heading-title"}}>
-              {{value}}
-            </h2>
-          {{/animated-value}}
-        </AnimatedContainer>
-        <div class="animated-content-container">
-          <AnimatedContainer class="animated-slideshow">
-
-            {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionMove}}
-              <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/html-css-js.png">
-            {{/animated-if}}
-            {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionMove}}
-              <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/ember-icon.svg">
-            {{/animated-if}}
-            {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionMove}}
-              <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/spring.png">
-            {{/animated-if}}
-            {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
-              <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/nodejs.png">
-            {{/animated-if}}
-            {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionMove}}
-              <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/android.png">
-            {{/animated-if}}
+      <div class="tech-container">
+        <div class="thumbnail-container">
+          <img class="thumbnail-img" src="/images/html-css-js.png">
+          <img class="thumbnail-img" src="/images/ember-icon.svg">
+          <img class="thumbnail-img" src="/images/spring.png">
+          <img class="thumbnail-img" src="/images/nodejs.png">
+          <img class="thumbnail-img" src="/images/android.png">
+        </div>
+        <div class="animated-container">
+          <AnimatedContainer class="animated-heading">
+            {{#animated-value this.currentTech use=this.transitionFade as |value|}}
+              <h2 class="animated-heading-title">
+                {{value}}
+              </h2>
+            {{/animated-value}}
           </AnimatedContainer>
+          <div class="animated-content-container">
+            <AnimatedContainer class="animated-slideshow">
+
+              {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionMove}}
+                <img class="img-slideshow" src="/images/html-css-js.png">
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionMove}}
+                <img class="img-slideshow" src="/images/ember-icon.svg">
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionMove}}
+                <img class="img-slideshow" src="/images/spring.png">
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
+                <img class="img-slideshow" src="/images/nodejs.png">
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionMove}}
+                <img class="img-slideshow" src="/images/android.png">
+              {{/animated-if}}
+            </AnimatedContainer>
+          </div>
         </div>
       </div>
+      <div id="tech-end"></div>
+
+      <div class="seperator" id="cv">
+        <div class="seperator-line-left"></div>
+        <h2 class="seperator-title">
+          CV
+        </h2>
+        <div class="seperator-line-right"></div>
+      </div>
+
+      <div class="cv-container">
+        <img class="cv-image-large" src="images/cv1.jpg"/>
+        <img class="cv-image-small" src="images/cv1.jpg"/>
+        <img class="cv-image-small" src="images/cv2.jpg"/>
+      </div>
+      <div id="cv-end"></div>
+
+      <div class="seperator" id="contact">
+        <div class="seperator-line-left"></div>
+        <h2 class="seperator-title">
+          Contact
+        </h2>
+        <div class="seperator-line-right"></div>
+      </div>
+
+      <div class="links">
+       <a class="link" href="mailto:sgoneill89@gmail.com">
+         <img class="gmail-icon" src="images/gmail.png">
+       </a>
+       <a class="link" href="https://github.com/ShaneON">
+         <img class="github-icon" src="images/github.png">
+       </a>
+       <a class="link" href="https://linkedin.com/in/shane-o-neill-7b133511b">
+         <img class="linkedin-icon" src="images/linkedin.png">
+       </a>
+      </div>
     </div>
-    <div id="tech-end"></div>
+    <div id="contact-end"></div>
+  </div>
 
-    <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="cv">
-      <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
-      <h2 class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
-        CV
-      </h2>
-      <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
-    </div>
 
-    <div class={{if this.isMobile "cv-container-mobile" "cv-container"}}>
 
-      <img class={{if this.isMobile "cv-image-large-mobile" "cv-image-large"}} src="images/cv1.jpg"/>
+{{!========================================= MOBILE ==============================================}}
 
-      <img class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv1.jpg"/>
-      <img class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv2.jpg"/>
-    </div>
-    <div id="cv-end"></div>
 
-    <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="contact">
-      <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
-      <h2 class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
-        Contact
-      </h2>
-      <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
-    </div>
-
-    <div class={{if this.isMobile "links-mobile" "links"}}>
-     <a class={{if this.isMobile "link-mobile" "link"}} href="mailto:sgoneill89@gmail.com">
-       <img class="{{if this.isMobile "gmail-icon-mobile" "gmail-icon"}}" src="images/gmail.png">
-     </a>
-     <a class={{if this.isMobile "link-mobile" "link"}} href="https://github.com/ShaneON">
-       <img class={{if this.isMobile "github-icon-mobile" "github-icon"}} src="images/github.png">
-     </a>
-     <a class={{if this.isMobile "link-mobile" "link"}} href="https://linkedin.com/in/shane-o-neill-7b133511b">
-       <img class={{if this.isMobile "linkedin-icon-mobile" "linkedin-icon"}} src="images/linkedin.png">
-     </a>
+{{else}}
+  {{log "mobile"}}
+  <div class="{{this.header}} mobile">
+    {{#if (eq this.header "header")}}
+      <div class="header-content mobile">
+        <img class="header-img mobile" src="/images/name2.png">
+        <img class="header-sub-img mobile" src="/images/software-dev.png">
+      </div>
+    {{/if}}
+    <div class="nav-bar">
+      <a class={{if this.isMobile "nav-item-mobile" "nav-item active"}} {{action "navigateToSection" "nav-about"}} id="nav-about">
+        <span class="nav-item-bracket mobile"> { </span>
+        <span class="nav-item-text mobile"> Home </span>
+        <span class="nav-item-bracket mobile"> } </span>
+      </a>
+      <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-tech"}} id="nav-tech">
+        <span class="nav-item-bracket mobile disabled"> { </span>
+        <span class="nav-item-text mobile"> Tech </span>
+        <span class="nav-item-bracket mobile disabled"> } </span>
+      </a>
+      <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-cv"}} id="nav-cv">
+        <span class="nav-item-bracket mobile disabled"> { </span>
+        <span class="nav-item-text mobile"> CV </span>
+        <span class="nav-item-bracket mobile disabled"> } </span>
+      </a>
+      <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-contact"}} id="nav-contact">
+        <span class="nav-item-bracket mobile disabled"> { </span>
+        <span class="nav-item-text mobile"> Contact </span>
+        <span class="nav-item-bracket mobile disabled"> } </span>
+      </a>
     </div>
   </div>
-  <div id="contact-end"></div>
-</div>
+
+  <div class="body" id="about">
+    <div class="content mobile">
+      <div class="about-container">
+        <div class="about-tiles mobile">
+          <div class="about-tile mobile" onclick={{action "changeTile" 'about'}}>
+            <img class="about-tile-img-bg mobile" src="/images/code.jpg">
+            <img class="about-tile-img-text-1 mobile" src="/images/about.png">
+            <!-- <div class="about-tile-title--mobile">
+              About
+            </div> -->
+          </div>
+          <div class="about-tile mobile" onclick={{action "changeTile" 'career'}}>
+            <img class="about-tile-img-bg mobile" src="/images/career.jpg">
+            <img class="about-tile-img-text-2 mobile" src="/images/career.png">
+            <!-- <div class="about-tile-title--mobile">
+              Career
+            </div> -->
+          </div>
+          <div class="about-tile mobile" onclick={{action "changeTile" 'education'}}>
+            <img class="about-tile-img-bg mobile" src="/images/education.jpg">
+            <img class="about-tile-img-text-3 mobile" src="/images/education.png">
+            <!-- <div class="about-tile-title--mobile">
+              Education
+            </div> -->
+          </div>
+          <div class="about-tile mobile" onclick={{action "changeTile" 'awards'}}>
+            <img class="about-tile-img-bg mobile" src="/images/awards.jpg">
+            <img class="about-tile-img-text-4 mobile" src="/images/awards.png">
+            <!-- <div class="about-tile-title--mobile">
+              Awards
+            </div> -->
+          </div>
+        </div>
+        <div class="about-content">
+          {{#if (eq this.currentTile 'about')}}
+            <div class="about-content-item--mobile">
+              <div class="about-content-item-header--mobile">
+                <h1 class="about-content-item-title--mobile">
+                  About
+                </h1>
+              </div>
+              <div class="about-content-item-container--mobile">
+                <img class="about-content-item-img--mobile" src="/images/me.jpg">
+                <p class="about-content-item-text--mobile">
+                  Shane is a freelance software and web developer from Dublin, Ireland.
+                  <br><br>
+                  He has experience working in frontend, backend, android and desktop development.
+                  <br><br>
+                  He is passionate about building beautiful, responsive, and robust web applications.
+                </p>
+              </div>
+            </div>
+          {{/if}}
+          {{#if (eq this.currentTile 'education')}}
+            <div class="about-content-item--mobile">
+              <div class="about-content-item-header--mobile">
+                <h1 class="about-content-item-title--mobile">
+                  Education
+                </h1>
+              </div>
+              <div class="about-content-item-container--mobile">
+                <img class="about-content-item-img--mobile" src="/images/me.jpg">
+                <p class="about-content-item-text--mobile">
+                  Shane graduated from Dublin City University in 2017 with an honours degree in Computer Science.
+                  <br><br>
+                  He specialized in wearable technology, machine translation and computer graphics.
+                  <br><br>
+                  He achieved a first class honours result and an award for his final year project.
+                </p>
+              </div>
+            </div>
+          {{/if}}
+          {{#if (eq this.currentTile 'career')}}
+            <div class="about-content-item--mobile">
+              <div class="about-content-item-header--mobile">
+                <h1 class="about-content-item-title--mobile">
+                  Career
+                </h1>
+              </div>
+              <div class="about-content-item-container--mobile">
+                <img class="about-content-item-img--mobile" src="/images/career.jpg">
+                <p class="about-content-item-text--mobile">
+                  Shane has experience in both small startups and large corporations, working with a wide range of technologies.
+                  <br><br>
+                  Shane has built frontend applications for the largest salon booking software in the world.
+                  <br><br>
+                  He has worked on backend and database infrastructure for large banking multinationals.
+                  <br><br>
+                  He has also done many smaller projects (frontend + backend) for individuals and startup companies;
+                </p>
+              </div>
+            </div>
+          {{/if}}
+          {{#if (eq this.currentTile 'awards')}}
+            <div class="about-content-item--mobile">
+              <div class="about-content-item-header--mobile">
+                <h1 class="about-content-item-title--mobile">
+                  Awards
+                </h1>
+              </div>
+              <div class="about-content-item-container--mobile">
+                <img class="about-content-item-img--mobile" src="/images/openet.jpeg">
+                <p class="about-content-item-text--mobile">
+                  Shane was awarded Most Innovative Project at the Dublin City University 2017 final year project expo.
+                  <br><br>
+                  Shane has built frontend applications for the largest salon booking software in the world.
+                  <br><br>
+                  His project was a wearable technology navigation system for cyclists consisting of an android app and an arduino which was fitted to a helmet, using a light system to direct the cyclist to their destination.
+                  <br><br>
+                  Shane received first class honours for the project as well as a new Ipad.
+                </p>
+              </div>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+      <div id="about-end"></div>
+
+      <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="tech">
+        <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
+        <h2 class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
+          Technologies
+        </h2>
+        <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
+      </div>
+
+      <div class="tech-container">
+        <div class={{if this.isMobile "thumbnail-container-mobile" "thumbnail-container"}}>
+          <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/html-css-js.png">
+          <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/ember-icon.svg">
+          <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/spring.png">
+          <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/nodejs.png">
+          <img class={{if this.isMobile "thumbnail-img-mobile" "thumbnail-img"}} src="/images/android.png">
+        </div>
+        <div class="animated-container">
+          <AnimatedContainer class="animated-heading">
+            {{#animated-value this.currentTech use=this.transitionFade as |value|}}
+              <h2 class={{if this.isMobile "animated-heading-mobile" "animated-heading-title"}}>
+                {{value}}
+              </h2>
+            {{/animated-value}}
+          </AnimatedContainer>
+          <div class="animated-content-container">
+            <AnimatedContainer class="animated-slideshow">
+
+              {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionMove}}
+                <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/html-css-js.png">
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionMove}}
+                <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/ember-icon.svg">
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionMove}}
+                <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/spring.png">
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
+                <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/nodejs.png">
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionMove}}
+                <img class={{if this.isMobile "img-slideshow-mobile" "img-slideshow"}} src="/images/android.png">
+              {{/animated-if}}
+            </AnimatedContainer>
+          </div>
+        </div>
+      </div>
+      <div id="tech-end"></div>
+
+      <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="cv">
+        <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
+        <h2 class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
+          CV
+        </h2>
+        <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
+      </div>
+
+      <div class={{if this.isMobile "cv-container-mobile" "cv-container"}}>
+
+        <img class={{if this.isMobile "cv-image-large-mobile" "cv-image-large"}} src="images/cv1.jpg"/>
+
+        <img class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv1.jpg"/>
+        <img class={{if this.isMobile "cv-image-small-mobile" "cv-image-small"}} src="images/cv2.jpg"/>
+      </div>
+      <div id="cv-end"></div>
+
+      <div class={{if this.isMobile "seperator-mobile" "seperator"}} id="contact">
+        <div class={{if this.isMobile "seperator-line-left-mobile" "seperator-line-left"}}></div>
+        <h2 class={{if this.isMobile "seperator-title-mobile" "seperator-title"}}>
+          Contact
+        </h2>
+        <div class={{if this.isMobile "seperator-line-right-mobile" "seperator-line-right"}}></div>
+      </div>
+
+      <div class={{if this.isMobile "links-mobile" "links"}}>
+       <a class={{if this.isMobile "link-mobile" "link"}} href="mailto:sgoneill89@gmail.com">
+         <img class="{{if this.isMobile "gmail-icon-mobile" "gmail-icon"}}" src="images/gmail.png">
+       </a>
+       <a class={{if this.isMobile "link-mobile" "link"}} href="https://github.com/ShaneON">
+         <img class={{if this.isMobile "github-icon-mobile" "github-icon"}} src="images/github.png">
+       </a>
+       <a class={{if this.isMobile "link-mobile" "link"}} href="https://linkedin.com/in/shane-o-neill-7b133511b">
+         <img class={{if this.isMobile "linkedin-icon-mobile" "linkedin-icon"}} src="images/linkedin.png">
+       </a>
+      </div>
+    </div>
+    <div id="contact-end"></div>
+  </div>
+{{/if}}

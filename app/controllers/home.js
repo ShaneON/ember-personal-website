@@ -48,7 +48,6 @@ export default Controller.extend({
     let sections = this.get('sections');
 
     sections.forEach((section) => {
-      console.log('nav-' + section);
       var navItem = document.getElementById('nav-' + section);
       var sectionItem = document.getElementById(section);
       var endItem = document.getElementById(section + '-end');
@@ -79,7 +78,7 @@ export default Controller.extend({
   ],
   tiles: ['about', 'career', 'education', 'awards'],
   currentTech: 'HTML5/Javascript/CSS3',
-  currentTile: 'about',
+  // currentTile: 'about',
   currentSection: 'about',
   sections: ['about', 'tech', 'cv', 'contact'],
 
