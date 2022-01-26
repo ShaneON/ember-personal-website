@@ -1,4 +1,5 @@
 {{ui-hooks did-insert=(action "activateScrolling")}}
+<AnimatedTools />
 
 {{#if this.isDesktop}}
   {{log "desktop"}}
@@ -9,7 +10,6 @@
         <img class="header-sub-img" src="/images/software-dev.png">
       </div>
     {{/if}}
-    <!-- <div class="nav-bar"> -->
     <div class="nav-bar">
       <a class="nav-item active" {{action "navigateToSection" "nav-about"}} id="nav-about">
         <span class="nav-item-bracket"> { </span>
@@ -38,19 +38,19 @@
     <div class="content">
       <div class="about-container">
         <div class="about-tiles">
-          <div class="about-tile" onclick={{action "changeTile" 'about'}}>
+          <div class="about-tile" onclick={{action "tileSelected" 'about'}}>
             <img class="about-tile-img-bg" src="/images/code.jpg">
             <img class="about-tile-img-text-1" src="/images/about.png">
           </div>
-          <div class="about-tile" onclick={{action "changeTile" 'career'}}>
+          <div class="about-tile" onclick={{action "tileSelected" 'career'}}>
             <img class="about-tile-img-bg" src="/images/career.jpg">
             <img class="about-tile-img-text-2" src="/images/career.png">
           </div>
-          <div class="about-tile" onclick={{action "changeTile" 'education'}}>
+          <div class="about-tile" onclick={{action "tileSelected" 'education'}}>
             <img class="about-tile-img-bg" src="/images/education.jpg">
             <img class="about-tile-img-text-3" src="/images/education.png">
           </div>
-          <div class="about-tile" onclick={{action "changeTile" 'awards'}}>
+          <div class="about-tile" onclick={{action "tileSelected" 'awards'}}>
             <img class="about-tile-img-bg" src="/images/awards.jpg">
             <img class="about-tile-img-text-4" src="/images/awards.png">
           </div>
@@ -233,6 +233,7 @@
 
 {{else}}
   {{log "mobile"}}
+  {{log this.isTileView}}
   <div class="{{this.header}} mobile">
     {{#if (eq this.header "header")}}
       <div class="header-content mobile">
@@ -268,34 +269,38 @@
     <div class="content mobile">
       <div class="about-container">
         <div class="about-tiles mobile">
-          <div class="about-tile mobile" onclick={{action "changeTile" 'about'}}>
-            <img class="about-tile-img-bg mobile" src="/images/code.jpg">
-            <img class="about-tile-img-text-1 mobile" src="/images/about.png">
-            <!-- <div class="about-tile-title--mobile">
-              About
-            </div> -->
-          </div>
-          <div class="about-tile mobile" onclick={{action "changeTile" 'career'}}>
-            <img class="about-tile-img-bg mobile" src="/images/career.jpg">
-            <img class="about-tile-img-text-2 mobile" src="/images/career.png">
-            <!-- <div class="about-tile-title--mobile">
-              Career
-            </div> -->
-          </div>
-          <div class="about-tile mobile" onclick={{action "changeTile" 'education'}}>
-            <img class="about-tile-img-bg mobile" src="/images/education.jpg">
-            <img class="about-tile-img-text-3 mobile" src="/images/education.png">
-            <!-- <div class="about-tile-title--mobile">
-              Education
-            </div> -->
-          </div>
-          <div class="about-tile mobile" onclick={{action "changeTile" 'awards'}}>
-            <img class="about-tile-img-bg mobile" src="/images/awards.jpg">
-            <img class="about-tile-img-text-4 mobile" src="/images/awards.png">
-            <!-- <div class="about-tile-title--mobile">
-              Awards
-            </div> -->
-          </div>
+          <AnimatedContainer class="about-tile-animated-container mobile">
+            {{#animated-if (or this.isTileView (eq this.currentSection 'about')) duration=1000 use=this.fadeOutTiles}}
+              <div class="about-tile mobile" onclick={{action "tileSelected" 'about'}}>
+                <img class="about-tile-img-bg mobile" src="/images/code.jpg">
+                <img class="about-tile-img-text-1 mobile" src="/images/about.png">
+              </div>
+            {{/animated-if}}
+          </AnimatedContainer>
+          <AnimatedContainer class="about-tile-animated-container mobile">
+            {{#animated-if (or this.isTileView (eq this.currentSection 'career')) duration=1000 use=this.fadeOutTiles}}
+              <div class="about-tile mobile" onclick={{action "tileSelected" 'career'}}>
+                <img class="about-tile-img-bg mobile" src="/images/career.jpg">
+                <img class="about-tile-img-text-2 mobile" src="/images/career.png">
+              </div>
+            {{/animated-if}}
+          </AnimatedContainer>
+          <AnimatedContainer class="about-tile-animated-container mobile">
+            {{#animated-if (or this.isTileView (eq this.currentSection 'education')) duration=1000 use=this.fadeOutTiles}}
+              <div class="about-tile mobile" onclick={{action "tileSelected" 'education'}}>
+                <img class="about-tile-img-bg mobile" src="/images/education.jpg">
+                <img class="about-tile-img-text-3 mobile" src="/images/education.png">
+              </div>
+            {{/animated-if}}
+          </AnimatedContainer>
+          <AnimatedContainer class="about-tile-animated-container mobile">
+            {{#animated-if (or this.isTileView (eq this.currentSection 'awards')) duration=1000 use=this.fadeOutTiles}}
+              <div class="about-tile mobile" onclick={{action "tileSelected" 'awards'}}>
+                <img class="about-tile-img-bg mobile" src="/images/awards.jpg">
+                <img class="about-tile-img-text-4 mobile" src="/images/awards.png">
+              </div>
+            {{/animated-if}}
+          </AnimatedContainer>
         </div>
         <div class="about-content">
           {{#if (eq this.currentTile 'about')}}

@@ -3,6 +3,7 @@ import move from 'ember-animated/motions/move';
 import { fadeOut, fadeIn } from 'ember-animated/motions/opacity';
 import { easeExpIn, easeExpOut } from 'd3-ease';
 import fade from 'ember-animated/transitions/fade';
+import { wait } from 'ember-animated';
 
 export default Controller.extend({
   init() {
@@ -30,6 +31,27 @@ export default Controller.extend({
         duration: duration * (1 / 2),
         easing: easeExpOut,
       });
+    }
+  },
+
+  *fadeOutTiles({ duration, insertedSprites, removedSprites, keptSprites }) {
+    // for (let sprite of insertedSprites) {
+    //   sprite.startAtPixel({ x: window.innerWidth });
+    //   move(sprite, {
+    //     duration: duration * (1 / 2),
+    //     easing: easeExpIn,
+    //   });
+    // }
+
+    console.log(keptSprites)
+
+    for (let sprite of removedSprites) {
+      yield fadeOut(sprite);
+    }
+
+    for (let sprite of keptSprites) {
+      sprite.endAtSprite({otherSprite: removedSprites[0]});
+      move(sprite);
     }
   },
 
@@ -80,6 +102,7 @@ export default Controller.extend({
   currentTech: 'HTML5/Javascript/CSS3',
   // currentTile: 'about',
   currentSection: 'about',
+  isTileView: true,
   sections: ['about', 'tech', 'cv', 'contact'],
 
   actions: {
@@ -95,8 +118,9 @@ export default Controller.extend({
       });
     },
 
-    changeTile(tile) {
-      this.set('currentTile', tile);
+    tileSelected(tile) {
+      this.set('isTileView', !this.get('isTileView'));
+      this.set('currentSection', tile);
     },
   },
 });
