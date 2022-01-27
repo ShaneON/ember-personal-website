@@ -88,9 +88,13 @@ export default Controller.extend({
     'Node.js/Express Server-Side Development',
     'Android Development',
   ],
+  techDetails: [
+    'Ember.js is a productive, battle-tested JavaScript framework for building modern web applications. It includes everything you need to build rich UIs that work on any device.',
+
+  ],
   tiles: ['about', 'career', 'education', 'awards'],
   currentTech: 'HTML5/Javascript/CSS3',
-  currentSection: 'null',
+  currentSection: 'about',
   isTileView: true,
   sections: ['about', 'tech', 'cv', 'contact'],
 
@@ -115,6 +119,6 @@ export default Controller.extend({
     closeAbout() {
       this.set('isTileView', true);
       this.set('currentSection', null);
-    }
+    },
   },
 });
