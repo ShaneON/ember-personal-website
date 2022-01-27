@@ -34,24 +34,16 @@ export default Controller.extend({
     }
   },
 
-  *fadeOutTiles({ duration, insertedSprites, removedSprites, keptSprites }) {
-    // for (let sprite of insertedSprites) {
-    //   sprite.startAtPixel({ x: window.innerWidth });
-    //   move(sprite, {
-    //     duration: duration * (1 / 2),
-    //     easing: easeExpIn,
-    //   });
-    // }
-
-    console.log(keptSprites)
+  *transitionFade({ duration, insertedSprites, removedSprites}) {
 
     for (let sprite of removedSprites) {
       yield fadeOut(sprite);
     }
 
-    for (let sprite of keptSprites) {
-      sprite.endAtSprite({otherSprite: removedSprites[0]});
-      move(sprite);
+    yield wait(750);
+
+    for (let sprite of insertedSprites) {
+      fadeIn(sprite);
     }
   },
 
@@ -88,8 +80,6 @@ export default Controller.extend({
     })
   },
 
-  transitionFade: fade,
-
   imgCount: 0,
   technologies: [
     'HTML5/Javascript/CSS3',
@@ -100,8 +90,7 @@ export default Controller.extend({
   ],
   tiles: ['about', 'career', 'education', 'awards'],
   currentTech: 'HTML5/Javascript/CSS3',
-  // currentTile: 'about',
-  currentSection: 'about',
+  currentSection: 'null',
   isTileView: true,
   sections: ['about', 'tech', 'cv', 'contact'],
 
@@ -119,8 +108,13 @@ export default Controller.extend({
     },
 
     tileSelected(tile) {
-      this.set('isTileView', !this.get('isTileView'));
+      this.set('isTileView', false);
       this.set('currentSection', tile);
     },
+
+    closeAbout() {
+      this.set('isTileView', true);
+      this.set('currentSection', null);
+    }
   },
 });

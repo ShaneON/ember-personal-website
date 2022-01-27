@@ -270,7 +270,7 @@
       <div class="about-container">
         <div class="about-tiles mobile">
           <AnimatedContainer class="about-tile-animated-container mobile">
-            {{#animated-if (or this.isTileView (eq this.currentSection 'about')) duration=1000 use=this.fadeOutTiles}}
+            {{#animated-if (or this.isTileView (eq this.currentSection 'about')) duration=1000 use=this.transitionFade}}
               <div class="about-tile mobile" onclick={{action "tileSelected" 'about'}}>
                 <img class="about-tile-img-bg mobile" src="/images/code.jpg">
                 <img class="about-tile-img-text-1 mobile" src="/images/about.png">
@@ -278,7 +278,7 @@
             {{/animated-if}}
           </AnimatedContainer>
           <AnimatedContainer class="about-tile-animated-container mobile">
-            {{#animated-if (or this.isTileView (eq this.currentSection 'career')) duration=1000 use=this.fadeOutTiles}}
+            {{#animated-if (or this.isTileView (eq this.currentSection 'career')) duration=1000 use=this.transitionFade}}
               <div class="about-tile mobile" onclick={{action "tileSelected" 'career'}}>
                 <img class="about-tile-img-bg mobile" src="/images/career.jpg">
                 <img class="about-tile-img-text-2 mobile" src="/images/career.png">
@@ -286,7 +286,7 @@
             {{/animated-if}}
           </AnimatedContainer>
           <AnimatedContainer class="about-tile-animated-container mobile">
-            {{#animated-if (or this.isTileView (eq this.currentSection 'education')) duration=1000 use=this.fadeOutTiles}}
+            {{#animated-if (or this.isTileView (eq this.currentSection 'education')) duration=1000 use=this.transitionFade}}
               <div class="about-tile mobile" onclick={{action "tileSelected" 'education'}}>
                 <img class="about-tile-img-bg mobile" src="/images/education.jpg">
                 <img class="about-tile-img-text-3 mobile" src="/images/education.png">
@@ -294,15 +294,85 @@
             {{/animated-if}}
           </AnimatedContainer>
           <AnimatedContainer class="about-tile-animated-container mobile">
-            {{#animated-if (or this.isTileView (eq this.currentSection 'awards')) duration=1000 use=this.fadeOutTiles}}
+            {{#animated-if (or this.isTileView (eq this.currentSection 'awards')) duration=1000 use=this.transitionFade}}
               <div class="about-tile mobile" onclick={{action "tileSelected" 'awards'}}>
                 <img class="about-tile-img-bg mobile" src="/images/awards.jpg">
                 <img class="about-tile-img-text-4 mobile" src="/images/awards.png">
               </div>
             {{/animated-if}}
           </AnimatedContainer>
+          <AnimatedContainer class="about-content-animated-container mobile">
+            {{#animated-if (and (not this.isTileView) (eq this.currentSection 'about')) duration=1000 use=this.transitionFade}}
+              <div class="about-content mobile">
+                <div class="about-content-container mobile">
+                  <img class="about-content-img mobile" src="/images/me.jpg">
+                  <div class="close" onclick={{action "closeAbout"}}></div>
+                </div>
+
+                <p class="about-content-text mobile">
+                  Shane is a freelance software and web developer from Dublin, Ireland.
+                  <br><br>
+                  He has experience working in frontend, backend, android and desktop development.
+                  <br><br>
+                  He is passionate about building beautiful, responsive, and robust web applications.
+                </p>
+              </div>
+            {{/animated-if}}
+            {{#animated-if (and (not this.isTileView) (eq this.currentSection 'career')) duration=1000 use=this.transitionFade}}
+              <div class="about-content mobile">
+                <div class="about-content-container mobile">
+                  <img class="about-content-img mobile" src="/images/working.jpg">
+                  <div class="close" onclick={{action "closeAbout"}}></div>
+                </div>
+
+                <p class="about-content-text mobile">
+                  Shane has experience in both small startups and large corporations, working with a wide range of technologies.
+                  <br>
+                  He has built frontend applications for the largest salon booking software in the world.
+                  <br>
+                  He has worked on backend and database infrastructure for large banking multinationals.
+                  <br>
+                  He has also done many smaller projects (frontend + backend) for individuals and startup companies;
+                </p>
+              </div>
+            {{/animated-if}}
+            {{#animated-if (and (not this.isTileView) (eq this.currentSection 'education')) duration=1000 use=this.transitionFade}}
+              <div class="about-content mobile">
+                <div class="about-content-container mobile">
+                  <img class="about-content-img mobile" src="/images/dcu.jpg">
+                  <div class="close" onclick={{action "closeAbout"}}></div>
+                </div>
+
+                <p class="about-content-text mobile">
+                  Shane graduated from Dublin City University in 2017 with an honours degree in Computer Science.
+                  <br><br>
+                  He specialized in wearable technology, machine translation and computer graphics.
+                  <br><br>
+                  He achieved a first class honours result and an award for his final year project.
+                </p>
+              </div>
+            {{/animated-if}}
+            {{#animated-if (and (not this.isTileView) (eq this.currentSection 'awards')) duration=1000 use=this.transitionFade}}
+              <div class="about-content mobile">
+                <div class="about-content-container mobile">
+                  <img class="about-content-img mobile" src="/images/openet.jpeg">
+                  <div class="close" onclick={{action "closeAbout"}}></div>
+                </div>
+
+                <p class="about-content-text mobile">
+                  Shane was awarded Most Innovative Project at the Dublin City University 2017 final year project expo.
+                  <br><br>
+                  Shane has built frontend applications for the largest salon booking software in the world.
+                  <br><br>
+                  His project was a wearable technology navigation system for cyclists consisting of an android app and an arduino which was fitted to a helmet, using a light system to direct the cyclist to their destination.
+                  <br><br>
+                  Shane received first class honours for the project as well as a new Ipad.
+                </p>
+              </div>
+            {{/animated-if}}
+          </AnimatedContainer>
         </div>
-        <div class="about-content">
+        <!-- <div class="about-content">
           {{#if (eq this.currentTile 'about')}}
             <div class="about-content-item--mobile">
               <div class="about-content-item-header--mobile">
@@ -383,7 +453,7 @@
               </div>
             </div>
           {{/if}}
-        </div>
+        </div> -->
       </div>
       <div id="about-end"></div>
 
