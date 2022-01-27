@@ -4,6 +4,7 @@ import { fadeOut, fadeIn } from 'ember-animated/motions/opacity';
 import { easeExpIn, easeExpOut } from 'd3-ease';
 import fade from 'ember-animated/transitions/fade';
 import { wait } from 'ember-animated';
+import { debounce } from '@ember/runloop';
 
 export default Controller.extend({
   init() {
@@ -19,16 +20,16 @@ export default Controller.extend({
   *transitionMove({ duration, insertedSprites, removedSprites }) {
     for (let sprite of insertedSprites) {
       sprite.startAtPixel({ x: window.innerWidth });
-      move(sprite, {
-        duration: duration * (1 / 2),
+      yield move(sprite, {
+        duration: duration * (2 / 3),
         easing: easeExpIn,
       });
     }
 
     for (let sprite of removedSprites) {
       sprite.endAtPixel({ x: 0 - sprite.initialBounds.width });
-      move(sprite, {
-        duration: duration * (1 / 2),
+      yield move(sprite, {
+        duration: duration * (1 / 3),
         easing: easeExpOut,
       });
     }
