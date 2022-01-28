@@ -129,11 +129,31 @@
         </div>
         <div class="slideshow">
           <AnimatedContainer class="slideshow-heading">
-            {{#animated-value this.currentTech use=this.transitionFade as |value|}}
+            {{#animated-if (eq this.imgCount 0) use=this.transitionFade}}
               <h2 class="slideshow-title">
-                {{value}}
+                HTML5/Javascript/CSS3
               </h2>
-            {{/animated-value}}
+            {{/animated-if}}
+            {{#animated-if (eq this.imgCount 1) use=this.transitionFade}}
+              <h2 class="slideshow-title">
+                Ember.js Frontend Development
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.imgCount 2) use=this.transitionFade}}
+              <h2 class="slideshow-title">
+                Java/Spring Server-Side Development
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.imgCount 3) use=this.transitionFade}}
+              <h2 class="slideshow-title">
+                Node.js/Express Server-Side Development
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.imgCount 4) use=this.transitionFade}}
+              <h2 class="slideshow-title">
+                Android Development
+              </h2>
+            {{/animated-if}}
           </AnimatedContainer>
           <div class="slideshow-container">
             <AnimatedContainer class="slideshow-content">
@@ -154,11 +174,41 @@
               {{/animated-if}}
             </AnimatedContainer>
             <AnimatedContainer class="slideshow-details">
-              <h2 class="slideshow-details-text">
-                Ember.js is a productive, battle-tested JavaScript framework for building modern web applications.
-                <br><br>
-                It includes everything you need to build rich UIs that work on any device.
-              </h2>
+              {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  HTML defines the meaning and structure of web content.
+                  <br><br>
+                  CSS is a style sheet language used for describing the presentation of HTML.
+                  <br><br>
+                  JavaScript is a lightweight, interpreted programming language with first-class functions.
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  Ember.js is a productive, battle-tested JavaScript framework for building modern web applications.
+                  <br><br>
+                  It includes everything you need to build rich UIs that work on any device.
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  The Spring Framework is an application framework for the Java platform.
+                  <br><br>
+                  The framework is one of the most popular in the world for web application development.
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that executes JavaScript code outside a web browser.
+                  <br><br>
+                  Express, is a back end web application framework for Node.js
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  Android development is the creation of applications for android smartphones and other devices.
+                </h2>
+              {{/animated-if}}
             </AnimatedContainer>
           </div>
         </div>
@@ -195,7 +245,7 @@
        <a class="link" href="https://github.com/ShaneON">
          <img class="github-icon" src="images/github.png">
        </a>
-       <a class="link" href="https://linkedin.com/in/shane-o-neill-7b133511b">
+       <a class="link" href="https://linkedin.com/in/shane-o-neill">
          <img class="linkedin-icon" src="images/linkedin.png">
        </a>
       </div>
@@ -209,8 +259,6 @@
 
 
 {{else}}
-  {{log "mobile"}}
-  {{log this.isTileView}}
   <div class="{{this.header}} mobile">
     {{#if (eq this.header "header")}}
       <div class="header-content mobile">
@@ -297,7 +345,7 @@
             {{/animated-if}}
             {{#animated-if (and (not this.isTileView) (eq this.currentSection 'career')) duration=1000 use=this.transitionFade}}
               <div class="about-content mobile">
-                <div class="about-content-container mobile">
+                <div class="about-content-container">
                   <img class="about-content-img mobile" src="/images/working.jpg">
                   <div class="close" onclick={{action "closeAbout"}}></div>
                 </div>
@@ -315,7 +363,7 @@
             {{/animated-if}}
             {{#animated-if (and (not this.isTileView) (eq this.currentSection 'education')) duration=1000 use=this.transitionFade}}
               <div class="about-content mobile">
-                <div class="about-content-container mobile">
+                <div class="about-content-container">
                   <img class="about-content-img mobile" src="/images/dcu.jpg">
                   <div class="close" onclick={{action "closeAbout"}}></div>
                 </div>
@@ -370,11 +418,31 @@
         </div>
         <div class="slideshow mobile">
           <AnimatedContainer class="slideshow-heading mobile">
-            {{#animated-value this.currentTech use=this.transitionFade as |value|}}
+            {{#animated-if (eq this.imgCount 0) use=this.transitionFade}}
               <h2 class="slideshow-title mobile">
-                {{value}}
+                HTML5/Javascript/CSS3
               </h2>
-            {{/animated-value}}
+            {{/animated-if}}
+            {{#animated-if (eq this.imgCount 1) use=this.transitionFade}}
+              <h2 class="slideshow-title mobile">
+                Ember.js Frontend Development
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.imgCount 2) use=this.transitionFade}}
+              <h2 class="slideshow-title mobile">
+                Java/Spring Server-Side Development
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.imgCount 3) use=this.transitionFade}}
+              <h2 class="slideshow-title mobile">
+                Node.js/Express Server-Side Development
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.imgCount 4) use=this.transitionFade}}
+              <h2 class="slideshow-title mobile">
+                Android Development
+              </h2>
+            {{/animated-if}}
           </AnimatedContainer>
           <div class="slideshow-container mobile">
             <AnimatedContainer class="slideshow-content mobile">
@@ -395,11 +463,41 @@
               {{/animated-if}}
             </AnimatedContainer>
             <AnimatedContainer class="slideshow-details mobile">
-              <h2 class="slideshow-details-text">
-                Ember.js is a productive, battle-tested JavaScript framework for building modern web applications.
-                <br><br>
-                It includes everything you need to build rich UIs that work on any device.
-              </h2>
+              {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  HTML defines the meaning and structure of web content.
+                  <br><br>
+                  CSS is a style sheet language used for describing the presentation of HTML.
+                  <br><br>
+                  JavaScript is a lightweight, interpreted programming language with first-class functions.
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  Ember.js is a productive, battle-tested JavaScript framework for building modern web applications.
+                  <br><br>
+                  It includes everything you need to build rich UIs that work on any device.
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  The Spring Framework is an application framework for the Java platform.
+                  <br><br>
+                  The framework is one of the most popular in the world for web application development.
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that executes JavaScript code outside a web browser.
+                  <br><br>
+                  Express, is a back end web application framework for Node.js
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  Android development is the creation of applications for android smartphones and other devices.
+                </h2>
+              {{/animated-if}}
             </AnimatedContainer>
           </div>
         </div>
@@ -433,13 +531,13 @@
 
       <div class="links mobile">
        <a class="link" href="mailto:sgoneill89@gmail.com">
-         <img class="gmail-icon" src="images/gmail.png">
+         <img class="gmail-icon mobile" src="images/gmail.png">
        </a>
        <a class="link" href="https://github.com/ShaneON">
-         <img class="github-icon" src="images/github.png">
+         <img class="github-icon mobile" src="images/github.png">
        </a>
        <a class="link" href="https://linkedin.com/in/shane-o-neill-7b133511b">
-         <img class="linkedin-icon" src="images/linkedin.png">
+         <img class="linkedin-icon mobile" src="images/linkedin.png">
        </a>
       </div>
     </div>

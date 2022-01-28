@@ -55,7 +55,6 @@ export default Controller.extend({
     } else {
       this.set('imgCount', this.imgCount + 1);
     }
-    this.set('currentTech', this.technologies[this.imgCount]);
   },
 
   _scrollToSection() {
@@ -82,19 +81,7 @@ export default Controller.extend({
   },
 
   imgCount: 0,
-  technologies: [
-    'HTML5/Javascript/CSS3',
-    'Ember.js Frontend Development',
-    'Java/Spring Server-Side Development',
-    'Node.js/Express Server-Side Development',
-    'Android Development',
-  ],
-  techDetails: [
-    'Ember.js is a productive, battle-tested JavaScript framework for building modern web applications. It includes everything you need to build rich UIs that work on any device.',
-
-  ],
   tiles: ['about', 'career', 'education', 'awards'],
-  currentTech: 'HTML5/Javascript/CSS3',
   currentSection: 'about',
   isTileView: true,
   sections: ['about', 'tech', 'cv', 'contact'],
@@ -113,8 +100,13 @@ export default Controller.extend({
     },
 
     tileSelected(tile) {
-      this.set('isTileView', false);
-      this.set('currentSection', tile);
+      if (this.isTileView) {
+        this.set('isTileView', false);
+        this.set('currentSection', tile);
+      }
+      else {
+        this.send('closeAbout');
+      }
     },
 
     closeAbout() {

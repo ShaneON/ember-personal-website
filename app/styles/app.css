@@ -141,7 +141,7 @@ body {
 
 .body {
   overflow-x: hidden;
-  background-color: #fffbf5;
+  background-color: #ffeed4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,6 +181,7 @@ body {
   display: flex;
   flex-direction: row;
   height: 40%;
+  max-height: 200px;
   overflow: hidden;
 }
 
@@ -340,6 +341,10 @@ body {
   z-index: 0;
 }
 
+.about-content-container {
+  width: 100%;
+}
+
 .about-content-img {
   max-height: 200px;
   max-width: auto;
@@ -370,13 +375,6 @@ body {
   font-weight: 300;
   margin-top: 10px;
   margin-left: 0;
-}
-
-.about-content-item-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 20px;
 }
 
 /* ==============================================TECH================================ */
@@ -430,7 +428,7 @@ body {
 }
 
 .slideshow-content.mobile {
-  height: 250px;
+  height: 200px;
   width: 100%;
 }
 
@@ -467,7 +465,7 @@ body {
 
 .slideshow-details.mobile {
   width: 100%;
-  height: 100px;
+  height: 150px;
   border-top: 1px solid #c0c1c2;
   border-left: none;
   background-color: #fafafa;
@@ -554,16 +552,32 @@ body {
   transition: transform .2s;
 }
 
+.github-icon.mobile {
+  height: 80px;
+  width: 80px;
+}
+
 .linkedin-icon {
+  margin-left: 10px;
   height: 140px;
   width: 140px;
   transition: transform .2s;
+}
+
+.linkedin-icon.mobile {
+  height: 90px;
+  width: 90px;
 }
 
 .gmail-icon {
   height: 160px;
   width: 250px;
   transition: transform .2s;
+}
+
+.gmail-icon.mobile {
+  height: 90px;
+  width: 180px;
 }
 
 .github-icon:hover {
