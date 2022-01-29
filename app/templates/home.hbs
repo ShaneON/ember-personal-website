@@ -20,11 +20,6 @@
         <span class="nav-item-text"> Tech </span>
         <span class="nav-item-bracket disabled"> } </span>
       </a>
-      <a class="nav-item" {{action "navigateToSection" "nav-cv"}} id="nav-cv">
-        <span class="nav-item-bracket disabled"> { </span>
-        <span class="nav-item-text"> CV </span>
-        <span class="nav-item-bracket disabled"> } </span>
-      </a>
       <a class="nav-item" {{action "navigateToSection" "nav-contact"}} id="nav-contact">
         <span class="nav-item-bracket disabled"> { </span>
         <span class="nav-item-text"> Contact </span>
@@ -64,6 +59,16 @@
                 He has experience working in frontend, backend, android and desktop development.
                 <br><br>
                 He is passionate about building beautiful, responsive, and robust web applications.
+                <br><br>
+                <object
+                	type="application/pdf"
+                	width="100%"
+                	height="100%">
+                	<p>
+                		<a href="/assets/cv.pdf">Download Curriculum Vitae</a>
+                		.
+                	</p>
+                </object>
               </p>
             </div>
           {{/animated-if}}
@@ -215,21 +220,6 @@
       </div>
       <div id="tech-end"></div>
 
-      <div class="seperator" id="cv">
-        <div class="seperator-line-left"></div>
-        <h2 class="seperator-title">
-          CV
-        </h2>
-        <div class="seperator-line-right"></div>
-      </div>
-
-      <div class="cv-container">
-        <img class="cv-image-large" src="images/cv1.jpg"/>
-        <img class="cv-image-small" src="images/cv1.jpg"/>
-        <img class="cv-image-small" src="images/cv2.jpg"/>
-      </div>
-      <div id="cv-end"></div>
-
       <div class="seperator" id="contact">
         <div class="seperator-line-left"></div>
         <h2 class="seperator-title">
@@ -275,11 +265,6 @@
       <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-tech"}} id="nav-tech">
         <span class="nav-item-bracket mobile disabled"> { </span>
         <span class="nav-item-text mobile"> Tech </span>
-        <span class="nav-item-bracket mobile disabled"> } </span>
-      </a>
-      <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-cv"}} id="nav-cv">
-        <span class="nav-item-bracket mobile disabled"> { </span>
-        <span class="nav-item-text mobile"> CV </span>
         <span class="nav-item-bracket mobile disabled"> } </span>
       </a>
       <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-contact"}} id="nav-contact">
@@ -503,23 +488,6 @@
         </div>
       </div>
       <div id="tech-end"></div>
-
-      <div class="seperator mobile" id="cv">
-        <div class="seperator-line-left mobile"></div>
-        <h2 class="seperator-title mobile">
-          CV
-        </h2>
-        <div class="seperator-line-right mobile"></div>
-      </div>
-
-      <div class="cv-container">
-
-        <img class="cv-image-large" src="images/cv1.jpg"/>
-
-        <img class="cv-image-small" src="images/cv1.jpg"/>
-        <img class="cv-image-small" src="images/cv2.jpg"/>
-      </div>
-      <div id="cv-end"></div>
 
       <div class="seperator mobile" id="contact">
         <div class="seperator-line-left mobile"></div>

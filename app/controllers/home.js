@@ -18,10 +18,6 @@ export default Controller.extend({
   },
 
   *transitionMove({ duration, insertedSprites, removedSprites }) {
-    console.log('inserted');
-    console.log(insertedSprites);
-    console.log('removed');
-    console.log(removedSprites);
     for (let sprite of insertedSprites) {
       sprite.startAtPixel({ x: window.innerWidth });
       yield move(sprite, {
@@ -88,7 +84,7 @@ export default Controller.extend({
   tiles: ['about', 'career', 'education', 'awards'],
   currentSection: 'about',
   isTileView: true,
-  sections: ['about', 'tech', 'cv', 'contact'],
+  sections: ['about', 'tech', 'contact'],
 
   actions: {
     navigateToSection(section) {
