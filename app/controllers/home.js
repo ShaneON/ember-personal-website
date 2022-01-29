@@ -18,6 +18,10 @@ export default Controller.extend({
   },
 
   *transitionMove({ duration, insertedSprites, removedSprites }) {
+    console.log('inserted');
+    console.log(insertedSprites);
+    console.log('removed');
+    console.log(removedSprites);
     for (let sprite of insertedSprites) {
       sprite.startAtPixel({ x: window.innerWidth });
       yield move(sprite, {
@@ -100,6 +104,10 @@ export default Controller.extend({
     },
 
     tileSelected(tile) {
+      this.set('currentSection', tile);
+    },
+
+    tileSelectedMobile(tile) {
       if (this.isTileView) {
         this.set('isTileView', false);
         this.set('currentSection', tile);
