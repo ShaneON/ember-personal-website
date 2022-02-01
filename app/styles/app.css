@@ -320,17 +320,31 @@ body {
 }
 
 .about-content {
+  margin-top: 20px;
   height: 90%;
-  width: 50%;
+  width: fit-content;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 30px;
+  flex-direction: column;
   box-shadow: 0px 0px 5px -4px rgba(0,0,0,0.75);
   background-color: white;
   border-left: 1px solid #bababa;
   border-right: 1px solid #bababa;
   border-bottom: 1px solid #bababa;
+}
+
+.about-content-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #12336b;
+  width: 100%;
+}
+
+.about-content-container {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
 }
 
 .about-content.mobile {
@@ -363,7 +377,7 @@ body {
 }
 
 .about-content-text {
-  width: 500px;
+  max-width: 500px;
   font-size: 16px;
   font-weight: 400;
   margin-top: 0;
