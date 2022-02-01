@@ -508,6 +508,7 @@ body {
 .slideshow-heading {
   text-align: center;
   height: 40px;
+  min-height: 40px;
   background-color: #403e3e;
   width: 100%;
   border-radius: 10px 10px 0 0;
@@ -515,6 +516,7 @@ body {
 
 .slideshow-heading.mobile {
   height: 30px;
+  min-height: 30px;
   width: 100%;
 }
 
