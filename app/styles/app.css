@@ -506,6 +506,8 @@ body {
 }
 
 .slideshow-heading {
+  display: flex;
+  justify-content: center;
   text-align: center;
   height: 40px;
   min-height: 40px;
