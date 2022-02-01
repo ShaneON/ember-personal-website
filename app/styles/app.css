@@ -215,14 +215,9 @@ body {
 .about-tile.mobile {
   height: 100%;
   width: 95%;
-  opacity: .8;
   box-shadow: 1px 2px 10px -4px rgba(0,0,0,0.75);
   border-radius: 3px;
   margin-top: 10px;
-}
-
-.about-tile.mobile:hover {
-  opacity: 1;
 }
 
 .about-tile:hover {
@@ -311,7 +306,6 @@ body {
 .about-content-animated-container {
   display: flex;
   justify-content: center;
-  height: 60%;
   width: 100%;
 }
 
@@ -386,6 +380,9 @@ body {
 }
 
 .about-content-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   background-color: #4287f5;
   color: white;
@@ -415,7 +412,7 @@ body {
 /* ==============================================TECH================================ */
 
 .tech-container {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 140px);
   width: 100%;
   display: flex;
   align-items: center;
@@ -444,6 +441,7 @@ body {
   justify-content: center;
   height: 80px;
   width: 80px;
+  border: 1px solid #fffcf7;
 }
 
 .thumbnail-item.mobile {
@@ -475,7 +473,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
   margin-top: 10px;
 }
 
@@ -608,7 +605,10 @@ body {
   display: flex;
   justify-content: center;
   width: 33%;
+}
 
+.link.mobile {
+  width: 100%;
 }
 
 .github-icon {
@@ -643,7 +643,7 @@ body {
 
 .gmail-icon.mobile {
   height: 90px;
-  width: 180px;
+  width: 160px;
 }
 
 .github-icon:hover {
