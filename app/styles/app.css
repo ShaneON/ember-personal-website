@@ -308,6 +308,7 @@ body {
   justify-content: center;
   width: 100%;
   max-height: 60%;
+  height: 60%;
 }
 
 .about-content-animated-container.mobile {
@@ -331,7 +332,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
+  min-height: 40px;
   background-color: #12336b;
   width: 100%;
 }
@@ -358,7 +359,8 @@ body {
 }
 
 .about-content-img {
-  max-height: 200px;
+  min-height: 200px;
+  height: 200px;
   max-width: auto;
   border-radius: 5px;
   box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
@@ -394,6 +396,7 @@ body {
   border-radius: 3px;
   font-weight: 300;
   box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
+  margin-top: 30px;
 }
 
 .about-content-link:hover {
