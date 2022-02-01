@@ -17,7 +17,7 @@
       </a>
       <a class="nav-item" {{action "navigateToSection" "nav-tech"}} id="nav-tech">
         <span class="nav-item-bracket disabled"> { </span>
-        <span class="nav-item-text"> Tech </span>
+        <span class="nav-item-text"> Skills </span>
         <span class="nav-item-bracket disabled"> } </span>
       </a>
       <a class="nav-item" {{action "navigateToSection" "nav-contact"}} id="nav-contact">
@@ -32,19 +32,19 @@
     <div class="content">
       <div class="about-container">
         <div class="about-tiles">
-          <div class="about-tile" onmouseover={{action "tileSelected" 'about'}}>
+          <div class="about-tile" onclick={{action "tileSelected" 'about'}}>
             <img class="about-tile-img-bg" src="/images/code.jpg">
             <img class="about-tile-img-text-1" src="/images/about.png">
           </div>
-          <div class="about-tile" onmouseover={{action "tileSelected" 'career'}}>
+          <div class="about-tile" onclick={{action "tileSelected" 'career'}}>
             <img class="about-tile-img-bg" src="/images/career.jpg">
             <img class="about-tile-img-text-2" src="/images/career.png">
           </div>
-          <div class="about-tile" onmouseover={{action "tileSelected" 'education'}}>
+          <div class="about-tile" onclick={{action "tileSelected" 'education'}}>
             <img class="about-tile-img-bg" src="/images/education.jpg">
             <img class="about-tile-img-text-3" src="/images/education.png">
           </div>
-          <div class="about-tile" onmouseover={{action "tileSelected" 'awards'}}>
+          <div class="about-tile" onclick={{action "tileSelected" 'awards'}}>
             <img class="about-tile-img-bg" src="/images/awards.jpg">
             <img class="about-tile-img-text-4" src="/images/awards.png">
           </div>
@@ -65,7 +65,7 @@
                 	width="100%"
                 	height="100%">
                 	<p>
-                		<a href="/assets/cv.pdf">Download Curriculum Vitae</a>.
+                		<a class="about-content-link" href="/assets/cv.pdf">Download CV</a>
                 	</p>
                 </object>
               </p>
@@ -118,102 +118,196 @@
       <div class="seperator" id="tech">
         <div class="seperator-line-left"></div>
         <h2 class="seperator-title">
-          Technologies
+          Technologies / Skills
         </h2>
         <div class="seperator-line-right"></div>
       </div>
 
       <div class="tech-container">
         <div class="thumbnail-container">
-          <img class="thumbnail-img" src="/images/html-css-js.png">
-          <img class="thumbnail-img" src="/images/ember-icon.svg">
-          <img class="thumbnail-img" src="/images/spring.png">
-          <img class="thumbnail-img" src="/images/nodejs.png">
-          <img class="thumbnail-img" src="/images/android.png">
+          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 0}}>
+            <img class="thumbnail-img" src="/images/html-css-js.png" width="75px" height="30px">
+          </div>
+          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 1}}>
+            <img class="thumbnail-img" src="/images/ember-icon.svg" width="75px" height="75px">
+          </div>
+          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 2}}>
+            <img class="thumbnail-img" src="/images/spring.png" width="100px" height="75spx">
+          </div>
+          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 3}}>
+            <img class="thumbnail-img" src="/images/nodejs.png" width="75px" height="60px">
+          </div>
+          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 4}}>
+            <img class="thumbnail-img" src="/images/android.png" width="75px" height="75px">
+          </div>
+          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 5}}>
+            <img class="thumbnail-img" src="/images/docker.png" width="50px" height="50px">
+          </div>
+          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 6}}>
+            <img class="thumbnail-img" src="/images/kubernetes.png" width="40px" height="40px">
+          </div>
+          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 7}}>
+            <img class="thumbnail-img" src="/images/sql.png" width="50px" height="50px">
+          </div>
+          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 8}}>
+            <img class="thumbnail-img" src="/images/git.png" width="50px" height="25px">
+          </div>
+          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 9}}>
+            <img class="thumbnail-img" src="/images/mongo.png" width="70px" height="25px">
+          </div>
         </div>
         <div class="slideshow">
           <AnimatedContainer class="slideshow-heading">
-            {{#animated-if (eq this.imgCount 0) use=this.transitionFade}}
+            {{#animated-if (eq this.currentSlideshowImg 0) use=this.transitionFade}}
               <h2 class="slideshow-title">
                 HTML5/Javascript/CSS3
               </h2>
             {{/animated-if}}
-            {{#animated-if (eq this.imgCount 1) use=this.transitionFade}}
+            {{#animated-if (eq this.currentSlideshowImg 1) use=this.transitionFade}}
               <h2 class="slideshow-title">
                 Ember.js Frontend Development
               </h2>
             {{/animated-if}}
-            {{#animated-if (eq this.imgCount 2) use=this.transitionFade}}
+            {{#animated-if (eq this.currentSlideshowImg 2) use=this.transitionFade}}
               <h2 class="slideshow-title">
                 Java/Spring Server-Side Development
               </h2>
             {{/animated-if}}
-            {{#animated-if (eq this.imgCount 3) use=this.transitionFade}}
+            {{#animated-if (eq this.currentSlideshowImg 3) use=this.transitionFade}}
               <h2 class="slideshow-title">
                 Node.js/Express Server-Side Development
               </h2>
             {{/animated-if}}
-            {{#animated-if (eq this.imgCount 4) use=this.transitionFade}}
+            {{#animated-if (eq this.currentSlideshowImg 4) use=this.transitionFade}}
               <h2 class="slideshow-title">
                 Android Development
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.currentSlideshowImg 5) use=this.transitionFade}}
+              <h2 class="slideshow-title">
+                Docker
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.currentSlideshowImg 6) use=this.transitionFade}}
+              <h2 class="slideshow-title">
+                Kubernetes
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.currentSlideshowImg 7) use=this.transitionFade}}
+              <h2 class="slideshow-title">
+                SQL
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.currentSlideshowImg 8) use=this.transitionFade}}
+              <h2 class="slideshow-title">
+                Git/Github
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.currentSlideshowImg 9) use=this.transitionFade}}
+              <h2 class="slideshow-title">
+                MongoDB
               </h2>
             {{/animated-if}}
           </AnimatedContainer>
           <div class="slideshow-container">
             <AnimatedContainer class="slideshow-content">
-              {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionMove}}
-                <img class="slideshow-img" src="/images/html-css-js.png">
+              {{#animated-if (eq this.currentSlideshowImg 0) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/html-css-js.png" width="350px">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionMove}}
-                <img class="slideshow-img" src="/images/ember-icon.svg">
+              {{#animated-if (eq this.currentSlideshowImg 1) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/ember-icon.svg" width="350px">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionMove}}
-                <img class="slideshow-img" src="/images/spring.png">
+              {{#animated-if (eq this.currentSlideshowImg 2) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/spring.png" width="400px">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
-                <img class="slideshow-img" src="/images/nodejs.png">
+              {{#animated-if (eq this.currentSlideshowImg 3) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/nodejs.png" width="350px">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionMove}}
-                <img class="slideshow-img" src="/images/android.png">
+              {{#animated-if (eq this.currentSlideshowImg 4) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/android.png" width="350px">
               {{/animated-if}}
-            </AnimatedContainer>
-            <AnimatedContainer class="slideshow-details">
-              {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  HTML defines the meaning and structure of web content.
-                  <br><br>
-                  CSS is a style sheet language used for describing the presentation of HTML.
-                  <br><br>
-                  JavaScript is a lightweight, interpreted programming language with first-class functions.
-                </h2>
+              {{#animated-if (eq this.currentSlideshowImg 5) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/docker.png" width="250px">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  Ember.js is a productive, battle-tested JavaScript framework for building modern web applications.
-                  <br><br>
-                  It includes everything you need to build rich UIs that work on any device.
-                </h2>
+              {{#animated-if (eq this.currentSlideshowImg 6) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/kubernetes.png" width="200px">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  The Spring Framework is an application framework for the Java platform.
-                  <br><br>
-                  The framework is one of the most popular in the world for web application development.
-                </h2>
+              {{#animated-if (eq this.currentSlideshowImg 7) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/sql.png" width="250px">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that executes JavaScript code outside a web browser.
-                  <br><br>
-                  Express, is a back end web application framework for Node.js
-                </h2>
+              {{#animated-if (eq this.currentSlideshowImg 8) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/git.png" width="250px">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  Android development is the creation of applications for android smartphones and other devices.
-                </h2>
+              {{#animated-if (eq this.currentSlideshowImg 9) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/mongo.png" width="300px">
               {{/animated-if}}
             </AnimatedContainer>
+            <div class="slideshow-details">
+              <AnimatedContainer class="slideshow-details-container">
+                {{#animated-if (eq this.currentSlideshowImg 0) use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    HTML defines the meaning and structure of web content.
+                    <br><br>
+                    CSS is a style sheet language used for describing the presentation of HTML.
+                    <br><br>
+                    JavaScript is a lightweight, interpreted programming language with first-class functions.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 1) use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Ember.js is a productive, battle-tested JavaScript framework for building modern web applications.
+                    <br><br>
+                    It includes everything you need to build rich UIs that work on any device.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 2) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    The Spring Framework is an application framework for the Java platform.
+                    <br><br>
+                    The framework is one of the most popular in the world for web application development.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 3) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that executes JavaScript code outside a web browser.
+                    <br><br>
+                    Express, is a back end web application framework for Node.js
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 4) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Android development is the creation of applications for android smartphones and other devices.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 5) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
+                    <br><br>
+                    Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 6) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Kubernetes is an open-source container orchestration system for automating software deployment, scaling, and management. Google originally designed Kubernetes, but the Cloud Native Computing Foundation now maintains the project.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 7) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system, or for stream processing in a relational data stream management system.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 8) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 9) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
+                  </h2>
+                {{/animated-if}}
+                </AnimatedContainer>
+            </div>
           </div>
         </div>
       </div>
@@ -255,18 +349,18 @@
         <img class="header-sub-img mobile" src="/images/software-dev.png">
       </div>
     {{/if}}
-    <div class="nav-bar">
-      <a class={{if this.isMobile "nav-item-mobile" "nav-item active"}} {{action "navigateToSection" "nav-about"}} id="nav-about">
+    <div class="nav-bar mobile">
+      <a class="nav-item mobile active" {{action "navigateToSection" "nav-about"}} id="nav-about">
         <span class="nav-item-bracket mobile"> { </span>
         <span class="nav-item-text mobile"> Home </span>
         <span class="nav-item-bracket mobile"> } </span>
       </a>
-      <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-tech"}} id="nav-tech">
+      <a class="nav-item mobile" {{action "navigateToSection" "nav-tech"}} id="nav-tech">
         <span class="nav-item-bracket mobile disabled"> { </span>
-        <span class="nav-item-text mobile"> Tech </span>
+        <span class="nav-item-text mobile"> Skills </span>
         <span class="nav-item-bracket mobile disabled"> } </span>
       </a>
-      <a class={{if this.isMobile "nav-item-mobile" "nav-item"}} {{action "navigateToSection" "nav-contact"}} id="nav-contact">
+      <a class="nav-item mobile" {{action "navigateToSection" "nav-contact"}} id="nav-contact">
         <span class="nav-item-bracket mobile disabled"> { </span>
         <span class="nav-item-text mobile"> Contact </span>
         <span class="nav-item-bracket mobile disabled"> } </span>
@@ -395,67 +489,134 @@
       <div class="seperator mobile" id="tech">
         <div class="seperator-line-left mobile"></div>
         <h2 class="seperator-title mobile">
-          Technologies
+          Skills / Technologies
         </h2>
         <div class="seperator-line-right mobile"></div>
       </div>
 
       <div class="tech-container">
-        <div class="thumbnail-container">
-          <img class="thumbnail-img mobile" src="/images/html-css-js.png">
-          <img class="thumbnail-img mobile" src="/images/ember-icon.svg">
-          <img class="thumbnail-img mobile" src="/images/spring.png">
-          <img class="thumbnail-img mobile" src="/images/nodejs.png">
-          <img class="thumbnail-img mobile" src="/images/android.png">
+        <div class="thumbnail-row mobile">
+          <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 0}}>
+            <img class="thumbnail-img" src="/images/html-css-js.png" width="45px" height="20px">
+          </div>
+          <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 1}}>
+            <img class="thumbnail-img" src="/images/ember-icon.svg" width="65px" height="65px">
+          </div>
+          <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 2}}>
+            <img class="thumbnail-img" src="/images/spring.png" width="90px" height="65px">
+          </div>
+          <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 3}}>
+            <img class="thumbnail-img" src="/images/nodejs.png" width="65px" height="50px">
+          </div>
+          <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 4}}>
+            <img class="thumbnail-img" src="/images/android.png" width="65px" height="65px">
+          </div>
+        </div>
+        <div class="thumbnail-row mobile">
+          <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 5}}>
+            <img class="thumbnail-img" src="/images/docker.png" width="40px" height="40px">
+          </div>
+          <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 6}}>
+            <img class="thumbnail-img" src="/images/kubernetes.png" width="30px" height="30px">
+          </div>
+          <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 7}}>
+            <img class="thumbnail-img" src="/images/sql.png" width="40px" height="40px">
+          </div>
+          <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 8}}>
+            <img class="thumbnail-img" src="/images/git.png" width="40px" height="20px">
+          </div>
+          <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 9}}>
+            <img class="thumbnail-img" src="/images/mongo.png" width="50px" height="20px">
+          </div>
         </div>
         <div class="slideshow mobile">
           <AnimatedContainer class="slideshow-heading mobile">
-            {{#animated-if (eq this.imgCount 0) use=this.transitionFade}}
+            {{#animated-if (eq this.currentSlideshowImg 0) use=this.transitionFade}}
               <h2 class="slideshow-title mobile">
                 HTML5/Javascript/CSS3
               </h2>
             {{/animated-if}}
-            {{#animated-if (eq this.imgCount 1) use=this.transitionFade}}
+            {{#animated-if (eq this.currentSlideshowImg 1) use=this.transitionFade}}
               <h2 class="slideshow-title mobile">
                 Ember.js Frontend Development
               </h2>
             {{/animated-if}}
-            {{#animated-if (eq this.imgCount 2) use=this.transitionFade}}
+            {{#animated-if (eq this.currentSlideshowImg 2) use=this.transitionFade}}
               <h2 class="slideshow-title mobile">
                 Java/Spring Server-Side Development
               </h2>
             {{/animated-if}}
-            {{#animated-if (eq this.imgCount 3) use=this.transitionFade}}
+            {{#animated-if (eq this.currentSlideshowImg 3) use=this.transitionFade}}
               <h2 class="slideshow-title mobile">
                 Node.js/Express Server-Side Development
               </h2>
             {{/animated-if}}
-            {{#animated-if (eq this.imgCount 4) use=this.transitionFade}}
+            {{#animated-if (eq this.currentSlideshowImg 4) use=this.transitionFade}}
               <h2 class="slideshow-title mobile">
                 Android Development
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.currentSlideshowImg 5) use=this.transitionFade}}
+              <h2 class="slideshow-title mobile">
+                Docker
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.currentSlideshowImg 6) use=this.transitionFade}}
+              <h2 class="slideshow-title mobile">
+                Kubernetes
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.currentSlideshowImg 7) use=this.transitionFade}}
+              <h2 class="slideshow-title mobile">
+                SQL
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.currentSlideshowImg 8) use=this.transitionFade}}
+              <h2 class="slideshow-title mobile">
+                Git/Github
+              </h2>
+            {{/animated-if}}
+            {{#animated-if (eq this.currentSlideshowImg 9) use=this.transitionFade}}
+              <h2 class="slideshow-title mobile">
+                MongoDB
               </h2>
             {{/animated-if}}
           </AnimatedContainer>
           <div class="slideshow-container mobile">
             <AnimatedContainer class="slideshow-content mobile">
-              {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionMove}}
+              {{#animated-if (eq this.currentSlideshowImg 0) duration=1500 use=this.transitionMove}}
                 <img class="slideshow-img mobile" src="/images/html-css-js.png">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionMove}}
+              {{#animated-if (eq this.currentSlideshowImg 1) duration=1500 use=this.transitionMove}}
                 <img class="slideshow-img mobile" src="/images/ember-icon.svg">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionMove}}
+              {{#animated-if (eq this.currentSlideshowImg 2) duration=1500 use=this.transitionMove}}
                 <img class="slideshow-img mobile" src="/images/spring.png">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionMove}}
+              {{#animated-if (eq this.currentSlideshowImg 3) duration=1500 use=this.transitionMove}}
                 <img class="slideshow-img mobile" src="/images/nodejs.png">
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionMove}}
+              {{#animated-if (eq this.currentSlideshowImg 4) duration=1500 use=this.transitionMove}}
                 <img class="slideshow-img mobile" src="/images/android.png">
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSlideshowImg 5) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/docker.png" width="150px">
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSlideshowImg 6) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/kubernetes.png" width="100px">
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSlideshowImg 7) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/sql.png" width="150px">
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSlideshowImg 8) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/git.png" width="150px">
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSlideshowImg 9) duration=1000 use=this.transitionMove}}
+                <img class="slideshow-img" src="/images/mongo.png" width="200px">
               {{/animated-if}}
             </AnimatedContainer>
             <AnimatedContainer class="slideshow-details mobile">
-              {{#animated-if (eq this.imgCount 0) duration=1500 use=this.transitionFade}}
+              {{#animated-if (eq this.currentSlideshowImg 0) duration=1000 use=this.transitionFade}}
                 <h2 class="slideshow-details-text">
                   HTML defines the meaning and structure of web content.
                   <br><br>
@@ -464,30 +625,57 @@
                   JavaScript is a lightweight, interpreted programming language with first-class functions.
                 </h2>
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 1) duration=1500 use=this.transitionFade}}
+              {{#animated-if (eq this.currentSlideshowImg 1) duration=1000 use=this.transitionFade}}
                 <h2 class="slideshow-details-text">
                   Ember.js is a productive, battle-tested JavaScript framework for building modern web applications.
                   <br><br>
                   It includes everything you need to build rich UIs that work on any device.
                 </h2>
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 2) duration=1500 use=this.transitionFade}}
+              {{#animated-if (eq this.currentSlideshowImg 2) duration=1000 use=this.transitionFade}}
                 <h2 class="slideshow-details-text">
                   The Spring Framework is an application framework for the Java platform.
                   <br><br>
                   The framework is one of the most popular in the world for web application development.
                 </h2>
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 3) duration=1500 use=this.transitionFade}}
+              {{#animated-if (eq this.currentSlideshowImg 3) duration=1000 use=this.transitionFade}}
                 <h2 class="slideshow-details-text">
                   Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that executes JavaScript code outside a web browser.
                   <br><br>
                   Express, is a back end web application framework for Node.js
                 </h2>
               {{/animated-if}}
-              {{#animated-if (eq this.imgCount 4) duration=1500 use=this.transitionFade}}
+              {{#animated-if (eq this.currentSlideshowImg 4) duration=1000 use=this.transitionFade}}
                 <h2 class="slideshow-details-text">
                   Android development is the creation of applications for android smartphones and other devices.
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSlideshowImg 5) duration=1000 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
+                  <br><br>
+                  Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSlideshowImg 6) duration=1000 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  Kubernetes is an open-source container orchestration system for automating software deployment, scaling, and management. Google originally designed Kubernetes, but the Cloud Native Computing Foundation now maintains the project.
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSlideshowImg 7) duration=1000 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system, or for stream processing in a relational data stream management system.
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSlideshowImg 8) duration=1000 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows.
+                </h2>
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSlideshowImg 9) duration=1000 use=this.transitionFade}}
+                <h2 class="slideshow-details-text">
+                  MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
                 </h2>
               {{/animated-if}}
             </AnimatedContainer>

@@ -12,9 +12,10 @@ export default Controller.extend({
     let start = Date.now();
     var self = this;
 
-    setInterval(() => {
+    const interval = setInterval(() => {
       this._slideshowInterval();
     }, 10000);
+    this.set('slideshowInterval', interval);
   },
 
   *transitionMove({ duration, insertedSprites, removedSprites }) {
@@ -35,13 +36,13 @@ export default Controller.extend({
     }
   },
 
-  *transitionFade({ duration, insertedSprites, removedSprites}) {
+  *transitionFade(context) {
+
+    let { duration, insertedSprites, removedSprites } = context;
 
     for (let sprite of removedSprites) {
-      yield fadeOut(sprite);
+      fadeOut(sprite);
     }
-
-    yield wait(750);
 
     for (let sprite of insertedSprites) {
       fadeIn(sprite);
@@ -49,11 +50,11 @@ export default Controller.extend({
   },
 
   _slideshowInterval() {
-    let count = this.imgCount;
-    if (count === 4) {
-      this.set('imgCount', 0);
+    let count = this.currentSlideshowImg;
+    if (count === 9) {
+      this.set('currentSlideshowImg', 0);
     } else {
-      this.set('imgCount', this.imgCount + 1);
+      this.set('currentSlideshowImg', this.currentSlideshowImg + 1);
     }
   },
 
@@ -72,7 +73,7 @@ export default Controller.extend({
         navItem.children[2].classList.add('disabled');
       }
 
-      if ((scrollTop + 1) > sectionItem.offsetTop && scrollTop < endItem.offsetTop) {
+      if ((scrollTop + 20) > sectionItem.offsetTop && scrollTop < endItem.offsetTop) {
         navItem.classList.add('active');
         navItem.children[0].classList.remove('disabled');
         navItem.children[2].classList.remove('disabled');
@@ -80,11 +81,12 @@ export default Controller.extend({
     })
   },
 
-  imgCount: 0,
+  currentSlideshowImg: 0,
   tiles: ['about', 'career', 'education', 'awards'],
   currentSection: 'about',
   isTileView: true,
   sections: ['about', 'tech', 'contact'],
+  slideshowInterval: null,
 
   actions: {
     navigateToSection(section) {
@@ -117,5 +119,16 @@ export default Controller.extend({
       this.set('isTileView', true);
       this.set('currentSection', null);
     },
+
+    changeSlideshowImage(imageNum) {
+      this.set('currentSlideshowImg', imageNum);
+
+      clearInterval(this.slideshowInterval);
+
+      const interval = setInterval(() => {
+        this._slideshowInterval();
+      }, 10000);
+      this.set('slideshowInterval', interval);
+    }
   },
 });
