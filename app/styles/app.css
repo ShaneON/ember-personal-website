@@ -332,6 +332,15 @@ body {
   border-bottom: 1px solid #bababa;
 }
 
+.about-content.mobile {
+  width: 80%;
+  justify-content: center;
+  height: fit-content;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+}
+
 .about-content-header {
   display: flex;
   justify-content: center;
@@ -344,23 +353,12 @@ body {
 .about-content-container {
   display: flex;
   flex-direction: row;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.about-content.mobile {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  height: fit-content;
-  flex-direction: column;
-  padding: 10px;
-  margin-top: 20px;
-  background-color: white;
-}
-
-.about-content-container {
+  padding: 20px;
   width: 100%;
+}
+
+.about-content-img-container {
+
 }
 
 .about-content-img {
