@@ -128,6 +128,7 @@ export default Controller.extend({
       const interval = setInterval(() => {
         this._slideshowInterval();
       }, 10000);
+
       this.set('slideshowInterval', interval);
     }
   },

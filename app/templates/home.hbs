@@ -386,7 +386,7 @@
       <div class="about-container">
         <div class="about-tiles mobile">
           <AnimatedContainer class="about-tile-animated-container mobile">
-            {{#animated-if (or this.isTileView (eq this.currentSection 'about')) duration=1000 use=this.transitionFade}}
+            {{#animated-if (or this.isTileView (eq this.currentSection 'about')) use=this.transitionFade}}
               <div class="about-tile mobile" onclick={{action "tileSelectedMobile" 'about'}}>
                 <img class="about-tile-img-bg mobile" src="/images/code.jpg">
                 <img class="about-tile-img-text-1 mobile" src="/images/about.png">
@@ -394,7 +394,7 @@
             {{/animated-if}}
           </AnimatedContainer>
           <AnimatedContainer class="about-tile-animated-container mobile">
-            {{#animated-if (or this.isTileView (eq this.currentSection 'career')) duration=1000 use=this.transitionFade}}
+            {{#animated-if (or this.isTileView (eq this.currentSection 'career')) use=this.transitionFade}}
               <div class="about-tile mobile" onclick={{action "tileSelectedMobile" 'career'}}>
                 <img class="about-tile-img-bg mobile" src="/images/career.jpg">
                 <img class="about-tile-img-text-2 mobile" src="/images/career.png">
@@ -402,7 +402,7 @@
             {{/animated-if}}
           </AnimatedContainer>
           <AnimatedContainer class="about-tile-animated-container mobile">
-            {{#animated-if (or this.isTileView (eq this.currentSection 'education')) duration=1000 use=this.transitionFade}}
+            {{#animated-if (or this.isTileView (eq this.currentSection 'education')) use=this.transitionFade}}
               <div class="about-tile mobile" onclick={{action "tileSelectedMobile" 'education'}}>
                 <img class="about-tile-img-bg mobile" src="/images/education.jpg">
                 <img class="about-tile-img-text-3 mobile" src="/images/education.png">
@@ -410,84 +410,86 @@
             {{/animated-if}}
           </AnimatedContainer>
           <AnimatedContainer class="about-tile-animated-container mobile">
-            {{#animated-if (or this.isTileView (eq this.currentSection 'awards')) duration=1000 use=this.transitionFade}}
+            {{#animated-if (or this.isTileView (eq this.currentSection 'awards')) use=this.transitionFade}}
               <div class="about-tile mobile" onclick={{action "tileSelectedMobile" 'awards'}}>
                 <img class="about-tile-img-bg mobile" src="/images/awards.jpg">
                 <img class="about-tile-img-text-4 mobile" src="/images/awards.png">
               </div>
             {{/animated-if}}
           </AnimatedContainer>
-          <AnimatedContainer class="about-content-animated-container mobile">
-            {{#animated-if (and (not this.isTileView) (eq this.currentSection 'about')) duration=1000 use=this.transitionFade}}
-              <div class="about-content mobile">
-                <div class="about-content-container mobile">
-                  <img class="about-content-img mobile" src="/images/me.jpg">
-                  <div class="close" onclick={{action "closeAbout"}}></div>
-                </div>
+          {{#if (not this.isTileView)}}
+            <AnimatedContainer class="about-content-animated-container mobile">
+              {{#animated-if (eq this.currentSection 'about') duration=1000 use=this.transitionFade}}
+                <div class="about-content mobile">
+                  <div class="about-content-container mobile">
+                    <img class="about-content-img mobile" src="/images/me.jpg" width="120px" height="120px">
+                    <div class="close" onclick={{action "closeAbout"}}></div>
+                  </div>
 
-                <p class="about-content-text mobile">
-                  Shane is a freelance software and web developer from Dublin, Ireland.
-                  <br><br>
-                  He has experience working in frontend, backend, android and desktop development.
-                  <br><br>
-                  He is passionate about building beautiful, responsive, and robust web applications.
-                </p>
-                <a class="about-content-link" href="/assets/cv.pdf">Download CV</a>
-              </div>
-            {{/animated-if}}
-            {{#animated-if (and (not this.isTileView) (eq this.currentSection 'career')) duration=1000 use=this.transitionFade}}
-              <div class="about-content mobile">
-                <div class="about-content-container">
-                  <img class="about-content-img mobile" src="/images/working.jpg">
-                  <div class="close" onclick={{action "closeAbout"}}></div>
+                  <p class="about-content-text mobile">
+                    Shane is a freelance software and web developer from Dublin, Ireland.
+                    <br><br>
+                    He has experience working in frontend, backend, android and desktop development.
+                    <br><br>
+                    He is passionate about building beautiful, responsive, and robust web applications.
+                  </p>
+                  <a class="about-content-link" href="/assets/cv.pdf">Download CV</a>
                 </div>
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSection 'career') duration=1000 use=this.transitionFade}}
+                <div class="about-content mobile">
+                  <div class="about-content-container">
+                    <img class="about-content-img mobile" src="/images/working.jpg" width="180px" height="140px">
+                    <div class="close" onclick={{action "closeAbout"}}></div>
+                  </div>
 
-                <p class="about-content-text mobile">
-                  Shane has experience in both small startups and large corporations, working with a wide range of technologies.
-                  <br>
-                  He has built frontend applications for the largest salon booking software in the world.
-                  <br>
-                  He has worked on backend and database infrastructure for large banking multinationals.
-                  <br>
-                  He has also done many smaller projects (frontend + backend) for individuals and startup companies;
-                </p>
-              </div>
-            {{/animated-if}}
-            {{#animated-if (and (not this.isTileView) (eq this.currentSection 'education')) duration=1000 use=this.transitionFade}}
-              <div class="about-content mobile">
-                <div class="about-content-container">
-                  <img class="about-content-img mobile" src="/images/dcu.jpg">
-                  <div class="close" onclick={{action "closeAbout"}}></div>
+                  <p class="about-content-text mobile">
+                    Shane has experience in both small startups and large corporations, working with a wide range of technologies.
+                    <br>
+                    He has built frontend applications for the largest salon booking software in the world.
+                    <br>
+                    He has worked on backend and database infrastructure for large banking multinationals.
+                    <br>
+                    He has also done many smaller projects (frontend + backend) for individuals and startup companies;
+                  </p>
                 </div>
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSection 'education') duration=1000 use=this.transitionFade}}
+                <div class="about-content mobile">
+                  <div class="about-content-container">
+                    <img class="about-content-img mobile" src="/images/dcu.jpg" width="200px" height="160px">
+                    <div class="close" onclick={{action "closeAbout"}}></div>
+                  </div>
 
-                <p class="about-content-text mobile">
-                  Shane graduated from Dublin City University in 2017 with an honours degree in Computer Science.
-                  <br><br>
-                  He specialized in wearable technology, machine translation and computer graphics.
-                  <br><br>
-                  He achieved a first class honours result and an award for his final year project.
-                </p>
-              </div>
-            {{/animated-if}}
-            {{#animated-if (and (not this.isTileView) (eq this.currentSection 'awards')) duration=1000 use=this.transitionFade}}
-              <div class="about-content mobile">
-                <div class="about-content-container mobile">
-                  <img class="about-content-img mobile" src="/images/openet.jpeg">
-                  <div class="close" onclick={{action "closeAbout"}}></div>
+                  <p class="about-content-text mobile">
+                    Shane graduated from Dublin City University in 2017 with an honours degree in Computer Science.
+                    <br><br>
+                    He specialized in wearable technology, machine translation and computer graphics.
+                    <br><br>
+                    He achieved a first class honours result and an award for his final year project.
+                  </p>
                 </div>
+              {{/animated-if}}
+              {{#animated-if (eq this.currentSection 'awards') duration=1000 use=this.transitionFade}}
+                <div class="about-content mobile">
+                  <div class="about-content-container mobile">
+                    <img class="about-content-img mobile" src="/images/openet.jpeg" width="200px" height="160px">
+                    <div class="close" onclick={{action "closeAbout"}}></div>
+                  </div>
 
-                <p class="about-content-text mobile">
-                  Shane was awarded Most Innovative Project at the Dublin City University 2017 final year project expo.
-                  <br><br>
-                  Shane has built frontend applications for the largest salon booking software in the world.
-                  <br><br>
-                  His project was a wearable technology navigation system for cyclists consisting of an android app and an arduino which was fitted to a helmet, using a light system to direct the cyclist to their destination.
-                  <br><br>
-                  Shane received first class honours for the project as well as a new Ipad.
-                </p>
-              </div>
-            {{/animated-if}}
-          </AnimatedContainer>
+                  <p class="about-content-text mobile">
+                    Shane was awarded Most Innovative Project at the Dublin City University 2017 final year project expo.
+                    <br><br>
+                    Shane has built frontend applications for the largest salon booking software in the world.
+                    <br><br>
+                    His project was a wearable technology navigation system for cyclists consisting of an android app and an arduino which was fitted to a helmet, using a light system to direct the cyclist to their destination.
+                    <br><br>
+                    Shane received first class honours for the project as well as a new Ipad.
+                  </p>
+                </div>
+              {{/animated-if}}
+            </AnimatedContainer>
+          {{/if}}
         </div>
       </div>
       <div id="about-end"></div>
@@ -621,70 +623,72 @@
                 <img class="slideshow-img" src="/images/mongo.png" width="200px">
               {{/animated-if}}
             </AnimatedContainer>
-            <AnimatedContainer class="slideshow-details mobile">
-              {{#animated-if (eq this.currentSlideshowImg 0) duration=1000 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  HTML defines the meaning and structure of web content.
-                  <br><br>
-                  CSS is a style sheet language used for describing the presentation of HTML.
-                  <br><br>
-                  JavaScript is a lightweight, interpreted programming language with first-class functions.
-                </h2>
-              {{/animated-if}}
-              {{#animated-if (eq this.currentSlideshowImg 1) duration=1000 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  Ember.js is a productive, battle-tested JavaScript framework for building modern web applications.
-                  <br><br>
-                  It includes everything you need to build rich UIs that work on any device.
-                </h2>
-              {{/animated-if}}
-              {{#animated-if (eq this.currentSlideshowImg 2) duration=1000 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  The Spring Framework is an application framework for the Java platform.
-                  <br><br>
-                  The framework is one of the most popular in the world for web application development.
-                </h2>
-              {{/animated-if}}
-              {{#animated-if (eq this.currentSlideshowImg 3) duration=1000 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that executes JavaScript code outside a web browser.
-                  <br><br>
-                  Express, is a back end web application framework for Node.js
-                </h2>
-              {{/animated-if}}
-              {{#animated-if (eq this.currentSlideshowImg 4) duration=1000 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  Android development is the creation of applications for android smartphones and other devices.
-                </h2>
-              {{/animated-if}}
-              {{#animated-if (eq this.currentSlideshowImg 5) duration=1000 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
-                  <br><br>
-                  Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
-                </h2>
-              {{/animated-if}}
-              {{#animated-if (eq this.currentSlideshowImg 6) duration=1000 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  Kubernetes is an open-source container orchestration system for automating software deployment, scaling, and management. Google originally designed Kubernetes, but the Cloud Native Computing Foundation now maintains the project.
-                </h2>
-              {{/animated-if}}
-              {{#animated-if (eq this.currentSlideshowImg 7) duration=1000 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system, or for stream processing in a relational data stream management system.
-                </h2>
-              {{/animated-if}}
-              {{#animated-if (eq this.currentSlideshowImg 8) duration=1000 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows.
-                </h2>
-              {{/animated-if}}
-              {{#animated-if (eq this.currentSlideshowImg 9) duration=1000 use=this.transitionFade}}
-                <h2 class="slideshow-details-text">
-                  MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
-                </h2>
-              {{/animated-if}}
-            </AnimatedContainer>
+            <div class="slideshow-details mobile">
+              <AnimatedContainer class="slideshow-details-container mobile">
+                {{#animated-if (eq this.currentSlideshowImg 0) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    HTML defines the meaning and structure of web content.
+                    <br><br>
+                    CSS is a style sheet language used for describing the presentation of HTML.
+                    <br><br>
+                    JavaScript is a lightweight, interpreted programming language with first-class functions.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 1) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Ember.js is a productive, battle-tested JavaScript framework for building modern web applications.
+                    <br><br>
+                    It includes everything you need to build rich UIs that work on any device.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 2) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    The Spring Framework is an application framework for the Java platform.
+                    <br><br>
+                    The framework is one of the most popular in the world for web application development.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 3) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that executes JavaScript code outside a web browser.
+                    <br><br>
+                    Express, is a back end web application framework for Node.js
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 4) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Android development is the creation of applications for android smartphones and other devices.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 5) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
+                    <br><br>
+                    Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 6) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Kubernetes is an open-source container orchestration system for automating software deployment, scaling, and management. Google originally designed Kubernetes, but the Cloud Native Computing Foundation now maintains the project.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 7) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system, or for stream processing in a relational data stream management system.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 8) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows.
+                  </h2>
+                {{/animated-if}}
+                {{#animated-if (eq this.currentSlideshowImg 9) duration=1000 use=this.transitionFade}}
+                  <h2 class="slideshow-details-text">
+                    MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
+                  </h2>
+                {{/animated-if}}
+              </AnimatedContainer>
+            </div>
           </div>
         </div>
       </div>

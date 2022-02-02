@@ -359,8 +359,6 @@ body {
 }
 
 .about-content-img {
-  min-height: 200px;
-  height: 200px;
   max-width: auto;
   border-radius: 5px;
   box-shadow: 0px 4px 11px -4px rgba(0,0,0,0.75);
