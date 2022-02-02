@@ -14,7 +14,7 @@ body {
 .header {
   position: absolute;
   width: 100%;
-  background-color: #6a8ec8;
+  background-color: #4572ba;
   height: 140px;
   padding: 0;
   margin-bottom: 5px;
@@ -30,7 +30,7 @@ body {
 .sticky {
   width: 100%;
   position: fixed;
-  background-color: #6a8ec8;
+  background-color: #4572ba;
   height: 30px;
   padding: 0;
   margin-bottom: 50px;
@@ -94,7 +94,7 @@ body {
   text-decoration: none;
   color: #f7f1f0;
   border-radius: 2px;
-  border-right: 1px solid #7d9ccf;
+  border-right: 1px solid #6a8ec8;
 }
 
 .nav-item.mobile {
@@ -214,15 +214,20 @@ body {
 
 .about-tile.mobile {
   height: 100%;
-  width: 95%;
+  width: 97%;
   box-shadow: 1px 2px 10px -4px rgba(0,0,0,0.75);
   border-radius: 3px;
   margin-top: 10px;
+  opacity: 1;
 }
 
 .about-tile:hover {
   transform: scale(1.03);
   opacity: 1;
+}
+
+.about-tile.mobile:hover {
+  transform: none;
 }
 
 .about-tile-title {
@@ -309,12 +314,14 @@ body {
 }
 
 .about-content-animated-container.mobile {
+  max-height: 80%;
+  height: 80%;
   width: 100%;
 }
 
 .about-content {
   margin-top: 20px;
-  height: 90%;
+  max-height: 100%;
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -337,7 +344,8 @@ body {
 .about-content-container {
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .about-content.mobile {
@@ -391,7 +399,7 @@ body {
   border-radius: 3px;
   font-weight: 300;
   box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .about-content-link:hover {
@@ -416,6 +424,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 .thumbnail-container {
@@ -425,6 +434,15 @@ body {
   align-items: center;
   justify-content: space-around;
   margin-bottom: 15px;
+}
+
+.thumbnail-container.mobile {
+  height: 200px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .thumbnail-row.mobile {
@@ -472,7 +490,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
 }
 
 .slideshow-content {
@@ -591,7 +608,7 @@ body {
 /* ============================================CONTACT=========================== */
 
 .links {
-  height: 100vh;
+  height: calc(100vh - 60px);
   width: 100%;
   display: flex;
   flex-direction: row;
