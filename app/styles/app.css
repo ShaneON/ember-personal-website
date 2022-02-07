@@ -478,6 +478,12 @@ body {
   box-shadow: -3px 3px 9px -8px rgba(0,0,0,0.75);
 }
 
+.thumbnail-item.mobile:hover {
+  border: 1px solid #fffcf7;
+  border-radius: none;
+  box-shadow: none;
+}
+
 .thumbnail-item.active {
   border: 1px solid #ACCEF7;
   border-radius: 5px;
