@@ -479,9 +479,7 @@ body {
 }
 
 .thumbnail-item.mobile:hover {
-  border: 1px solid #fffcf7;
-  border-radius: none;
-  box-shadow: none;
+  pointer-events: none;
 }
 
 .thumbnail-item.active {
