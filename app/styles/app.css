@@ -767,3 +767,7 @@ body {
 .close:after {
   transform: rotate(-45deg);
 }
+
+.nav-divider-end {
+  height: 0;
+}

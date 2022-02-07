@@ -77,7 +77,13 @@ export default Controller.extend({
         navItem.children[2].classList.add('disabled');
       }
 
-      if ((scrollTop + 20) > sectionItem.offsetTop && scrollTop < endItem.offsetTop) {
+      if ((scrollTop + 1) > sectionItem.offsetTop && (scrollTop - 20) < endItem.offsetTop) {
+        console.log("scroll position:");
+        console.log(scrollTop + 1);
+        console.log("start offset:");
+        console.log(sectionItem.offsetTop);
+        console.log("end offset:");
+        console.log(endItem.offsetTop);
         navItem.classList.add('active');
         navItem.children[0].classList.remove('disabled');
         navItem.children[2].classList.remove('disabled');
