@@ -136,34 +136,34 @@
 
       <div class="tech-container">
         <div class="thumbnail-container">
-          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 0}}>
+          <div class="thumbnail-item {{if (eq this.currentSlideshowImg 0) "active"}}" onclick={{action "changeSlideshowImage" 0}}>
             <img class="thumbnail-img" src="/images/html-css-js.png" width="75px" height="30px">
           </div>
-          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 1}}>
+          <div class="thumbnail-item {{if (eq this.currentSlideshowImg 1) "active"}}" onclick={{action "changeSlideshowImage" 1}}>
             <img class="thumbnail-img" src="/images/ember-icon.svg" width="75px" height="75px">
           </div>
-          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 2}}>
+          <div class="thumbnail-item {{if (eq this.currentSlideshowImg 2) "active"}}" onclick={{action "changeSlideshowImage" 2}}>
             <img class="thumbnail-img" src="/images/spring.png" width="100px" height="75spx">
           </div>
-          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 3}}>
+          <div class="thumbnail-item {{if (eq this.currentSlideshowImg 3) "active"}}" onclick={{action "changeSlideshowImage" 3}}>
             <img class="thumbnail-img" src="/images/nodejs.png" width="75px" height="60px">
           </div>
-          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 4}}>
+          <div class="thumbnail-item {{if (eq this.currentSlideshowImg 4) "active"}}" onclick={{action "changeSlideshowImage" 4}}>
             <img class="thumbnail-img" src="/images/android.png" width="75px" height="75px">
           </div>
-          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 5}}>
+          <div class="thumbnail-item {{if (eq this.currentSlideshowImg 5) "active"}}" onclick={{action "changeSlideshowImage" 5}}>
             <img class="thumbnail-img" src="/images/docker.png" width="50px" height="50px">
           </div>
-          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 6}}>
+          <div class="thumbnail-item {{if (eq this.currentSlideshowImg 6) "active"}}" onclick={{action "changeSlideshowImage" 6}}>
             <img class="thumbnail-img" src="/images/kubernetes.png" width="40px" height="40px">
           </div>
-          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 7}}>
+          <div class="thumbnail-item {{if (eq this.currentSlideshowImg 7) "active"}}" onclick={{action "changeSlideshowImage" 7}}>
             <img class="thumbnail-img" src="/images/sql.png" width="50px" height="50px">
           </div>
-          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 8}}>
+          <div class="thumbnail-item {{if (eq this.currentSlideshowImg 8) "active"}}" onclick={{action "changeSlideshowImage" 8}}>
             <img class="thumbnail-img" src="/images/git.png" width="50px" height="25px">
           </div>
-          <div class="thumbnail-item" onclick={{action "changeSlideshowImage" 9}}>
+          <div class="thumbnail-item {{if (eq this.currentSlideshowImg 9) "active"}}" onclick={{action "changeSlideshowImage" 9}}>
             <img class="thumbnail-img" src="/images/mongo.png" width="70px" height="25px">
           </div>
         </div>
@@ -501,36 +501,36 @@
       <div class="tech-container">
         <div class="thumbnail-container mobile">
           <div class="thumbnail-row mobile">
-            <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 0}}>
+            <div class="thumbnail-item mobile {{if (eq this.currentSlideshowImg 0) "active"}}" onclick={{action "changeSlideshowImage" 0}}>
               <img class="thumbnail-img" src="/images/html-css-js.png" width="45px" height="20px">
             </div>
-            <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 1}}>
+            <div class="thumbnail-item mobile {{if (eq this.currentSlideshowImg 1) "active"}}" onclick={{action "changeSlideshowImage" 1}}>
               <img class="thumbnail-img" src="/images/ember-icon.svg" width="65px" height="65px">
             </div>
-            <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 2}}>
+            <div class="thumbnail-item mobile {{if (eq this.currentSlideshowImg 2) "active"}}" onclick={{action "changeSlideshowImage" 2}}>
               <img class="thumbnail-img" src="/images/spring.png" width="90px" height="65px">
             </div>
-            <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 3}}>
+            <div class="thumbnail-item mobile {{if (eq this.currentSlideshowImg 3) "active"}}" onclick={{action "changeSlideshowImage" 3}}>
               <img class="thumbnail-img" src="/images/nodejs.png" width="65px" height="50px">
             </div>
-            <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 4}}>
+            <div class="thumbnail-item mobile {{if (eq this.currentSlideshowImg 4) "active"}}" onclick={{action "changeSlideshowImage" 4}}>
               <img class="thumbnail-img" src="/images/android.png" width="65px" height="65px">
             </div>
           </div>
           <div class="thumbnail-row mobile">
-            <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 5}}>
+            <div class="thumbnail-item mobile {{if (eq this.currentSlideshowImg 5) "active"}}" onclick={{action "changeSlideshowImage" 5}}>
               <img class="thumbnail-img" src="/images/docker.png" width="40px" height="40px">
             </div>
-            <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 6}}>
+            <div class="thumbnail-item mobile {{if (eq this.currentSlideshowImg 6) "active"}}" onclick={{action "changeSlideshowImage" 6}}>
               <img class="thumbnail-img" src="/images/kubernetes.png" width="30px" height="30px">
             </div>
-            <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 7}}>
+            <div class="thumbnail-item mobile {{if (eq this.currentSlideshowImg 7) "active"}}" onclick={{action "changeSlideshowImage" 7}}>
               <img class="thumbnail-img" src="/images/sql.png" width="40px" height="40px">
             </div>
-            <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 8}}>
+            <div class="thumbnail-item mobile {{if (eq this.currentSlideshowImg 8) "active"}}" onclick={{action "changeSlideshowImage" 8}}>
               <img class="thumbnail-img" src="/images/git.png" width="40px" height="20px">
             </div>
-            <div class="thumbnail-item mobile" onclick={{action "changeSlideshowImage" 9}}>
+            <div class="thumbnail-item mobile {{if (eq this.currentSlideshowImg 9) "active"}}" onclick={{action "changeSlideshowImage" 9}}>
               <img class="thumbnail-img" src="/images/mongo.png" width="50px" height="20px">
             </div>
           </div>
