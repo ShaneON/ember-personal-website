@@ -98,7 +98,11 @@ body {
 }
 
 .nav-item.mobile {
-  width: 33%;
+  width: 33.3%;
+}
+
+.nav-item:last-child {
+  border: none;
 }
 
 .active {
@@ -201,6 +205,10 @@ body {
   align-items: center;
   max-height: 25%;
   width: 100%;
+}
+
+.about-tile-animated-container.mobile.closed {
+  height: 25%;
 }
 
 .about-tile {

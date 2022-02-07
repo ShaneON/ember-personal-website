@@ -41,11 +41,15 @@ export default Controller.extend({
     let { duration, insertedSprites, removedSprites } = context;
 
     for (let sprite of removedSprites) {
-      fadeOut(sprite);
+      yield fadeOut(sprite, {
+        duration: duration * (1 / 3),
+      });
     }
 
     for (let sprite of insertedSprites) {
-      fadeIn(sprite);
+      fadeIn(sprite, {
+        duration: duration * (2 / 3),
+      });
     }
   },
 
