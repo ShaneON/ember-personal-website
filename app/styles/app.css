@@ -95,6 +95,7 @@ body {
   color: #f7f1f0;
   border-radius: 2px;
   border-right: 1px solid #6a8ec8;
+  cursor: pointer;
 }
 
 .nav-item.mobile {
@@ -212,6 +213,7 @@ body {
 }
 
 .about-tile {
+  cursor: pointer;
   position: relative;
   height: 100%;
   width: 25%;
