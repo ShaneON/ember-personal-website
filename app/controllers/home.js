@@ -68,7 +68,7 @@ export default Controller.extend({
 
     sections.forEach((section) => {
       var navItem = document.getElementById('nav-' + section);
-      var sectionItem = document.getElementById(section);
+      var sectionItem = document.getElementById(section + '-start');
       var endItem = document.getElementById(section + '-end');
 
       if (navItem.className.includes("active")) {
@@ -77,13 +77,7 @@ export default Controller.extend({
         navItem.children[2].classList.add('disabled');
       }
 
-      if ((scrollTop + 1) > sectionItem.offsetTop && (scrollTop - 20) < endItem.offsetTop) {
-        console.log("scroll position:");
-        console.log(scrollTop + 1);
-        console.log("start offset:");
-        console.log(sectionItem.offsetTop);
-        console.log("end offset:");
-        console.log(endItem.offsetTop);
+      if ((scrollTop + 1) >= sectionItem.offsetTop && scrollTop < endItem.offsetTop) {
         navItem.classList.add('active');
         navItem.children[0].classList.remove('disabled');
         navItem.children[2].classList.remove('disabled');
