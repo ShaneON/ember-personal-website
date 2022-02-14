@@ -95,7 +95,7 @@ export default Controller.extend({
   actions: {
     navigateToSection(section) {
       let navItem = document.getElementById(section);
-      navItem = document.getElementById(section.replace('nav-', ''));
+      navItem = document.getElementById(section.replace('nav-', '') + '-start');
       navItem.scrollIntoView();
     },
 
