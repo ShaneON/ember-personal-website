@@ -28,7 +28,10 @@
     </div>
   </div>
 
-  <div class="body" id="about-start">
+  <div class="body" id="about">
+
+    <div class="nav-divider" id="about-start"></div>
+
     <div class="content">
       <div class="about-container">
         <div class="about-tiles">
@@ -136,7 +139,7 @@
         <div class="seperator-line-right"></div>
       </div>
 
-      <div class="tech-container">
+      <div class="tech-container" id="tech">
         <div class="thumbnail-container">
           <div class="thumbnail-item {{if (eq this.currentSlideshowImg 0) "active"}}" onclick={{action "changeSlideshowImage" 0}}>
             <img class="thumbnail-img" src="/images/html-css-js.png" width="75px" height="30px">
@@ -336,7 +339,7 @@
         <div class="seperator-line-right"></div>
       </div>
 
-      <div class="links">
+      <div class="links" id="contact">
        <a class="link" href="mailto:sgoneill89@gmail.com">
          <img class="gmail-icon" src="images/gmail.png">
        </a>
@@ -383,7 +386,10 @@
     </div>
   </div>
 
-  <div class="body" id="about-start">
+  <div class="body" id="about">
+
+    <div class="nav-divider" id="about-start"></div>
+
     <div class="content mobile">
       <div class="about-container">
         <div class="about-tiles mobile">
@@ -504,7 +510,7 @@
         <div class="seperator-line-right mobile"></div>
       </div>
 
-      <div class="tech-container">
+      <div class="tech-container mobile" id="tech">
         <div class="thumbnail-container mobile">
           <div class="thumbnail-row mobile">
             <div class="thumbnail-item mobile {{if (eq this.currentSlideshowImg 0) "active"}}" onclick={{action "changeSlideshowImage" 0}}>
@@ -708,7 +714,7 @@
         <div class="seperator-line-right mobile"></div>
       </div>
 
-      <div class="links mobile">
+      <div class="links mobile" id="contact">
        <a class="link mobile" href="mailto:sgoneill89@gmail.com">
          <img class="gmail-icon mobile" src="images/gmail.png">
        </a>

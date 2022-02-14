@@ -433,6 +433,13 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.tech-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .thumbnail-container {
