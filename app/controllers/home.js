@@ -2,9 +2,6 @@ import Controller from '@ember/controller';
 import move from 'ember-animated/motions/move';
 import { fadeOut, fadeIn } from 'ember-animated/motions/opacity';
 import { easeExpIn, easeExpOut } from 'd3-ease';
-import fade from 'ember-animated/transitions/fade';
-import { wait } from 'ember-animated';
-import { debounce } from '@ember/runloop';
 
 export default Controller.extend({
   init() {
