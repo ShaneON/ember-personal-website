@@ -96,7 +96,7 @@ body {
   text-decoration: none;
   color: #f7f1f0;
   border-radius: 2px;
-  border-right: 1px solid #6a8ec8;
+  border-right: 1px solid #7f9af0;
   cursor: pointer;
 }
 
@@ -332,6 +332,7 @@ body {
 }
 
 .about-content {
+  border-radius: 3px 3px 0 0;
   margin-top: 20px;
   max-height: 100%;
   width: fit-content;
@@ -354,11 +355,13 @@ body {
 }
 
 .about-content-header {
+  border-radius: 3px 3px 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 40px;
-  background-color: #12336b;
+  background: rgb(58,131,177);
+  background: linear-gradient(90deg, rgba(58,131,177,1) 35%, rgba(18,60,107,1) 83%);
   width: 100%;
 }
 

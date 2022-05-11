@@ -18,7 +18,7 @@ export default Route.extend({
         stickyPosition = 70;
       }
       else {
-        stickyPosition = 110;
+        stickyPosition = 80;
       }
       let scrollPosition = Math.round(window.scrollY);
       if (scrollPosition > stickyPosition) {
