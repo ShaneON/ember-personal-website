@@ -130,6 +130,7 @@ body {
 }
 
 .nav-item-bracket {
+  height: 22px;
   font-size: 14px;
   color: #f58e8e;
   font-weight: 800;
