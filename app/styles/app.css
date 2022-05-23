@@ -82,7 +82,6 @@ body {
   flex-direction: row;
   align-items: center;
   height: 30px;
-  /* background-color: #7d9ccf; */
 }
 
 .nav-item {
@@ -112,7 +111,7 @@ body {
   color: #fad7d7;
 }
 
-.disabled {
+.nav-item-bracket.disabled {
   display: none;
 }
 
@@ -130,6 +129,8 @@ body {
 }
 
 .nav-item-bracket {
+  display: flex;
+  align-items: center;
   height: 22px;
   font-size: 14px;
   color: #f58e8e;
