@@ -79,7 +79,6 @@
     "edition": "octane"
   },
   "dependencies": {
-    "canvas": "^2.8.0",
     "d3-ease": "^3.0.1",
     "postcss": "^8.4.5"
   }
